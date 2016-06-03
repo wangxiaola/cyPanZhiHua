@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  cyPZH
+//
+//  Created by 王小腊 on 16/6/3.
+//  Copyright © 2016年 王小腊. All rights reserved.
+//
+
+#import <Availability.h>
+
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+/*--------------公共定义文件-----------------*/
+#import "PublicDefine.h"
+
+/*--------------王主席定义文件-----------------*/
+#import "WXLDefine.h"
+
+/*--------------汤亮定义文件-----------------*/
+#import "TLDefine.h"
+
+#endif
