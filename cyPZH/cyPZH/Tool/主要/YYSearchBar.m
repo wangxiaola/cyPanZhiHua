@@ -72,7 +72,7 @@
     }else{
         attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入关键字查询"];
     }
-    [attributedPlaceholder addAttribute:(NSString*)NSForegroundColorAttributeName value:YJCorl(180, 180, 180) range:NSMakeRange(0, attributedPlaceholder.length)];
+    [attributedPlaceholder addAttribute:(NSString*)NSForegroundColorAttributeName value:RGB(180, 180, 180) range:NSMakeRange(0, attributedPlaceholder.length)];
     searchField.attributedPlaceholder = attributedPlaceholder;
 }
 

@@ -8,10 +8,6 @@
 
 
 #import "ZKUtil.h"
-#define navBarHeight 44
-#define tabBarHeight 49
-#define statusBarHeight 20
-
 
 @interface ZKUtil : NSObject
 

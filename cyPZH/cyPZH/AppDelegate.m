@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BaiduMobStat.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 初始化百度统计SDK
+    [self startBaiduMobStat];
+    
     return YES;
+}
+
+/**
+ *  初始化百度统计SDK
+ */
+- (void)startBaiduMobStat {
+    
+    BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
+    // 此处(startWithAppId之前)可以设置初始化的可选参数，具体有哪些参数，可详见BaiduMobStat.h文件，例如：
+    statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    statTracker.enableDebugOn = NO;
+    statTracker.logStrategy = BaiduMobStatLogStrategyAppLaunch;
+    statTracker.monitorStrategy = BaiduMobStatMonitorStrategyNone;
+    [statTracker startWithAppId:BAIDU_ID];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

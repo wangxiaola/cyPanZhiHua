@@ -13,5 +13,8 @@ NSString *const POST_LIST_URL    = @"http://192.168.0.11/tdgl/rest/item";
 NSString *const POST_ZF_URL      = @"http://192.168.0.11/tdgl/rest/law";
 NSString *const POST_ZF_LIST_URL = @"http://192.168.0.11/tdgl/rest/guide";
 
+NSString *const BAIDU_ID = @"1462e31ee3";
+
+
 NSString *const QY_ERR           = @"no_data";
 NSString *const ZF_ERR           = @"no_data";
