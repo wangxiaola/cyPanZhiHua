@@ -31,7 +31,21 @@
     // 初始化百度统计SDK
     [self startBaiduMobStat];
     [self startShareSDK];
+    [self commonConfiguration];
     return YES;
+}
+
+- (void)commonConfiguration {
+
+    /************* HUD动画设置 **************/
+    //背景样式
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+    //HUD背景色
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+    //动画样式
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    //动画时间
+    [SVProgressHUD setMinimumDismissTimeInterval:1.2];
 }
 
 /**
@@ -103,23 +117,33 @@
 
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation
+//{
+//    
 //    if ([url.host isEqualToString:@"safepay"]) {
 //        //跳转支付宝钱包进行支付，处理支付结果
 //        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
 //            NSLog(@"result00002\n = %@",resultDic);
 //        }];
 //    }
-    
-    return YES;
-}
-
-
+//    
+//    return YES;
+//}
+//
+//// NOTE: 9.0以后使用新API接口
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+//{
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        //跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            NSLog(@"result = %@",resultDic);
+//        }];
+//    }
+//    return YES;
+//}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
