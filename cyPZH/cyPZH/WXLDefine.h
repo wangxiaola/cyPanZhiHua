@@ -32,17 +32,33 @@
 /**
  *  请求地址
  */
-FOUNDATION_EXPORT NSString *const POST_QY_URL;
-FOUNDATION_EXPORT NSString *const POST_LIST_URL;
-FOUNDATION_EXPORT NSString *const POST_ZF_URL;
-FOUNDATION_EXPORT NSString *const POST_ZF_LIST_URL;
+FOUNDATION_EXPORT NSString *const POST_ZK_URL;
+
 /**
  *  错误图片
  */
-FOUNDATION_EXPORT NSString *const QY_ERR;
-FOUNDATION_EXPORT NSString *const ZF_ERR;
-
+FOUNDATION_EXPORT NSString *const ZK_ERR;
+/**
+ *  配置参数
+ */
 FOUNDATION_EXPORT NSString *const BAIDU_ID;
 
+/* shareSDK */
+//    腾讯
+FOUNDATION_EXPORT NSString *const tenxunQQID;
+FOUNDATION_EXPORT NSString *const tenxunQQKEY;
+//    微信
+FOUNDATION_EXPORT NSString *const weixinID;
+FOUNDATION_EXPORT NSString *const weixinSecret;
+//   新浪微博
+FOUNDATION_EXPORT NSString *const xinlangweipoID;
+FOUNDATION_EXPORT NSString *const xinlangweipoSecret;
+
+/* 支付SDK */
+//   支付宝
+FOUNDATION_EXPORT NSString *const PARTNER;
+FOUNDATION_EXPORT NSString *const SELLER;
+FOUNDATION_EXPORT NSString *const PRIVATEKEY;
+// 微信支付
 
 #endif

@@ -2,15 +2,6 @@
 #ifndef _TLDEFINE_H_
 #define _TLDEFINE_H_
 
-// 导游验证、注册、资料接口路径
-FOUNDATION_EXPORT NSString *const DY_POST_URL;
-// 导游出团信息接口路径
-FOUNDATION_EXPORT NSString *const DY_ITEM_POST_URL;
-// 导游签到有关接口路径
-FOUNDATION_EXPORT NSString *const DY_SIGN_POST_URL;
-//图片上传接口
-FOUNDATION_EXPORT NSString *const DY_UPLOAD_POST_URL;
-
 // 补全图片路径
 #define FullImagePath(suffix) [NSString stringWithFormat:@"%@", suffix];
 // HUD
@@ -22,8 +13,8 @@ FOUNDATION_EXPORT NSString *const DY_UPLOAD_POST_URL;
 
 
 // 屏幕
-#define __SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define __SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define _SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define _SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 
 // 颜色
