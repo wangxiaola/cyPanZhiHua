@@ -13,18 +13,25 @@
 
 @implementation ZKUtil
 
-+(id)takeDataMaek:(NSString*)Identifier;
-{
-    return nil;
-}
-
-+(void)saveData:(id)data mark:(NSString*)Identifier;
++ (id)readForKey:(NSString*)key;
 {
 
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:[kDocumentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.dataFile",key]]];
+}
++ (void)write:(id)data forKey:(NSString*)key;
+{
+    if (data) {
+        
+        dispatch_queue_t queue =  dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        dispatch_async(queue, ^{
+            
+            [NSKeyedArchiver archiveRootObject:data toFile:[kDocumentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.dataFile",key]]];
+            
+        });
+    }
 
 }
-
-
 
 +(CGSize)contentLabelSize:(CGSize)size labelFont:(float)font labelText:(NSString*)str
 {

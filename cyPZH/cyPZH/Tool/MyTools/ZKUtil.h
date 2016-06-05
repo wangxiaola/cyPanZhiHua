@@ -11,26 +11,24 @@
 
 @interface ZKUtil : NSObject
 
-
 /**
  *  取出缓存
  *
- *  @param Identifier 标示符
+ *  @param key 标示符
  *
  *  @return 数据
  */
-+(id)takeDataMaek:(NSString*)Identifier;
++ (id)readForKey:(NSString*)key;
 
 /**
  *  缓存策略
  *
  *  @param data       数据
- *  @param Identifier 标示符
+ *  @param key 标示符
  *
  *  @return 是否存入
  */
-+(void)saveData:(id)data mark:(NSString*)Identifier;
-
++ (void)write:(id)data forKey:(NSString*)key;
 
 /**
  *  uilabel的状态

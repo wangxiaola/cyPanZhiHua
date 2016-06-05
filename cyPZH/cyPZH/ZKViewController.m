@@ -7,8 +7,11 @@
 //
 
 #import "ZKViewController.h"
+#import "ZKmode.h"
 
 @interface ZKViewController ()
+
+@property (nonatomic, strong) NSCache *cache;
 
 @end
 
@@ -24,15 +27,24 @@
     [bty addTarget:self action:@selector(bty) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:bty];
     
+    self.cache = [[NSCache alloc] init];
+    ZKmode *jku =[self.cache objectForKey:@"jku"];
+    NSLog( @"%@", jku.str);
+    
+    
+
+    
+    
 }
 - (void)bty
 {
 
-    UIViewController *vc = [UIViewController new];
-    vc.title = @"么哦用";
-    vc.view.backgroundColor = [UIColor yellowColor];
-    [self.navigationController pushViewController:vc animated:YES];
     
+//    UIViewController *vc = [UIViewController new];
+//    vc.title = @"么哦用";
+//    vc.view.backgroundColor = [UIColor yellowColor];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    
 }
 
 - (void)beginAnimationWithTitle:(NSString *)title

@@ -14,7 +14,9 @@
 #import "SVProgressHUD.h"
 //工具类
 #import "ZKUtil.h"
-#import "ZFUserInfo.h"
+#import "UserInfo.h"
+#import "ZKCache.h"
+
 // 固定参数的分类
 #import "NSDictionary+FixedParams.h"
 // 是否登录过
