@@ -18,6 +18,8 @@ PODS:
   - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
   - MOBFoundation (1.5.3)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -35,6 +37,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MOBFoundation
+  - SDCycleScrollView (~> 1.65)
   - SDWebImage
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/QQ
@@ -48,6 +51,7 @@ SPEC CHECKSUMS:
   MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   MOBFoundation: 1a4f9865c777e76f069050c4990602c668126a89
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   ShareSDK3: 8423b4dca9f5a3a210d536fc4f0c4b1555022810
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4

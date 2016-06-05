@@ -9,4 +9,5 @@ pod 'MOBFoundation'
 pod 'ShareSDK3/ShareSDKPlatforms/QQ'
 pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
 pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+pod 'SDCycleScrollView', '~> 1.65'
 use_frameworks!

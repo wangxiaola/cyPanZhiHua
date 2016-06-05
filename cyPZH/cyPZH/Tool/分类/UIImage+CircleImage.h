@@ -12,7 +12,10 @@
 [originalImage circleImageForBorderWidth:borderWidth borderColor:borderColor]
 
 @interface UIImage (CircleImage)
+
 - (UIImage *)circleImageForBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 //将方形图变成带边框的原形图
 + (UIImage *)circleImageWithImage:(UIImage *)image borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+// 圆角
+- (UIImage *)circleImage;
 @end
