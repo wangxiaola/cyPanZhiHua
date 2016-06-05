@@ -18,6 +18,8 @@
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
 
+#import "ZKNavigationController.h"
+#import "ZKViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -32,6 +34,14 @@
     [self startBaiduMobStat];
     [self startShareSDK];
     [self commonConfiguration];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    ZKViewController *vc = [[ZKViewController alloc] init];
+    ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+     [self.window makeKeyAndVisible];
     return YES;
 }
 
