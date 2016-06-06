@@ -7,7 +7,7 @@
 //封装的网络工具类
 #import "ZKHttp.h"
 //字典模型刷新框架,转换框架,自动布局框架,无数据提示控件
-#import "MJRefresh.h"
+#import "MJUpdateUI.h"
 #import "MJExtension.h"
 #import "Masonry.h"
 //提示

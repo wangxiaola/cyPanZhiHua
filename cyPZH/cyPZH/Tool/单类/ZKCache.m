@@ -18,23 +18,13 @@ static ZKCache *_instance = nil;
     static dispatch_once_t onceToken ;
     dispatch_once(&onceToken, ^{
         _instance = [[super allocWithZone:NULL] init];
-        _instance.cache = [[NSCache alloc] init];
+
         
     }) ;
     
     return _instance ;
 }
 
-
-- (id)readForKey:(NSString*)key;
-{
- 
-    return [_cache objectForKey:key];
-}
-- (void)write:(id)data forKey:(NSString*)key;
-{
-   [_cache setObject:data forKey:key];
-}
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
