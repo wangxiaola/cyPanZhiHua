@@ -14,6 +14,8 @@
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"format"] = @"json";
+    params[@"AppId"] = @"AbezdodBhh6a";
+    params[@"AppKey"] = @"c528b39514834026bc8763e287f84c22";
     return params;
 }
 

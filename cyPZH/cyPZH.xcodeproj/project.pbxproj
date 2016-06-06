@@ -48,7 +48,7 @@
 		3BA21D421D0540CC0027B5CE /* ZKAdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */; };
 		3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */; };
 		3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */; };
-		3BA21D4F1D0562220027B5CE /* ZKRobotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */; };
+		3BA21D4F1D0562220027B5CE /* ZKRobotViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D4E1D0562220027B5CE /* ZKRobotViewController.mm */; };
 		3BA21D5C1D05644E0027B5CE /* libmtaWXOsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D581D05644E0027B5CE /* libmtaWXOsdk.a */; };
 		3BA21D5D1D05644E0027B5CE /* libWXVoiceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D591D05644E0027B5CE /* libWXVoiceSDK.a */; };
 		3BA21D5F1D05646B0027B5CE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D5E1D05646B0027B5CE /* AudioToolbox.framework */; };
@@ -56,6 +56,13 @@
 		3BA21D631D0564920027B5CE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D621D0564920027B5CE /* libz.tbd */; };
 		3BA21D651D0564AF0027B5CE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D641D0564AF0027B5CE /* libsqlite3.tbd */; };
 		3BA21D671D0565C20027B5CE /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D661D0565C20027B5CE /* libstdc++.6.0.9.tbd */; };
+		3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D691D056B300027B5CE /* ZKRobotTableView.m */; };
+		3BA21D6D1D056B8C0027B5CE /* ZKRobotTallyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D6C1D056B8C0027B5CE /* ZKRobotTallyView.m */; };
+		3BA21D701D056BFE0027B5CE /* ZKRobotMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D6F1D056BFE0027B5CE /* ZKRobotMode.m */; };
+		3BA21D751D056CB30027B5CE /* ZKRobotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D731D056CB30027B5CE /* ZKRobotTableViewCell.m */; };
+		3BA21D761D056CB30027B5CE /* ZKRobotTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA21D741D056CB30027B5CE /* ZKRobotTableViewCell.xib */; };
+		3BA21D7A1D056D2D0027B5CE /* ZKUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D781D056D2D0027B5CE /* ZKUserTableViewCell.m */; };
+		3BA21D7B1D056D2D0027B5CE /* ZKUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BA21D791D056D2D0027B5CE /* ZKUserTableViewCell.xib */; };
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
@@ -172,7 +179,7 @@
 		3BA21D461D055A8A0027B5CE /* ZKForbidNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKForbidNavigationController.h; sourceTree = "<group>"; };
 		3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKForbidNavigationController.m; sourceTree = "<group>"; };
 		3BA21D4D1D0562220027B5CE /* ZKRobotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotViewController.h; sourceTree = "<group>"; };
-		3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotViewController.m; sourceTree = "<group>"; };
+		3BA21D4E1D0562220027B5CE /* ZKRobotViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZKRobotViewController.mm; sourceTree = "<group>"; };
 		3BA21D581D05644E0027B5CE /* libmtaWXOsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmtaWXOsdk.a; sourceTree = "<group>"; };
 		3BA21D591D05644E0027B5CE /* libWXVoiceSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWXVoiceSDK.a; sourceTree = "<group>"; };
 		3BA21D5A1D05644E0027B5CE /* WXSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSpeechSynthesizer.h; sourceTree = "<group>"; };
@@ -182,6 +189,18 @@
 		3BA21D621D0564920027B5CE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		3BA21D641D0564AF0027B5CE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3BA21D661D0565C20027B5CE /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		3BA21D681D056B300027B5CE /* ZKRobotTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotTableView.h; sourceTree = "<group>"; };
+		3BA21D691D056B300027B5CE /* ZKRobotTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTableView.m; sourceTree = "<group>"; };
+		3BA21D6B1D056B8C0027B5CE /* ZKRobotTallyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotTallyView.h; sourceTree = "<group>"; };
+		3BA21D6C1D056B8C0027B5CE /* ZKRobotTallyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTallyView.m; sourceTree = "<group>"; };
+		3BA21D6E1D056BFE0027B5CE /* ZKRobotMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotMode.h; sourceTree = "<group>"; };
+		3BA21D6F1D056BFE0027B5CE /* ZKRobotMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotMode.m; sourceTree = "<group>"; };
+		3BA21D721D056CB30027B5CE /* ZKRobotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotTableViewCell.h; sourceTree = "<group>"; };
+		3BA21D731D056CB30027B5CE /* ZKRobotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTableViewCell.m; sourceTree = "<group>"; };
+		3BA21D741D056CB30027B5CE /* ZKRobotTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKRobotTableViewCell.xib; sourceTree = "<group>"; };
+		3BA21D771D056D2D0027B5CE /* ZKUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKUserTableViewCell.h; sourceTree = "<group>"; };
+		3BA21D781D056D2D0027B5CE /* ZKUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKUserTableViewCell.m; sourceTree = "<group>"; };
+		3BA21D791D056D2D0027B5CE /* ZKUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKUserTableViewCell.xib; sourceTree = "<group>"; };
 		3BBF4F081D05133C00EB8DCF /* MJDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYBackFooter.h; sourceTree = "<group>"; };
 		3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYBackFooter.m; sourceTree = "<group>"; };
 		3BBF4F0B1D05134B00EB8DCF /* MJDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYHeader.h; sourceTree = "<group>"; };
@@ -494,7 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				3BA21D4D1D0562220027B5CE /* ZKRobotViewController.h */,
-				3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */,
+				3BA21D4E1D0562220027B5CE /* ZKRobotViewController.mm */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -502,6 +521,8 @@
 		3BA21D4B1D055BB60027B5CE /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				3BA21D6E1D056BFE0027B5CE /* ZKRobotMode.h */,
+				3BA21D6F1D056BFE0027B5CE /* ZKRobotMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -509,6 +530,11 @@
 		3BA21D4C1D055BBD0027B5CE /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3BA21D711D056C940027B5CE /* cell */,
+				3BA21D681D056B300027B5CE /* ZKRobotTableView.h */,
+				3BA21D691D056B300027B5CE /* ZKRobotTableView.m */,
+				3BA21D6B1D056B8C0027B5CE /* ZKRobotTallyView.h */,
+				3BA21D6C1D056B8C0027B5CE /* ZKRobotTallyView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -522,6 +548,19 @@
 				3BA21D5B1D05644E0027B5CE /* WXVoiceSDK.h */,
 			);
 			path = "语言SDK";
+			sourceTree = "<group>";
+		};
+		3BA21D711D056C940027B5CE /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				3BA21D721D056CB30027B5CE /* ZKRobotTableViewCell.h */,
+				3BA21D731D056CB30027B5CE /* ZKRobotTableViewCell.m */,
+				3BA21D741D056CB30027B5CE /* ZKRobotTableViewCell.xib */,
+				3BA21D771D056D2D0027B5CE /* ZKUserTableViewCell.h */,
+				3BA21D781D056D2D0027B5CE /* ZKUserTableViewCell.m */,
+				3BA21D791D056D2D0027B5CE /* ZKUserTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		3BBF4EF51D050D4C00EB8DCF /* mj_update */ = {
@@ -725,8 +764,10 @@
 				3B5A59B21D01825800105280 /* Assets.xcassets in Resources */,
 				3B592B011D05298400E2727E /* icon_120x120.png in Resources */,
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
+				3BA21D7B1D056D2D0027B5CE /* ZKUserTableViewCell.xib in Resources */,
 				3B592B031D05298400E2727E /* icon@2x.png in Resources */,
 				3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */,
+				3BA21D761D056CB30027B5CE /* ZKRobotTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,20 +848,25 @@
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
 				A1F967031D0423E700AF07EB /* iCarousel.m in Sources */,
 				3B5A5A301D01850800105280 /* HHLocationManger.m in Sources */,
+				3BA21D701D056BFE0027B5CE /* ZKRobotMode.m in Sources */,
 				3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */,
 				3B5A59F01D0184B200105280 /* NSString+Regex.m in Sources */,
 				3B5A5A211D0184D000105280 /* ZKUtil.m in Sources */,
 				3B5A5A1F1D0184D000105280 /* UploadParam.m in Sources */,
 				A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */,
+				3BA21D751D056CB30027B5CE /* ZKRobotTableViewCell.m in Sources */,
 				3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */,
 				3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */,
+				3BA21D6D1D056B8C0027B5CE /* ZKRobotTallyView.m in Sources */,
 				3B5A5A0E1D0184BE00105280 /* ZKTextField.m in Sources */,
 				3B5A5A201D0184D000105280 /* ZKHttp.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
+				3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */,
+				3BA21D7A1D056D2D0027B5CE /* ZKUserTableViewCell.m in Sources */,
 				3B5A5A171D0184C700105280 /* ZKCommonImagePickerController.m in Sources */,
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
-				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.m in Sources */,
+				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.mm in Sources */,
 				3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
