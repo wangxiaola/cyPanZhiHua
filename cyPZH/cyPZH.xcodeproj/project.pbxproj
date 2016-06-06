@@ -11,10 +11,15 @@
 		3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF51D0517A800E2727E /* ZKTabelViewController.m */; };
 		3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF81D0517EE00E2727E /* ZKTableViewBaseController.m */; };
 		3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AFB1D05190300E2727E /* ZKErrorView.m */; };
+		3B592B011D05298400E2727E /* icon_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592AFE1D05298400E2727E /* icon_120x120.png */; };
+		3B592B021D05298400E2727E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592AFF1D05298400E2727E /* icon.png */; };
+		3B592B031D05298400E2727E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592B001D05298400E2727E /* icon@2x.png */; };
+		3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592B041D05299E00E2727E /* LaunchImage-568h@2x.png */; };
+		3B592B081D05299E00E2727E /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592B051D05299E00E2727E /* LaunchImage.png */; };
+		3B592B091D05299E00E2727E /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B592B061D05299E00E2727E /* LaunchImage@2x.png */; };
 		3B5A59A71D01825800105280 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A59A61D01825800105280 /* main.m */; };
 		3B5A59AA1D01825800105280 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A59A91D01825800105280 /* AppDelegate.m */; };
 		3B5A59B21D01825800105280 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B5A59B11D01825800105280 /* Assets.xcassets */; };
-		3B5A59B51D01825800105280 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B5A59B31D01825800105280 /* LaunchScreen.storyboard */; };
 		3B5A59C01D01825800105280 /* cyPZHTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A59BF1D01825800105280 /* cyPZHTests.m */; };
 		3B5A59CB1D01825800105280 /* cyPZHUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A59CA1D01825800105280 /* cyPZHUITests.m */; };
 		3B5A59EE1D0184B200105280 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A59DB1D0184B200105280 /* Foundation+Log.m */; };
@@ -40,6 +45,9 @@
 		3B5A5A391D0189A700105280 /* TLDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A5A351D0189A700105280 /* TLDefine.m */; };
 		3B5A5A3A1D0189A700105280 /* PublicDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A5A371D0189A700105280 /* PublicDefine.m */; };
 		3B5A5A3F1D018BBF00105280 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5A5A3E1D018BBF00105280 /* libBaiduMobStat.a */; };
+		3BA21D421D0540CC0027B5CE /* ZKAdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */; };
+		3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */; };
+		3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */; };
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
@@ -86,12 +94,17 @@
 		3B592AF81D0517EE00E2727E /* ZKTableViewBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKTableViewBaseController.m; sourceTree = "<group>"; };
 		3B592AFA1D05190300E2727E /* ZKErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKErrorView.h; sourceTree = "<group>"; };
 		3B592AFB1D05190300E2727E /* ZKErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKErrorView.m; sourceTree = "<group>"; };
+		3B592AFE1D05298400E2727E /* icon_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_120x120.png; sourceTree = "<group>"; };
+		3B592AFF1D05298400E2727E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		3B592B001D05298400E2727E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		3B592B041D05299E00E2727E /* LaunchImage-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-568h@2x.png"; sourceTree = "<group>"; };
+		3B592B051D05299E00E2727E /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		3B592B061D05299E00E2727E /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
 		3B5A59A21D01825800105280 /* cyPZH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cyPZH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5A59A61D01825800105280 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B5A59A81D01825800105280 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3B5A59A91D01825800105280 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3B5A59B11D01825800105280 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B5A59B41D01825800105280 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B5A59B61D01825800105280 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B5A59BB1D01825800105280 /* cyPZHTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cyPZHTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5A59BF1D01825800105280 /* cyPZHTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cyPZHTests.m; sourceTree = "<group>"; };
@@ -144,6 +157,12 @@
 		3B5A5A3B1D018B5200105280 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B5A5A3D1D018BBF00105280 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		3B5A5A3E1D018BBF00105280 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
+		3BA21D401D0540CC0027B5CE /* ZKAdvertisementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKAdvertisementViewController.h; sourceTree = "<group>"; };
+		3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKAdvertisementViewController.m; sourceTree = "<group>"; };
+		3BA21D431D054F190027B5CE /* ZKBaseWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseWebViewController.h; sourceTree = "<group>"; };
+		3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseWebViewController.m; sourceTree = "<group>"; };
+		3BA21D461D055A8A0027B5CE /* ZKForbidNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKForbidNavigationController.h; sourceTree = "<group>"; };
+		3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKForbidNavigationController.m; sourceTree = "<group>"; };
 		3BBF4F081D05133C00EB8DCF /* MJDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYBackFooter.h; sourceTree = "<group>"; };
 		3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYBackFooter.m; sourceTree = "<group>"; };
 		3BBF4F0B1D05134B00EB8DCF /* MJDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYHeader.h; sourceTree = "<group>"; };
@@ -216,6 +235,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3B592AFD1D05297D00E2727E /* iconImage */ = {
+			isa = PBXGroup;
+			children = (
+				3B592B041D05299E00E2727E /* LaunchImage-568h@2x.png */,
+				3B592B051D05299E00E2727E /* LaunchImage.png */,
+				3B592B061D05299E00E2727E /* LaunchImage@2x.png */,
+				3B592AFE1D05298400E2727E /* icon_120x120.png */,
+				3B592AFF1D05298400E2727E /* icon.png */,
+				3B592B001D05298400E2727E /* icon@2x.png */,
+			);
+			path = iconImage;
+			sourceTree = "<group>";
+		};
 		3B5A59991D01825800105280 = {
 			isa = PBXGroup;
 			children = (
@@ -243,10 +275,10 @@
 			children = (
 				3B5A59D91D0184A200105280 /* LIB库 */,
 				3B5A59D81D01848E00105280 /* Tool */,
+				3BA21D3B1D053D780027B5CE /* Classes */,
 				3B5A59A81D01825800105280 /* AppDelegate.h */,
 				3B5A59A91D01825800105280 /* AppDelegate.m */,
 				3B5A59B11D01825800105280 /* Assets.xcassets */,
-				3B5A59B31D01825800105280 /* LaunchScreen.storyboard */,
 				3B5A59B61D01825800105280 /* Info.plist */,
 				3B5A59A51D01825800105280 /* Supporting Files */,
 			);
@@ -256,6 +288,7 @@
 		3B5A59A51D01825800105280 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3B592AFD1D05297D00E2727E /* iconImage */,
 				3B5A5A3B1D018B5200105280 /* PrefixHeader.pch */,
 				3B5A5A321D0189A700105280 /* WXLDefine.h */,
 				3B5A5A331D0189A700105280 /* WXLDefine.m */,
@@ -342,6 +375,8 @@
 			children = (
 				3B5A59FB1D0184BE00105280 /* YYSearchBar.h */,
 				3B5A59FC1D0184BE00105280 /* YYSearchBar.m */,
+				3BA21D461D055A8A0027B5CE /* ZKForbidNavigationController.h */,
+				3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */,
 				3B5A59FD1D0184BE00105280 /* ZKNavigationController.h */,
 				3B5A59FE1D0184BE00105280 /* ZKNavigationController.m */,
 				3B5A5A031D0184BE00105280 /* ZKTextField.h */,
@@ -400,6 +435,55 @@
 			path = BaiduMobStat;
 			sourceTree = "<group>";
 		};
+		3BA21D3B1D053D780027B5CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3BA21D491D055B9C0027B5CE /* 机器人 */,
+				3BA21D3C1D053F1A0027B5CE /* 广告 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3BA21D3C1D053F1A0027B5CE /* 广告 */ = {
+			isa = PBXGroup;
+			children = (
+				3BA21D401D0540CC0027B5CE /* ZKAdvertisementViewController.h */,
+				3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */,
+			);
+			path = "广告";
+			sourceTree = "<group>";
+		};
+		3BA21D491D055B9C0027B5CE /* 机器人 */ = {
+			isa = PBXGroup;
+			children = (
+				3BA21D4A1D055BB10027B5CE /* Controller */,
+				3BA21D4C1D055BBD0027B5CE /* views */,
+				3BA21D4B1D055BB60027B5CE /* mode */,
+			);
+			path = "机器人";
+			sourceTree = "<group>";
+		};
+		3BA21D4A1D055BB10027B5CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BA21D4B1D055BB60027B5CE /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3BA21D4C1D055BBD0027B5CE /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		3BBF4EF51D050D4C00EB8DCF /* mj_update */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +509,8 @@
 				3B592AF81D0517EE00E2727E /* ZKTableViewBaseController.m */,
 				3B592AF41D0517A800E2727E /* ZKTabelViewController.h */,
 				3B592AF51D0517A800E2727E /* ZKTabelViewController.m */,
+				3BA21D431D054F190027B5CE /* ZKBaseWebViewController.h */,
+				3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -589,8 +675,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B5A59B51D01825800105280 /* LaunchScreen.storyboard in Resources */,
+				3B592B091D05299E00E2727E /* LaunchImage@2x.png in Resources */,
+				3B592B021D05298400E2727E /* icon.png in Resources */,
 				3B5A59B21D01825800105280 /* Assets.xcassets in Resources */,
+				3B592B011D05298400E2727E /* icon_120x120.png in Resources */,
+				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
+				3B592B031D05298400E2727E /* icon@2x.png in Resources */,
+				3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +755,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5A59EF1D0184B200105280 /* NSDictionary+FixedParams.m in Sources */,
+				3BA21D421D0540CC0027B5CE /* ZKAdvertisementViewController.m in Sources */,
+				3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */,
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
 				3B5A59F41D0184B200105280 /* UIImage+Thumbnail.m in Sources */,
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
@@ -675,6 +768,7 @@
 				3B5A5A1F1D0184D000105280 /* UploadParam.m in Sources */,
 				A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */,
 				3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */,
+				3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */,
 				3B5A5A0E1D0184BE00105280 /* ZKTextField.m in Sources */,
 				3B5A5A201D0184D000105280 /* ZKHttp.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
@@ -731,17 +825,6 @@
 			targetProxy = 3B5A59C71D01825800105280 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3B5A59B31D01825800105280 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3B5A59B41D01825800105280 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3B5A59CD1D01825800105280 /* Debug */ = {
@@ -830,7 +913,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05BEC5071EF2473BE33402D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -855,7 +937,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2659243C1836EFE4B5767EA /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (

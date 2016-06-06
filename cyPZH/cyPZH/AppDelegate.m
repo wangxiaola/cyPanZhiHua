@@ -18,8 +18,8 @@
 //新浪微博SDK头文件
 #import "WeiboSDK.h"
 
-#import "ZKNavigationController.h"
-
+#import "ZKForbidNavigationController.h"
+#import "ZKAdvertisementViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -34,14 +34,26 @@
     [self startBaiduMobStat];
     [self startShareSDK];
     [self commonConfiguration];
+    [self advertisement];
     
-    
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    [self.window makeKeyAndVisible];
     return YES;
 }
+/**
+ *  展示广告
+ */
+- (void)advertisement
+{
 
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ZKAdvertisementViewController *advertisement = [[ZKAdvertisementViewController alloc ] init];
+     ZKForbidNavigationController*nav = [[ZKForbidNavigationController alloc] initWithRootViewController:advertisement];
+    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+}
+/**
+ *  设置hud
+ */
 - (void)commonConfiguration {
 
     /************* HUD动画设置 **************/

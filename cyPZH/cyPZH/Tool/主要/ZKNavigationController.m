@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 禁止使用系统自带的滑动手势
+    self.interactivePopGestureRecognizer.enabled = NO;
+    
     // 获取系统自带滑动手势的target对象
     id target = self.interactivePopGestureRecognizer.delegate;
     // 创建全屏滑动手势，调用系统自带滑动手势的target的action方法
@@ -26,9 +29,10 @@
     pan.delegate = self;
     // 给导航控制器的view添加全屏滑动手势
     [self.view addGestureRecognizer:pan];
-    // 禁止使用系统自带的滑动手势
-    self.interactivePopGestureRecognizer.enabled = NO;
-
+    
+    
+    
+    
 }
 
 + (void)initialize
@@ -56,19 +60,19 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-
+    
     if (self.viewControllers.count > 0)
     {
         viewController.hidesBottomBarWhenPushed = YES;
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"nav_back" highIcon:nil target:self action:@selector(back)];
     }
-
+    
     [super pushViewController:viewController animated:animated];
 }
 
 - (void)handleNavigationTransition:(UIPanGestureRecognizer*)pan
 {
-
+    
 }
 
 - (void)back
