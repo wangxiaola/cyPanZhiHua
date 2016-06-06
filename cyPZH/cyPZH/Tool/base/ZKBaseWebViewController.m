@@ -48,7 +48,7 @@
     [self.view addSubview:webView];
     self.webView = webView;
 
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"nav_back" highIcon:@"nav_back" target:self action:@selector(goBack)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"backimage" highIcon:@"backimage" target:self action:@selector(goBack)];
 
     
 }

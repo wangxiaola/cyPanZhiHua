@@ -38,9 +38,9 @@
 + (void)initialize
 {
     UINavigationBar *bar = [UINavigationBar appearance];
-    [bar setBarTintColor:CYBColorGreen];
+    [bar setBarTintColor:[UIColor whiteColor]];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    attrs[NSForegroundColorAttributeName] = CYBColorGreen;
     attrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:20];
     [bar setTitleTextAttributes:attrs];
 }
@@ -64,7 +64,7 @@
     if (self.viewControllers.count > 0)
     {
         viewController.hidesBottomBarWhenPushed = YES;
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"nav_back" highIcon:nil target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"backimage" highIcon:nil target:self action:@selector(back)];
     }
     
     [super pushViewController:viewController animated:animated];

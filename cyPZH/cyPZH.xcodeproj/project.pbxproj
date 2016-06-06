@@ -48,6 +48,14 @@
 		3BA21D421D0540CC0027B5CE /* ZKAdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */; };
 		3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */; };
 		3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */; };
+		3BA21D4F1D0562220027B5CE /* ZKRobotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */; };
+		3BA21D5C1D05644E0027B5CE /* libmtaWXOsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D581D05644E0027B5CE /* libmtaWXOsdk.a */; };
+		3BA21D5D1D05644E0027B5CE /* libWXVoiceSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D591D05644E0027B5CE /* libWXVoiceSDK.a */; };
+		3BA21D5F1D05646B0027B5CE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D5E1D05646B0027B5CE /* AudioToolbox.framework */; };
+		3BA21D611D05647F0027B5CE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D601D05647F0027B5CE /* AVFoundation.framework */; };
+		3BA21D631D0564920027B5CE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D621D0564920027B5CE /* libz.tbd */; };
+		3BA21D651D0564AF0027B5CE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D641D0564AF0027B5CE /* libsqlite3.tbd */; };
+		3BA21D671D0565C20027B5CE /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA21D661D0565C20027B5CE /* libstdc++.6.0.9.tbd */; };
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
@@ -163,6 +171,17 @@
 		3BA21D441D054F190027B5CE /* ZKBaseWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseWebViewController.m; sourceTree = "<group>"; };
 		3BA21D461D055A8A0027B5CE /* ZKForbidNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKForbidNavigationController.h; sourceTree = "<group>"; };
 		3BA21D471D055A8A0027B5CE /* ZKForbidNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKForbidNavigationController.m; sourceTree = "<group>"; };
+		3BA21D4D1D0562220027B5CE /* ZKRobotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotViewController.h; sourceTree = "<group>"; };
+		3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotViewController.m; sourceTree = "<group>"; };
+		3BA21D581D05644E0027B5CE /* libmtaWXOsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmtaWXOsdk.a; sourceTree = "<group>"; };
+		3BA21D591D05644E0027B5CE /* libWXVoiceSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWXVoiceSDK.a; sourceTree = "<group>"; };
+		3BA21D5A1D05644E0027B5CE /* WXSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXSpeechSynthesizer.h; sourceTree = "<group>"; };
+		3BA21D5B1D05644E0027B5CE /* WXVoiceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVoiceSDK.h; sourceTree = "<group>"; };
+		3BA21D5E1D05646B0027B5CE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3BA21D601D05647F0027B5CE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3BA21D621D0564920027B5CE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3BA21D641D0564AF0027B5CE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3BA21D661D0565C20027B5CE /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		3BBF4F081D05133C00EB8DCF /* MJDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYBackFooter.h; sourceTree = "<group>"; };
 		3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYBackFooter.m; sourceTree = "<group>"; };
 		3BBF4F0B1D05134B00EB8DCF /* MJDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYHeader.h; sourceTree = "<group>"; };
@@ -196,10 +215,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA21D671D0565C20027B5CE /* libstdc++.6.0.9.tbd in Frameworks */,
+				3BA21D651D0564AF0027B5CE /* libsqlite3.tbd in Frameworks */,
+				3BA21D631D0564920027B5CE /* libz.tbd in Frameworks */,
+				3BA21D611D05647F0027B5CE /* AVFoundation.framework in Frameworks */,
+				3BA21D5F1D05646B0027B5CE /* AudioToolbox.framework in Frameworks */,
 				A1DBFCFB1D02F6390037700D /* libstdc++.tbd in Frameworks */,
 				A1DBFCF91D02F61D0037700D /* libz.1.2.5.tbd in Frameworks */,
 				A1DBFCF71D02F60E0037700D /* CoreGraphics.framework in Frameworks */,
 				A1DBFCF51D02F6060037700D /* CoreTelephony.framework in Frameworks */,
+				3BA21D5D1D05644E0027B5CE /* libWXVoiceSDK.a in Frameworks */,
+				3BA21D5C1D05644E0027B5CE /* libmtaWXOsdk.a in Frameworks */,
 				A1DBFCF31D02F5FC0037700D /* SystemConfiguration.framework in Frameworks */,
 				A1DBFCF11D02F5F50037700D /* CoreLocation.framework in Frameworks */,
 				A1DBFCEF1D02F5EB0037700D /* Security.framework in Frameworks */,
@@ -341,6 +367,7 @@
 		3B5A59D91D0184A200105280 /* LIB库 */ = {
 			isa = PBXGroup;
 			children = (
+				3BA21D571D05644E0027B5CE /* 语言SDK */,
 				3B5A5A3C1D018BBF00105280 /* BaiduMobStat */,
 			);
 			path = "LIB库";
@@ -466,6 +493,8 @@
 		3BA21D4A1D055BB10027B5CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3BA21D4D1D0562220027B5CE /* ZKRobotViewController.h */,
+				3BA21D4E1D0562220027B5CE /* ZKRobotViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -482,6 +511,17 @@
 			children = (
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		3BA21D571D05644E0027B5CE /* 语言SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3BA21D581D05644E0027B5CE /* libmtaWXOsdk.a */,
+				3BA21D591D05644E0027B5CE /* libWXVoiceSDK.a */,
+				3BA21D5A1D05644E0027B5CE /* WXSpeechSynthesizer.h */,
+				3BA21D5B1D05644E0027B5CE /* WXVoiceSDK.h */,
+			);
+			path = "语言SDK";
 			sourceTree = "<group>";
 		};
 		3BBF4EF51D050D4C00EB8DCF /* mj_update */ = {
@@ -518,6 +558,11 @@
 		7301879AFDCCD2F299804437 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3BA21D661D0565C20027B5CE /* libstdc++.6.0.9.tbd */,
+				3BA21D641D0564AF0027B5CE /* libsqlite3.tbd */,
+				3BA21D621D0564920027B5CE /* libz.tbd */,
+				3BA21D601D05647F0027B5CE /* AVFoundation.framework */,
+				3BA21D5E1D05646B0027B5CE /* AudioToolbox.framework */,
 				A1DBFE021D03236C0037700D /* AFNetworking.framework */,
 				A1DBFCFA1D02F6390037700D /* libstdc++.tbd */,
 				A1DBFCF81D02F61D0037700D /* libz.1.2.5.tbd */,
@@ -775,6 +820,7 @@
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
 				3B5A5A171D0184C700105280 /* ZKCommonImagePickerController.m in Sources */,
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
+				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.m in Sources */,
 				3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
@@ -913,6 +959,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05BEC5071EF2473BE33402D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -927,6 +975,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cyPZH/LIB库/BaiduMobStat",
+					"$(PROJECT_DIR)/cyPZH/LIB库/语言SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -937,6 +986,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2659243C1836EFE4B5767EA /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				HEADER_SEARCH_PATHS = (
@@ -951,6 +1002,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/cyPZH/LIB库/BaiduMobStat",
+					"$(PROJECT_DIR)/cyPZH/LIB库/语言SDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
