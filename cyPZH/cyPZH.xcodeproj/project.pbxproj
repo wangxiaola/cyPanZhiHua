@@ -54,8 +54,6 @@
 		A1E574CA1D0458D5009E5507 /* UIView+ZKMasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E574C91D0458D5009E5507 /* UIView+ZKMasonry.m */; };
 		A1E574CF1D045D25009E5507 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E574CE1D045D25009E5507 /* UserInfo.m */; };
 		A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E574D11D045D4F009E5507 /* ZKCache.m */; };
-		A1E574D51D0461AE009E5507 /* ZKmode.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E574D41D0461AE009E5507 /* ZKmode.m */; };
-		A1F966F21D040A8C00AF07EB /* ZKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F966F11D040A8C00AF07EB /* ZKViewController.m */; };
 		A1F967031D0423E700AF07EB /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F967021D0423E700AF07EB /* iCarousel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4E1AB00E7A40DF3585DEA7E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134064B43C42BA3C611EA947 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -169,10 +167,6 @@
 		A1E574CE1D045D25009E5507 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		A1E574D01D045D4F009E5507 /* ZKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKCache.h; sourceTree = "<group>"; };
 		A1E574D11D045D4F009E5507 /* ZKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKCache.m; sourceTree = "<group>"; };
-		A1E574D31D0461AE009E5507 /* ZKmode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKmode.h; sourceTree = "<group>"; };
-		A1E574D41D0461AE009E5507 /* ZKmode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKmode.m; sourceTree = "<group>"; };
-		A1F966F01D040A8C00AF07EB /* ZKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKViewController.h; sourceTree = "<group>"; };
-		A1F966F11D040A8C00AF07EB /* ZKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKViewController.m; sourceTree = "<group>"; };
 		A1F967011D0423E700AF07EB /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		A1F967021D0423E700AF07EB /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		E2659243C1836EFE4B5767EA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,10 +245,6 @@
 				3B5A59D81D01848E00105280 /* Tool */,
 				3B5A59A81D01825800105280 /* AppDelegate.h */,
 				3B5A59A91D01825800105280 /* AppDelegate.m */,
-				A1F966F01D040A8C00AF07EB /* ZKViewController.h */,
-				A1F966F11D040A8C00AF07EB /* ZKViewController.m */,
-				A1E574D31D0461AE009E5507 /* ZKmode.h */,
-				A1E574D41D0461AE009E5507 /* ZKmode.m */,
 				3B5A59B11D01825800105280 /* Assets.xcassets */,
 				3B5A59B31D01825800105280 /* LaunchScreen.storyboard */,
 				3B5A59B61D01825800105280 /* Info.plist */,
@@ -697,7 +687,6 @@
 				3B5A5A391D0189A700105280 /* TLDefine.m in Sources */,
 				3B5A5A3A1D0189A700105280 /* PublicDefine.m in Sources */,
 				3B5A59AA1D01825800105280 /* AppDelegate.m in Sources */,
-				A1E574D51D0461AE009E5507 /* ZKmode.m in Sources */,
 				3B5A59A71D01825800105280 /* main.m in Sources */,
 				3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */,
 				3B5A59F61D0184B200105280 /* UIViewController+Prompt.m in Sources */,
@@ -709,7 +698,6 @@
 				3B5A5A241D0184D400105280 /* RatingBar.swift in Sources */,
 				3B5A5A0B1D0184BE00105280 /* ZKNavigationController.m in Sources */,
 				3B5A5A0A1D0184BE00105280 /* YYSearchBar.m in Sources */,
-				A1F966F21D040A8C00AF07EB /* ZKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

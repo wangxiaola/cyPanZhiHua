@@ -10,4 +10,9 @@
 
 @interface ZKBaseViewController : UIViewController
 
+/**
+ *  title
+ */
+@property (nonatomic, copy) NSString *paoMaTitle;
+
 @end

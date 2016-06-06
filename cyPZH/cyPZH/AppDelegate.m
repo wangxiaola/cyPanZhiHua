@@ -19,7 +19,7 @@
 #import "WeiboSDK.h"
 
 #import "ZKNavigationController.h"
-#import "ZKViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -38,10 +38,7 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    ZKViewController *vc = [[ZKViewController alloc] init];
-    ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:vc];
-    self.window.rootViewController = nav;
-     [self.window makeKeyAndVisible];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

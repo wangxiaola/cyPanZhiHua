@@ -11,6 +11,10 @@
 @class ZKErrorView;
 @interface ZKTableViewBaseController : UITableViewController
 /**
+ *  title
+ */
+@property (nonatomic, copy) NSString *paoMaTitle;
+/**
  *  无数据时显示的view,可在子类自定义
  */
 @property (nonatomic, weak)  ZKErrorView *promptView;

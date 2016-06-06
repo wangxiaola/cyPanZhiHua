@@ -7,7 +7,6 @@
 //
 
 #import "ZKBaseTableView.h"
-#import "MJRefresh.h"
 
 @implementation ZKBaseTableView
 
@@ -20,6 +19,7 @@
         self.showsHorizontalScrollIndicator = NO;
         self.sectionHeaderHeight = 0;
         self.sectionFooterHeight = 0;
+        self.backgroundColor = TabelBackCorl;
         self.tableFooterView = [[UIView alloc] init];
         self.isNeedPullDownToRefreshAction = NO;
         self.isNeedPullUpToRefreshAction = NO;
@@ -37,7 +37,7 @@
     _isNeedPullDownToRefreshAction = isEnable;
     __block typeof(self) weakSelf = self;
     if (_isNeedPullDownToRefreshAction) {
-        self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.mj_header = [MJDIYHeader headerWithRefreshingBlock:^{
             if ([weakSelf.ZKPullDelegate respondsToSelector:@selector(pullDownToRefreshAction)]) {
                 [weakSelf.ZKPullDelegate pullDownToRefreshAction];
             }
@@ -54,7 +54,7 @@
     _isNeedPullUpToRefreshAction = isEnable;
     __block typeof(self) weakSelf = self;
     if (_isNeedPullUpToRefreshAction) {
-        self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        self.mj_footer = [MJDIYBackFooter footerWithRefreshingBlock:^{
             if ([weakSelf.ZKPullDelegate respondsToSelector:@selector(pullUpToRefreshAction)]) {
                 [weakSelf.ZKPullDelegate pullUpToRefreshAction];
             }
