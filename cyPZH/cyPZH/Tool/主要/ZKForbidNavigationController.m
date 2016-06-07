@@ -29,7 +29,7 @@
     [bar setBarTintColor:[UIColor whiteColor]];
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSForegroundColorAttributeName] = CYBColorGreen;
-    attrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:20];
+    attrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:18];
     [bar setTitleTextAttributes:attrs];
 
 }

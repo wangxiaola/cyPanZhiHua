@@ -10,6 +10,24 @@
 
 @implementation ZKRobotTallyView
 
+- (instancetype)initWithFrame:(CGRect)frame;
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+      
+        self.userInteractionEnabled = YES;
+        
+        
+        UIView *is = [[UIView alloc] initWithFrame:frame];
+        is.backgroundColor = [UIColor clearColor];
+        [self addSubview:is];
+    }
+    
+    return self;
+    
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

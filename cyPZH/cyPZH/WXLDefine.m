@@ -7,7 +7,7 @@
 //
 
 
-NSString *const POST_ZK_URL      = @"http://192.168.0.11/tdgl/rest/business";
+NSString *const POST_ZK_URL      = @"http://wx.tpanzhihua.com/service.csw";
 
 NSString *const ZK_ERR           = @"no_data";
 

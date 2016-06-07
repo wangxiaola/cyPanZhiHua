@@ -12,4 +12,6 @@
  */
 @interface ZKRobotTallyView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame;
+
 @end

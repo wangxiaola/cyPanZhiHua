@@ -10,12 +10,15 @@
 
 @interface ZKRobotMode : NSObject
 
-@property (nonatomic, strong) NSString *fotoImageUrl;
+@property (nonatomic, strong) UIImage *potoImage;
 
 @property (nonatomic, strong) NSString *info;
 /**
  *  0是Robot，1是my
  */
 @property (nonatomic, assign) NSInteger type;
+
+@property (nonatomic,assign) float megHeghit;
+
 
 @end

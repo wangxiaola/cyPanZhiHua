@@ -147,7 +147,9 @@
 #pragma mark -- 点击事件
 - (void)doTap
 {
-    self.isGoWeb = YES;
+    
+    
+   self.isGoWeb = YES;
     NSLog(@" --- ");
     ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc] init];
     web.htmlUrl = @"www.baidu.com";
@@ -159,8 +161,10 @@
 }
 - (void)goContenView
 {
-    if (self.isGoWeb == YES) {return;}
-    
+   if (self.isGoWeb == YES) {return;}
+    self.isGoWeb = YES;
+    self.navigationController.navigationBarHidden = NO;
+    [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
     
        NSLog(@"++= ");
     

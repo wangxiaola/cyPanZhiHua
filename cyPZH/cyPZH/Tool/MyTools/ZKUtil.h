@@ -95,5 +95,10 @@
 +(void)UIimageView:(UIImageView*)image NSSting:(NSString*)url  duImage:(NSString*)duImageName;
 
 
-
+/**
+ * 时间戳
+ *
+ *  @return 时间戳字符串
+ */
++ (NSString *)timeStamp;
 @end

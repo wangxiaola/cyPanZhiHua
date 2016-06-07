@@ -18,8 +18,9 @@
 #define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 //颜色
 #define TabelBackCorl [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
-#define CYBColorGreen [UIColor colorWithRed:78/255.0 green:147/255.0 blue:232/255.0 alpha:1]
-#define CellBackCorl  [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
+#define CYBColorGreen [UIColor colorWithRed:51/255.0 green:202/255.0 blue:171/255.0 alpha:1]
+
+#define CellBackCorl  [UIColor colorWithRed:25/255.0 green:199/255.0 blue:168/255.0 alpha:1]
 
 //获取系统版本
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] doubleValue] >= 7.0)

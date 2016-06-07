@@ -11,13 +11,16 @@
 #import "ZKRobotTableViewCell.h"
 #import "ZKUserTableViewCell.h"
 
+static NSString *ZKRobotTableViewCellID = @"ZKRobotTableViewCellID";
+static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
+
 @interface ZKRobotTableView()
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) NSMutableArray <ZKRobotMode *> *modeArray;
 
-
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 @end
 
 @implementation ZKRobotTableView
@@ -39,15 +42,27 @@
     
     if (self) {
         
-        self.tableView = [[UITableView alloc] initWithFrame:frame];
+        self.userInteractionEnabled = YES;
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-24)];
         self.tableView.tableFooterView = [UIView new];
+        self.tableView.backgroundColor = [UIColor clearColor];
         self.tableView.separatorStyle = UITableViewStylePlain;
         self.tableView.estimatedRowHeight = 50;
         self.tableView.delegate   = self;
         self.tableView.dataSource = self;
-        [self.tableView registerNib:[UINib nibWithNibName:@"ZKRobotTableViewCell" bundle:nil] forCellReuseIdentifier:ZKRobotTableViewCellID];
-        [self.tableView registerNib:[UINib nibWithNibName:@"ZKUserTableViewCell" bundle:nil] forCellReuseIdentifier:ZKUserTableViewCellID];
+        
+        [self.tableView registerClass:[ZKRobotTableViewCell class] forCellReuseIdentifier:ZKRobotTableViewCellID];
+         [self.tableView registerClass:[ZKUserTableViewCell class] forCellReuseIdentifier:ZKUserTableViewCellID];
+        
         [self addSubview:self.tableView];
+        
+        
+        _activityView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _activityView .center = CGPointMake(self.tableView.frame.size.width/2, self.tableView.frame.size.height/2);
+        //设置菊花样式
+        _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+        _activityView.color =CYBColorGreen;
+        [self.tableView addSubview:_activityView];
         
         
     }
@@ -56,24 +71,40 @@
 }
 #pragma mark  ---数据处理---
 
-- (void)addUserMOde:(ZKRobotMode*)list;
+- (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
 {
-
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:13 inSection:0];
-//    [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-//    这个是指定哪一行的cell，让该行cell滑到tableView的最底端 ！
+     NSInteger dex = self.modeArray.count;
+    [self.modeArray addObject:list];
     
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];[self.tableView beginUpdates];
-//    NSArray *indexPaths = @[indexPath];
-//    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-//    [self.tableView endUpdates];
+ 
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
+    
+    [self.tableView beginUpdates];
+    NSArray *indexPaths = @[indexPath];
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView endUpdates];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    
+    if (ps == YES)
+    {
+        NSString *str = list.info;
+        
+        NSMutableDictionary *dic = [NSMutableDictionary params];
+        [dic setObject:str forKey:@"messg"];
+        
+        [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
+            
+            
+        } failure:^(NSError *error) {
+            
+            HUDShowFailure
+        }];
+        
+    }
     
 }
-- (void)addRobotMOde:(ZKRobotMode*)list;
-{
 
-
-}
 
 #pragma mark --table代理---
 
@@ -97,22 +128,37 @@
     if (modes.type == 0)
     {
        ZKRobotTableViewCell * robotCell = [tableView dequeueReusableCellWithIdentifier:ZKRobotTableViewCellID ];
+        robotCell.list = modes;
         cell = robotCell;
     }
     else
     {
     
         ZKUserTableViewCell *userCell = [tableView dequeueReusableCellWithIdentifier:ZKUserTableViewCellID ];
-        
+        userCell.list = modes;
         cell = userCell;
     }
-
+    cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 
+    ZKRobotMode *modes = self.modeArray[indexPath.row];
+
+    return modes.megHeghit+30;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+
+    NSLog(@" ------ ");
+    
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

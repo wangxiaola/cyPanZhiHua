@@ -312,7 +312,7 @@
     for (int i = 0; i < 2; i++) {
         UILabel *label = [[UILabel alloc] init];
         label.text = extendedTitle;
-        label.textColor = [UIColor whiteColor];
+        label.textColor = CYBColorGreen;
         label.font = [UIFont systemFontOfSize:18];
         label.frame = CGRectMake(i * labelSize.width, 0, labelSize.width, view.frame.size.height);
         [view addSubview:label];

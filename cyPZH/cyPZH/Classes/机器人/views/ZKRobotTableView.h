@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @class ZKRobotMode;
 
+
 /**
  *  机器对话表
  */
@@ -16,15 +17,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame;
 /**
- *  添加我的数据
+ *  添加数据
  *
  *  @param list 数据
+ *  @param ps   是否发起请求
  */
-- (void)addUserMOde:(ZKRobotMode*)list;
-/**
- *  添加机器人的数据
- *
- *  @param list 数据
- */
-- (void)addRobotMOde:(ZKRobotMode*)list;
+- (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
+
+
 @end

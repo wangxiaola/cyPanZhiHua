@@ -147,6 +147,12 @@
 
 
 
++ (NSString *)timeStamp
+{
+    NSTimeInterval time= [[NSDate date] timeIntervalSince1970] * 1000;
+    
+    return [NSString stringWithFormat:@"%lld", (long long)time];
+}
 
 
 
