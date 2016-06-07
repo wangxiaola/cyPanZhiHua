@@ -18,7 +18,7 @@
  */
 @property (nonatomic, assign) NSInteger type;
 
-@property (nonatomic,assign) float megHeghit;
+@property (nonatomic, assign) CGSize size;
 
 
 @end

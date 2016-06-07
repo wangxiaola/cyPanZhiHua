@@ -76,7 +76,7 @@
         
         make.right.mas_equalTo(portraitImageView.mas_left).offset(-12);
         make.top.mas_equalTo(14);
-        make.left.mas_equalTo(12);
+        make.left.mas_greaterThanOrEqualTo(12);
     }];
     
     [infoLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -98,7 +98,7 @@
     
     [backImageView mas_updateConstraints:^(MASConstraintMaker *make) {
         
-        make.height.mas_offset(list.megHeghit+30);
+        make.height.mas_offset(list.size.height+30);
     }];
 }
 

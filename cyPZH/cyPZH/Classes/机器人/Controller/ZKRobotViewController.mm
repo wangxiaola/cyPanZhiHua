@@ -102,8 +102,7 @@
     data.type = 0;
     
     
-    float h = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:robotMessg].height;
-    data.megHeghit = h ;
+    data.size = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:robotMessg];
     
     [self.robotTableView addMOde:data post:NO];
     
@@ -196,10 +195,8 @@
     data.type = 1;
     
     
-    float h = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:str].height;
-    data.megHeghit = h ;
-    
-    NSLog(@"高度  %f",h);
+    data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:str];
+
     
     [self.robotTableView addMOde:data post:NO];
     
