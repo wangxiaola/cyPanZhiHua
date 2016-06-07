@@ -149,7 +149,7 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
     ZKRobotMode *modes = self.modeArray[indexPath.row];
 
-    return modes.size.height+30;
+    return modes.size.height+40;
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
