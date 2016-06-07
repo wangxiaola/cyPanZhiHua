@@ -352,6 +352,10 @@ static NSString * ling = @"输入您想问的内容...";
 {
     if(gesture.state == UIGestureRecognizerStateBegan)
     {
+        skillButton.selected = YES;
+        textButton.selected  = YES;
+        [self stateSkillButton:skillButton.selected];
+        [self stateTextButton:textButton.selected];
         
         if ([self.toolDelegate respondsToSelector:@selector(voiceState:)])
         {
