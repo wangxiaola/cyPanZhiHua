@@ -16,8 +16,26 @@
 #import "ZKRobotTableView.h"
 #import "ZKRobotTallyView.h"
 #import "ZKRobotToolView.h"
+/**
+ *  机器人状态
+ */
+typedef NS_ENUM(NSInteger, robotTitleState) {
+    /**
+     *  开始录音
+     */
+    robotTitleBegin= 0,
+    /**
+     *  解析中
+     */
+    robotTitleAwait,
+    /**
+     *  解析结束
+     */
+    robotTitleEnd,
 
-@interface ZKRobotViewController ()<WXVoiceDelegate,ZKRobotToolViewDelegate>
+};
+
+@interface ZKRobotViewController ()<WXVoiceDelegate,ZKRobotToolViewDelegate,ZKRobotTallyViewDelegate>
 
 @property (nonatomic, strong) ZKRobotDeployList *deployList;//配置数据
 @property (nonatomic, strong) NSArray *randomArray;//随机数据
@@ -28,6 +46,7 @@
 
 @property (nonatomic, strong) UIImageView      *backImageView;
 @property (nonatomic, strong) UIImage          *robotPortraitImage;
+@property (nonatomic, strong) UIImage          *userPortraitImage;
 @end
 
 @implementation ZKRobotViewController
@@ -50,23 +69,24 @@
     NSMutableDictionary *dic = [NSMutableDictionary params];
     [dic setObject:@"129" forKey:@"interfaceId"];
     [dic setObject:@"robotConfig" forKey:@"Method"];
-    [dic setObject:@"TagConfig" forKey:@"Channel"];
     MJWeakSelf
     HUDShowLoading(@"加载中")
+    
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
         if (responseObject) {
-            
+            HUDShowSuccess(@"机器人配置成功")
             weakSelf.deployList = [ZKRobotDeployList mj_objectWithKeyValues:responseObject];
             [weakSelf updata];
             
         }
         else
         {
+            HUDShowError(@"机器人配置失败")
             weakSelf.backImageView.image = [UIImage imageNamed:@"guanggo_ default"];
         }
-        HUDDissmiss
+    
 
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         
     } failure:^(NSError *error) {
         
@@ -86,9 +106,8 @@
     
     NSData* robotdata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.deployList.RobotLogo]];
     UIImage *robotImage = [UIImage imageWithData:robotdata];
-       self.robotPortraitImage = robotImage;
     self.robotPortraitImage = robotImage;
-    
+    self.userPortraitImage  = [UIImage imageNamed:@"cell_ default"];
     NSData* backdata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.deployList.ThemeBackground]];
     UIImage *backImage = [UIImage imageWithData:backdata];
  
@@ -161,6 +180,7 @@
     self.robotTallyView = [[ZKRobotTallyView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.backImageView.frame.size.height)];
     self.robotTallyView.backgroundColor = [UIColor clearColor];
     self.robotTallyView.hidden = YES;
+    self.robotTallyView.tallyDelegate = self;
     [self.backImageView insertSubview:self.robotTallyView atIndex:101];
     
 //    工具栏
@@ -172,6 +192,33 @@
     
 }
 
+#pragma mark  ----
+#pragma mark  ---- ZKRobotTallyViewDelegate ----
+
+/**
+ *  点击选中谁
+ *
+ *  @param key
+ */
+- (void)selectTitel:(NSString*)key;
+{
+
+    [self.robotToolView dismmSkill];
+    
+    if (strIsEmpty(key)) {
+        
+        ZKRobotMode *data = [[ZKRobotMode alloc] init];
+        data.info = key;
+        data.potoImage = self.userPortraitImage;
+        data.type = 1;
+        
+        data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:key];
+        
+        [self.robotTableView addMOde:data post:YES];
+  
+    }
+
+}
 
 #pragma mark  ----
 #pragma mark  ---- ZKRobotToolViewDelegate ----
@@ -183,17 +230,35 @@
  */
 - (void)textFieldString:(NSString*)str;
 {
+    
 
     if (!self.deployList) {
         HUDShowError(@"数据加载失败")
         return;
     }
     
-    ZKRobotMode *data = [[ZKRobotMode alloc] init];
-    data.info = str;
-    data.potoImage =self.robotPortraitImage;
-    data.type = 1;
     
+    NSString *contenStr;
+    NSInteger state;
+    UIImage  *handerImage;
+    if (strIsEmpty(str)) {
+        
+        state = 1;
+        contenStr = str;
+        handerImage = self.userPortraitImage;
+    }
+    else
+    {
+        contenStr = [NSString stringWithFormat:@"刚才什么也没有听到,难道是%@走神了?请重新再说一次吧!",self.deployList.RoleName];
+        state = 0;
+        handerImage = self.robotPortraitImage;
+        
+    }
+    
+    ZKRobotMode *data = [[ZKRobotMode alloc] init];
+    data.info = contenStr;
+    data.potoImage = handerImage;
+    data.type = state;
     
     data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:str];
 
@@ -202,6 +267,7 @@
     
 
 }
+
 /**
  *  声音输入状态
  *
@@ -210,7 +276,25 @@
 - (void)voiceState:(BOOL)state;
 {
 
-
+    if (!self.deployList && state == YES) {
+        HUDShowError(@"数据加载失败")
+        return;
+    }
+    if (state == YES)
+    {
+      [[WXVoiceSDK sharedWXVoice] startOnce];
+ 
+    }
+    else
+    {
+      [[WXVoiceSDK sharedWXVoice] finish];
+    
+    }
+    
+ 
+   
+    
+    
 }
 /**
  *  技能状态
@@ -220,7 +304,13 @@
 - (void)skillState:(BOOL)state;
 {
 
+    self.robotTallyView.hidden = !state;
+    
+    [self.robotTallyView.sphereView ViewsState:state];
 
+
+   
+    
 }
 
 #pragma mark  ----
@@ -249,24 +339,47 @@
 //识别成功，返回结果，元素类型为WXVoiceResult，现阶段数组内只有一个元素
 - (void)voiceInputResultArray:(NSArray *)array{
     //一旦此方法被回调，array一定会有一个值，所以else的情况不会发生，但写了会更有安全感的
-    if (array && array.count>0) {
-//        WXVoiceResult *result=[array objectAtIndex:0];
-
+    NSString *key;
+    BOOL state;
+    NSInteger dex;
+    
+    if (array && array.count>0)
+    {
+        WXVoiceResult *result=[array objectAtIndex:0];
+        key = result.text;
+        state = YES;
+        dex = 1;
+ 
     }else{
      
+        key = [NSString stringWithFormat:@"刚才什么也没有听到,难道是%@走神了?请重新再说一次吧!",self.deployList.RoleName];;
+        dex = 0;
+        state = NO;
     }
+    
+    ZKRobotMode *data = [[ZKRobotMode alloc] init];
+    data.info = key;
+    data.potoImage = self.userPortraitImage;
+    data.type = dex;
+    
+    data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:key];
+    [self.robotTableView addMOde:data post:state];
+    
 }
 //出现错误，错误码请参见官方网站
 - (void)voiceInputMakeError:(NSInteger)errorCode{
-    NSLog(@"%d",errorCode);
+    HUDShowError(@"语音录取失败");
 
 }
 //音量，界限为0-30，通常音量范围在0-15之间
 - (void)voiceInputVolumn:(float)volumn{
+    
+    
 
 }
 //录音完成，等待服务器返回识别结果。此时不会再接受新的语音
 - (void)voiceInputWaitForResult{
+    
 
 }
  //在手动调用的cancel后，取消完成时回调

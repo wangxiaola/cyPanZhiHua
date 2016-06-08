@@ -73,19 +73,20 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
 {
-     NSInteger dex = self.modeArray.count;
+   
     [self.modeArray addObject:list];
-    
+    NSInteger dex = self.modeArray.count-1;
  
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
     
     [self.tableView beginUpdates];
     NSArray *indexPaths = @[indexPath];
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationTop];
+    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationRight:UITableViewRowAnimationLeft;
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:state];
     [self.tableView endUpdates];
     
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-    
+
     if (ps == YES)
     {
         NSString *str = list.info;
@@ -146,17 +147,18 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     ZKRobotMode *modes = self.modeArray[indexPath.row];
 
     return modes.size.height+40;
     
 }
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
 
-    NSLog(@" ------ ");
+    NSLog(@" ------%d ",indexPath.row);
+    
     
 }
 /*

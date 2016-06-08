@@ -7,11 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DBSphereView.h"
+
+@protocol ZKRobotTallyViewDelegate <NSObject>
+@optional
+/**
+ *  点击选中谁
+ *
+ *  @param key
+ */
+- (void)selectTitel:(NSString*)key;
+
+@end
 /**
  *  标签流
  */
-@interface ZKRobotTallyView : UIView
+@interface ZKRobotTallyView : UIView<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, retain) DBSphereView *sphereView;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
+@property (nonatomic, weak) id<ZKRobotTallyViewDelegate>tallyDelegate;
 @end

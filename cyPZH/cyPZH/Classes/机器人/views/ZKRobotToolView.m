@@ -103,7 +103,6 @@ static NSString * ling = @"输入您想问的内容...";
         navView.backgroundColor = [UIColor whiteColor];
         [self addSubview:navView];
         
-        //        icon-jianpan-pre
         textButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [textButton setTitle:@"键盘" forState:UIControlStateNormal];
         textButton.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -237,11 +236,22 @@ static NSString * ling = @"输入您想问的内容...";
     [infoTextView resignFirstResponder];
     [self stateTextButton:textButton.selected];
     
-    if (![infoTextView.text isEqualToString:ling]&&infoTextView.text.length>0) {
-        
-        if ([self.toolDelegate respondsToSelector:@selector(textFieldString:)]) {
-            [self.toolDelegate textFieldString:infoTextView.text];
-        }
+    NSString *str ;
+    
+    if ([infoTextView.text isEqualToString:ling]||infoTextView.text.length==0)
+    {
+       
+        str = @"";
+    }
+    else
+    {
+    
+        str = infoTextView.text;
+    }
+    
+    
+    if ([self.toolDelegate respondsToSelector:@selector(textFieldString:)]) {
+        [self.toolDelegate textFieldString:str];
     }
     
     infoTextView.text = ling;
@@ -291,6 +301,7 @@ static NSString * ling = @"输入您想问的内容...";
             skillButton.selected = YES;
             [skillButton setTitleColor:CYBColorGreen forState:UIControlStateNormal];
             [skillButton setImage:[UIImage imageNamed:@"icon-question-pre"] forState:UIControlStateNormal];
+            [skillButton setTitle:@"关闭" forState:UIControlStateNormal];
             
         }];
         
@@ -307,6 +318,7 @@ static NSString * ling = @"输入您想问的内容...";
             skillButton.selected = NO;
             [skillButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             [skillButton setImage:[UIImage imageNamed:@"icon-question"] forState:UIControlStateNormal];
+              [skillButton setTitle:@"技能" forState:UIControlStateNormal];
         }];
         
         
@@ -345,6 +357,10 @@ static NSString * ling = @"输入您想问的内容...";
     
 }
 
+- (void)dismmSkill;
+{
+   [self stateSkillButton:skillButton.selected];
+}
 
 #pragma mark 手势
 

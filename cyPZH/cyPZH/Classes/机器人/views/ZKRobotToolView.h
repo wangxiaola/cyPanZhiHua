@@ -37,7 +37,10 @@
 
 
 - (instancetype)initWithFrame:(CGRect)frame objec:(UIViewController*)controller;
-
-@property (nonatomic,weak) id<ZKRobotToolViewDelegate >toolDelegate;
+/**
+ *  消失技能
+ */
+- (void)dismmSkill;
+@property (nonatomic,weak) id< ZKRobotToolViewDelegate >toolDelegate;
 
 @end

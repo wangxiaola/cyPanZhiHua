@@ -50,10 +50,33 @@
     infoLabel.numberOfLines = 0;
     infoLabel.textColor = [UIColor whiteColor];
     infoLabel.font = [UIFont systemFontOfSize:14];
-    infoLabel.textAlignment = NSTextAlignmentRight;
+    infoLabel.textAlignment = NSTextAlignmentLeft;
     [backImageView addSubview:infoLabel];
     
     
+    [portraitImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.height.mas_equalTo(40);
+        make.top.mas_equalTo(14);
+        make.right.mas_equalTo(self.mas_right).offset(-12);
+        
+    }];
+    
+    [backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.mas_equalTo(portraitImageView.mas_left).offset(-12);
+        make.top.mas_equalTo(14);
+        make.left.mas_greaterThanOrEqualTo(12);
+    }];
+    
+    [infoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(backImageView.mas_left).offset(12);
+        make.right.mas_equalTo(backImageView.mas_right).offset(-12);
+        make.top.mas_equalTo(backImageView.mas_top).offset(6);
+        make.bottom.mas_equalTo(backImageView.mas_bottom).offset(-6);
+    }];
+
     
 }
 - (void)awakeFromNib {
@@ -64,29 +87,7 @@
 {
     [super layoutSubviews];
     
-    [portraitImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        make.width.height.mas_equalTo(40);
-        make.top.mas_equalTo(14);
-        make.right.mas_equalTo(self.mas_right).offset(-12);
-        
-    }];
-    
-    [backImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        make.right.mas_equalTo(portraitImageView.mas_left).offset(-12);
-        make.top.mas_equalTo(14);
-        make.left.mas_greaterThanOrEqualTo(12);
-    }];
-    
-    [infoLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.mas_equalTo(backImageView.mas_left).offset(12);
-        make.right.mas_equalTo(backImageView.mas_right).offset(-12);
-        make.centerY.mas_equalTo(backImageView.mas_centerY);
-        
-    }];
-}
+   }
 
 
 - (void)setList:(ZKRobotMode *)list
@@ -96,10 +97,7 @@
     
     portraitImageView.image = [list.potoImage circleImage];
     
-    [backImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        make.height.mas_offset(list.size.height+30);
-    }];
+
 }
 
 @end
