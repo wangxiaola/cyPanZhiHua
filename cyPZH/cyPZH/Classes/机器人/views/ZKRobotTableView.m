@@ -11,6 +11,7 @@
 #import "ZKRobotTableViewCell.h"
 #import "ZKUserTableViewCell.h"
 
+
 static NSString *ZKRobotTableViewCellID = @"ZKRobotTableViewCellID";
 static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
@@ -18,14 +19,17 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray <ZKRobotMode *> *modeArray;
+@property (nonatomic, strong) NSMutableArray <ZKRobotMode*>*modeArray;
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
+
+
+
 @end
 
 @implementation ZKRobotTableView
 
-- (NSMutableArray<ZKRobotMode *> *)modeArray
+- (NSMutableArray<ZKRobotMode*>*)modeArray
 {
 
     if (!_modeArray) {
@@ -92,12 +96,57 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
         NSString *str = list.info;
         
         NSMutableDictionary *dic = [NSMutableDictionary params];
-        [dic setObject:str forKey:@"messg"];
+        [dic setObject:@"132" forKey:@"interfaceId"];
+        [dic setObject:@"AudioQuery" forKey:@"Method"];
+        [dic setObject:str forKey:@"QueryKey"];
         
+        MJWeakSelf
         [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
             
+            NSLog(@"%@",responseObject);
+            NSDictionary *dic = responseObject;
+            NSArray   * array = [dic valueForKey:@"data"];
             
+            if (dic.count == 0 || array.count == 0) {
+                
+                if ([weakSelf.tabelDelegate respondsToSelector:@selector(userMusic:)]) {
+                    [weakSelf.tabelDelegate userMusic:@""];
+                }
+
+            }
+            else
+            {
+                NSDictionary *pic = array[0];
+                
+                if ([weakSelf.tabelDelegate respondsToSelector:@selector(userMusic:)]) {
+                    
+                    [weakSelf.tabelDelegate userMusic:[pic valueForKey:@"replyContent"]];
+                }
+
+            
+            }
+            
+//            int64_t delayInSeconds = 0.6;
+//            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//            
+//                NSString *root = [responseObject valueForKey:@"root"];
+//                
+//                NSDictionary *data = [root mj_JSONObject];
+//       
+//                ZKRobotMode *list = [[ZKRobotMode alloc] init];
+//                list.rootList     = data;
+//                list.type         = 3;
+//                [weakSelf.modeArray addObject:list];
+//                
+//            });
+
+
         } failure:^(NSError *error) {
+            
+            if ([weakSelf.tabelDelegate respondsToSelector:@selector(userMusic:)]) {
+                [weakSelf.tabelDelegate userMusic:@"主人,你的网络似乎断了。检查一下网络吧。"];
+            }
             
             HUDShowFailure
         }];
@@ -161,6 +210,10 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
     
     
 }
+
+
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -170,3 +223,5 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 */
 
 @end
+
+

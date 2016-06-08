@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 @class ZKRobotMode;
+@protocol ZKRobotTableViewDelegate <NSObject>
+@optional
+/**
+ *  翻译
+ *
+ *  @param string
+ */
+- (void)userMusic:(NSString*)string;
 
+@end
 
 /**
  *  机器对话表
@@ -24,5 +33,6 @@
  */
 - (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
 
+@property (nonatomic, weak) id<ZKRobotTableViewDelegate>tabelDelegate;
 
 @end

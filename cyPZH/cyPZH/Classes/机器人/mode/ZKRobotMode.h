@@ -14,11 +14,22 @@
 
 @property (nonatomic, strong) NSString *info;
 /**
- *  0是Robot，1是my
+ *  0是Robot，1是my 3是坑
  */
 @property (nonatomic, assign) NSInteger type;
 
 @property (nonatomic, assign) CGSize size;
 
+@property (nonatomic, copy) NSDictionary *rootList;
+
+
 
 @end
+
+
+
+
+
+
+
+
