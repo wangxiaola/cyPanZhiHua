@@ -310,10 +310,12 @@
 - (void)voiceState:(BOOL)state;
 {
     
-    if (!self.deployList && state == YES) {
+    if (!self.deployList) {
         HUDShowError(@"数据加载失败")
         return;
     }
+    
+    
     if (state == YES)
     {
         self.paoMaTitle  = @"开始录音了";
