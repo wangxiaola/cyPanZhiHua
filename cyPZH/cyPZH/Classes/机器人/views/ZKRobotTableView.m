@@ -277,15 +277,13 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
 }
 
 #pragma mark  ----
-#pragma mark  ---- ZKRobotStateTableViewCellDelegate ----
+#pragma mark  ---- ZKRobotStateTableViewCellDelegate ---
 
-<<<<<<< HEAD
-    NSLog(@" ------%ld ",(long)indexPath.row);
-=======
+
 - (void)touchData:(NSDictionary*)dic clickType:(clickState)type;
 {
     NSLog(@"%@",dic);
->>>>>>> origin/master
+
     
     if (type == clickStateNav )
     {

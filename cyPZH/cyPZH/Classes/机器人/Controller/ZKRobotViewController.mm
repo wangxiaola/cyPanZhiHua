@@ -57,11 +57,6 @@
     MJWeakSelf
     HUDShowLoading(@"加载中")
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
-<<<<<<< HEAD
-    
-=======
-        
->>>>>>> origin/master
         if (responseObject) {
             HUDShowSuccess(@"机器人配置成功")
             weakSelf.deployList = [ZKRobotDeployList mj_objectWithKeyValues:responseObject];
