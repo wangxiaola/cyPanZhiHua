@@ -206,7 +206,7 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 {
 
 
-    NSLog(@" ------%d ",indexPath.row);
+    NSLog(@" ------%ld ",(long)indexPath.row);
     
     
 }
