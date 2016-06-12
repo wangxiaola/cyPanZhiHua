@@ -32,7 +32,12 @@
  *  @param ps   是否发起请求
  */
 - (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
+/**
+ *  配置数据
+ */
+- (void)updateData:(UIImage*)poto robotName:(NSString*)name;
 
+@property (nonatomic, weak) id controller;
 @property (nonatomic, weak) id<ZKRobotTableViewDelegate>tabelDelegate;
 
 @end

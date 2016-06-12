@@ -56,9 +56,12 @@
     [dic setObject:@"robotConfig" forKey:@"Method"];
     MJWeakSelf
     HUDShowLoading(@"加载中")
-    
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
+<<<<<<< HEAD
     
+=======
+        
+>>>>>>> origin/master
         if (responseObject) {
             HUDShowSuccess(@"机器人配置成功")
             weakSelf.deployList = [ZKRobotDeployList mj_objectWithKeyValues:responseObject];
@@ -91,7 +94,16 @@
     
     NSData* robotdata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.deployList.RobotLogo]];
     UIImage *robotImage = [UIImage imageWithData:robotdata];
-    self.robotPortraitImage = robotImage;
+    
+    if (robotImage)
+    {
+        
+        self.robotPortraitImage = robotImage;
+    }else
+    {
+      self.robotPortraitImage = [UIImage imageNamed:@"headimage-default"];
+    }
+  
     self.userPortraitImage  = [UIImage imageNamed:@"cell_ default"];
     NSData* backdata = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.deployList.ThemeBackground]];
     UIImage *backImage = [UIImage imageWithData:backdata];
@@ -103,7 +115,7 @@
     ZKRobotMode *data = [[ZKRobotMode alloc] init];
     data.info = robotMessg;
     data.potoImage =robotImage;
-    data.type = 0;
+    data.type = ZKRobotStateRobot;
     data.size = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:robotMessg];
     
     [self.robotTableView addMOde:data post:NO];
@@ -111,6 +123,8 @@
     [[WXSpeechSynthesizer sharedSpeechSynthesizer] startWithText:robotMessg];
     
     self.backImageView.image = backImage;
+    
+    [self.robotTableView updateData:robotImage robotName:self.deployList.RoleName];
     
 }
 /**
@@ -148,7 +162,7 @@
     ZKRobotMode *data = [[ZKRobotMode alloc] init];
     data.info = key;
     data.potoImage = self.userPortraitImage;
-    data.type = 1;
+    data.type = ZKRobotStateUser;
     
     data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:key];
     
@@ -176,6 +190,7 @@
     self.robotTableView = [[ZKRobotTableView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.backImageView.frame.size.height)];
     self.robotTableView.backgroundColor = [UIColor clearColor];
     self.robotTableView.tabelDelegate = self;
+    self.robotTableView.controller    = self;
     [self.backImageView insertSubview:self.robotTableView atIndex:100];
     //    标签框
     self.robotTallyView = [[ZKRobotTallyView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.backImageView.frame.size.height)];
@@ -242,7 +257,7 @@
     ZKRobotMode *data = [[ZKRobotMode alloc] init];
     data.info = key;
     data.potoImage = self.robotPortraitImage;
-    data.type = 0;
+    data.type = ZKRobotStateRobot;
     data.size = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:key];
     [self.robotTableView addMOde:data post:NO];
 
@@ -294,7 +309,7 @@
     ZKRobotMode *data = [[ZKRobotMode alloc] init];
     data.info = contenStr;
     data.potoImage = handerImage;
-    data.type = state;
+    data.type = ZKRobotStateRobot;
     
     data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:str];
     
@@ -341,11 +356,7 @@
     
     self.robotTallyView.hidden = !state;
     
-    [self.robotTallyView.sphereView ViewsState:state];
-    
-    
-    
-    
+
 }
 
 #pragma mark  ----
@@ -386,19 +397,19 @@
     //一旦此方法被回调，array一定会有一个值，所以else的情况不会发生，但写了会更有安全感的
     NSString *key;
     BOOL state;
-    NSInteger dex;
+    ZKRobotState dex;
     
     if (array && array.count>0)
     {
         WXVoiceResult *result=[array objectAtIndex:0];
         key = result.text;
         state = YES;
-        dex = 1;
+        dex = ZKRobotStateUser;
         
     }else{
         
         key = [NSString stringWithFormat:@"刚才什么也没有听到,难道是%@走神了?请重新再说一次吧!",self.deployList.RoleName];;
-        dex = 0;
+        dex = ZKRobotStateRobot;
         state = NO;
     }
     

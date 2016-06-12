@@ -10,12 +10,14 @@
 #import "ZKRobotMode.h"
 #import "ZKRobotTableViewCell.h"
 #import "ZKUserTableViewCell.h"
-
+#import "ZKRobotStateTableViewCell.h"
+#import <MapKit/MapKit.h>
 
 static NSString *ZKRobotTableViewCellID = @"ZKRobotTableViewCellID";
-static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
+static NSString *ZKUserTableViewCellID  = @"ZKUserTableViewCellID";
+static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
 
-@interface ZKRobotTableView()
+@interface ZKRobotTableView()<ZKRobotStateTableViewCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -23,6 +25,9 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
+@property (nonatomic, strong) UIImage *potoImage;
+
+@property (nonatomic, strong) NSString *robotName;
 
 
 @end
@@ -31,7 +36,7 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (NSMutableArray<ZKRobotMode*>*)modeArray
 {
-
+    
     if (!_modeArray) {
         
         _modeArray = [NSMutableArray array];
@@ -41,7 +46,7 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (instancetype)initWithFrame:(CGRect)frame;
 {
-
+    
     self = [super initWithFrame:frame];
     
     if (self) {
@@ -56,7 +61,8 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
         self.tableView.dataSource = self;
         
         [self.tableView registerClass:[ZKRobotTableViewCell class] forCellReuseIdentifier:ZKRobotTableViewCellID];
-         [self.tableView registerClass:[ZKUserTableViewCell class] forCellReuseIdentifier:ZKUserTableViewCellID];
+        [self.tableView registerClass:[ZKUserTableViewCell class] forCellReuseIdentifier:ZKUserTableViewCellID];
+        [self.tableView registerClass:[ZKRobotStateTableViewCell class] forCellReuseIdentifier:ZKRobotStateTableViewCellID];
         
         [self addSubview:self.tableView];
         
@@ -77,20 +83,20 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (void)addMOde:(ZKRobotMode*)list post:(BOOL)ps;
 {
-   
+    
     [self.modeArray addObject:list];
     NSInteger dex = self.modeArray.count-1;
- 
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
     
     [self.tableView beginUpdates];
     NSArray *indexPaths = @[indexPath];
-    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationRight:UITableViewRowAnimationLeft;
+    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationLeft:UITableViewRowAnimationLeft;
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:state];
     [self.tableView endUpdates];
     
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+    
     if (ps == YES)
     {
         NSString *str = list.info;
@@ -101,18 +107,27 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
         [dic setObject:str forKey:@"QueryKey"];
         
         MJWeakSelf
+        [_activityView startAnimating];
         [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
             
-            NSLog(@"%@",responseObject);
+            [weakSelf.activityView stopAnimating];
+            
             NSDictionary *dic = responseObject;
             NSArray   * array = [dic valueForKey:@"data"];
             
-            if (dic.count == 0 || array.count == 0) {
+            /**
+             *  机器人回复点击状态数据
+             */
+            
+            NSDictionary *root = [[responseObject valueForKey:@"root"] mj_JSONObject];
+            NSArray * rows = [root valueForKey:@"rows"];
+            
+            if (array.count == 0 && rows.count == 0) {
                 
                 if ([weakSelf.tabelDelegate respondsToSelector:@selector(userMusic:)]) {
                     [weakSelf.tabelDelegate userMusic:@""];
                 }
-
+                
             }
             else
             {
@@ -122,28 +137,17 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
                     
                     [weakSelf.tabelDelegate userMusic:[pic valueForKey:@"replyContent"]];
                 }
-
-            
+                
+                
             }
             
-//            int64_t delayInSeconds = 0.6;
-//            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-//            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//            
-//                NSString *root = [responseObject valueForKey:@"root"];
-//                
-//                NSDictionary *data = [root mj_JSONObject];
-//       
-//                ZKRobotMode *list = [[ZKRobotMode alloc] init];
-//                list.rootList     = data;
-//                list.type         = 3;
-//                [weakSelf.modeArray addObject:list];
-//                
-//            });
-
-
-        } failure:^(NSError *error) {
+            [weakSelf addCellState:rows];
             
+            
+            
+            
+        } failure:^(NSError *error) {
+            [weakSelf.activityView stopAnimating];
             if ([weakSelf.tabelDelegate respondsToSelector:@selector(userMusic:)]) {
                 [weakSelf.tabelDelegate userMusic:@"主人,你的网络似乎断了。检查一下网络吧。"];
             }
@@ -154,7 +158,51 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
     }
     
 }
+- (void)addCellState:(NSArray*)array;
+{
+    
+    
+    if (self.robotName && array.count > 0)
+    {
+        
+        int64_t delayInSeconds = 1;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            
+            NSDictionary *data = array[0];
+            
+            ZKRobotMode *list = [[ZKRobotMode alloc] init];
+            list.rootList     = data;
+            list.potoImage    = self.potoImage;
+            list.name         = self.robotName;
+            list.type         = ZKRobotStateClick;
+            list.size         = CGSizeMake(300, 50);
+            [self.modeArray addObject:list];
+            
+            NSInteger dex = self.modeArray.count-1;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
 
+            NSArray *indexPaths = @[indexPath];
+            
+            [self.tableView beginUpdates];
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+            [self.tableView endUpdates];
+            
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+            
+            
+        });
+        
+    }
+   
+    
+}
+- (void)updateData:(UIImage*)poto robotName:(NSString*)name;
+{
+    
+    self.potoImage = poto;
+    self.robotName = name;
+}
 
 #pragma mark --table代理---
 
@@ -164,7 +212,7 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
+    
     return self.modeArray.count;
 }
 
@@ -174,20 +222,29 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
     
     ZKRobotMode *modes = self.modeArray[indexPath.row];
     
-    
-    if (modes.type == 0)
+    if (modes.type == ZKRobotStateRobot)
     {
-       ZKRobotTableViewCell * robotCell = [tableView dequeueReusableCellWithIdentifier:ZKRobotTableViewCellID ];
+        ZKRobotTableViewCell * robotCell = [tableView dequeueReusableCellWithIdentifier:ZKRobotTableViewCellID ];
         robotCell.list = modes;
         cell = robotCell;
     }
-    else
+    else if(modes.type == ZKRobotStateUser)
     {
-    
+        
         ZKUserTableViewCell *userCell = [tableView dequeueReusableCellWithIdentifier:ZKUserTableViewCellID ];
         userCell.list = modes;
         cell = userCell;
     }
+    else if(modes.type == ZKRobotStateClick)
+    {
+        
+        ZKRobotStateTableViewCell *stateCell = [tableView dequeueReusableCellWithIdentifier:ZKRobotStateTableViewCellID];
+        stateCell.list = modes;
+        stateCell.stateDelegate = self;
+        cell = stateCell;
+        
+    }
+    
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -196,31 +253,100 @@ static NSString *ZKUserTableViewCellID = @"ZKUserTableViewCellID";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     ZKRobotMode *modes = self.modeArray[indexPath.row];
-
+    
     return modes.size.height+40;
     
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 20;
+}
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [UIView new];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-
+    
+    
     NSLog(@" ------%ld ",(long)indexPath.row);
     
     
 }
 
+#pragma mark  ----
+#pragma mark  ---- ZKRobotStateTableViewCellDelegate ----
 
+<<<<<<< HEAD
+    NSLog(@" ------%ld ",(long)indexPath.row);
+=======
+- (void)touchData:(NSDictionary*)dic clickType:(clickState)type;
+{
+    NSLog(@"%@",dic);
+>>>>>>> origin/master
+    
+    if (type == clickStateNav )
+    {
+        [self nav:dic];
+        
+    }
+    else if (type == clickStatephone)
+    {
+        NSString *ls = [[dic valueForKey:@"phone"] componentsSeparatedByString:@"/"][0];
+        UIWebView *webView = [[UIWebView alloc]init];
+        
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",[ls stringByReplacingOccurrencesOfString:@"—" withString:@""]];
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str]]];
+       [self addSubview:webView];
+    }
+    else
+    {
+    
+        
+//        详情
+    }
 
+    
+}
+
+- (void)nav:(NSDictionary*)pic
+{
+    //  起点
+    CLLocationCoordinate2D coordinate;
+    
+    coordinate.latitude=[[pic objectForKey:@"latitude"] floatValue];
+    
+    coordinate.longitude=[[pic objectForKey:@"longitude"] floatValue];
+
+    CLLocationCoordinate2D coords2 = coordinate;
+    
+    //  当前的位置
+    
+    MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
+    
+    MKMapItem *toLocation = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:coords2 addressDictionary:nil]];
+    
+    toLocation.name = [pic objectForKey:@"address"];
+    
+    
+    NSArray *items = [NSArray arrayWithObjects:currentLocation, toLocation, nil];
+    
+    NSDictionary *options = @{ MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving, MKLaunchOptionsMapTypeKey: [NSNumber numberWithInteger:MKMapTypeStandard], MKLaunchOptionsShowsTrafficKey:@YES };
+    //打开苹果自身地图应用，并呈现特定的item
+    
+    [MKMapItem openMapsWithItems:items launchOptions:options];
+    
+}
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 
 @end
 

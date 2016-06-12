@@ -79,9 +79,7 @@ static NSString *identifier = @"cell";
     [dic setObject:@"TagConfig" forKey:@"Method"];
 
     MJWeakSelf
-    HUDShowLoading(@"加载中")
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
-              NSLog(@"== %@",responseObject);
          weakSelf.listArray = [ZKRobotLabelMode mj_objectArrayWithKeyValuesArray:responseObject];
         [weakSelf initSupViews];
         
@@ -178,16 +176,18 @@ static NSString *identifier = @"cell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZKRobotLabelMode *list = self.listArray[indexPath.section];
-    
-    //防止点击同一个cell
-    if (![self.record isEqualToString:list.TagName]) {
+    if (self.listArray.count > 0) {
         
-        [self updateLabel:list.MinTagClass];
+        ZKRobotLabelMode *list = self.listArray[indexPath.section];
+        
+        //防止点击同一个cell
+        if (![self.record isEqualToString:list.TagName]) {
+            
+            [self updateLabel:list.MinTagClass];
+        }
+        self.record = list.TagName;
+       
     }
-    self.record = list.TagName;
-    
-
     
 }
 
@@ -197,7 +197,7 @@ static NSString *identifier = @"cell";
     [sphereView removeFromSuperview];
     float spW =  _SCREEN_WIDTH - 120;
     
-    sphereView = [[DBSphereView alloc] initWithFrame:CGRectMake(0, 0,spW,spW)];
+    sphereView = [[DBSphereView alloc] initWithFrame:CGRectMake(0, 0,spW,spW+60)];
     sphereView.center = CGPointMake(spW/2+10, self.center.y);
     sphereView.clipsToBounds = YES;
     NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
@@ -208,13 +208,14 @@ static NSString *identifier = @"cell";
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
         [btn setTitle:list.TagName forState:UIControlStateNormal];
         [btn setTitleColor:[self randomColor] forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont systemFontOfSize:15];
-        float labelW = [ZKUtil contentLabelSize:CGSizeMake(MAXFLOAT, 18) labelFont:15 labelText:list.TagName].width+6;
-        btn.frame = CGRectMake(0, 0,labelW, 18);
+        btn.titleLabel.font = [UIFont systemFontOfSize:16];
+        float labelW = [ZKUtil contentLabelSize:CGSizeMake(MAXFLOAT, 20) labelFont:16 labelText:list.TagName].width+6;
+        btn.frame = CGRectMake(0, 0,labelW, 20);
         [btn addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [array addObject:btn];
         [sphereView addSubview:btn];
     }
+    
     [sphereView setCloudTags:array];
     sphereView.backgroundColor = [UIColor clearColor];
     [self.robotContenView addSubview:sphereView];

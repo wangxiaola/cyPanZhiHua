@@ -8,6 +8,8 @@
 
 #import "ZKBaseWebViewController.h"
 #import "UIBarButtonItem+Custom.h"
+#import "ZKNavigationController.h"
+
 @interface ZKBaseWebViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, weak) UIImageView *errorImageView;
@@ -73,7 +75,24 @@
     
     if (self.webView.canGoBack == NO) {
         
-        [self.navigationController popViewControllerAnimated:YES];
+
+        [[UserInfo sharedUserInfo] loadUserInfo];
+        
+        if (strIsEmpty([UserInfo sharedUserInfo].name)) {
+            
+            self.navigationController.navigationBarHidden = NO;
+            [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
+        }
+        else
+        {
+            
+            ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:[NSClassFromString(@"ZKLoginViewController") new]];
+            nav.navigationBarHidden = YES;
+            [APPDELEGATE window].rootViewController = nav;
+        }
+        
+
+        
     }
     else
     {

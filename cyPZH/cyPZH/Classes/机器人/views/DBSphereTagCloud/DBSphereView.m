@@ -124,21 +124,7 @@
     [timer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
-- (void)ViewsState:(BOOL)state;
-{
 
-    if (state == YES)
-    {
-        [self timerStart];
-        
-    }
-    else
-    {
-       [self timerStop];
-        
-    }
-
-}
 - (void)timerStop
 {
     [timer invalidate];
