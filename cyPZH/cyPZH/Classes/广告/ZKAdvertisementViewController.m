@@ -8,6 +8,7 @@
 
 #import "ZKAdvertisementViewController.h"
 #import "ZKBaseWebViewController.h"
+#import "ZKNavigationController.h"
 
 @interface ZKAdvertisementViewController ()
 
@@ -149,8 +150,8 @@
 {
     
     
-   self.isGoWeb = YES;
-    NSLog(@" --- ");
+    self.isGoWeb = YES;
+
     ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc] init];
     web.htmlUrl = @"www.baidu.com";
     web.htmlName = @"这是测试";
@@ -161,12 +162,26 @@
 }
 - (void)goContenView
 {
+    
+    
    if (self.isGoWeb == YES) {return;}
     self.isGoWeb = YES;
-    self.navigationController.navigationBarHidden = NO;
-    [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
     
-       NSLog(@"++= ");
+    [[UserInfo sharedUserInfo] loadUserInfo];
+    
+    if (strIsEmpty([UserInfo sharedUserInfo].name)) {
+        
+        self.navigationController.navigationBarHidden = NO;
+        [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
+    }
+    else
+    {
+    
+        ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:[NSClassFromString(@"ZKLoginViewController") new]];
+        nav.navigationBarHidden = YES;
+        [APPDELEGATE window].rootViewController = nav;
+    }
+
     
     
 }

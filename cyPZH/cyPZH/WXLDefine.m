@@ -6,8 +6,7 @@
 //  Copyright © 2016年 王小腊. All rights reserved.
 //
 
-
-NSString *const POST_ZK_URL      = @"http://wx.tpanzhihua.com/service.csw";
+NSString *const POST_ZK_URL      = @"http://tpanzhihua.m.geeker.com.cn/service.csw";
 
 NSString *const ZK_ERR           = @"no_data";
 

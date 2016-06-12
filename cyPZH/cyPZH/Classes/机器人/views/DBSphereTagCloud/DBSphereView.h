@@ -18,5 +18,5 @@
 - (void)setCloudTags:(NSArray *)array;
 - (void)timerStart;
 - (void)timerStop;
-- (void)ViewsState:(BOOL)state;
+
 @end
