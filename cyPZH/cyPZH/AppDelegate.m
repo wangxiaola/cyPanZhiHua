@@ -19,7 +19,7 @@
 #import "WeiboSDK.h"
 
 #import "ZKForbidNavigationController.h"
-#import "ZKAdvertisementViewController.h"
+#import "ZKRobotViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -45,9 +45,9 @@
 {
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    ZKAdvertisementViewController *advertisement = [[ZKAdvertisementViewController alloc ] init];
+    ZKRobotViewController *advertisement = [[ZKRobotViewController alloc ] init];
      ZKForbidNavigationController*nav = [[ZKForbidNavigationController alloc] initWithRootViewController:advertisement];
-    nav.navigationBarHidden = YES;
+    nav.navigationBarHidden = NO;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 }

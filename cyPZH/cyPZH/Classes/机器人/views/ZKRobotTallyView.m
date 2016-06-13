@@ -57,7 +57,7 @@ static NSString *identifier = @"cell";
         
         self.robotContenView = [[UIView alloc] initWithFrame:frame];
         
-        self.robotContenView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+        self.robotContenView.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.robotContenView];
         

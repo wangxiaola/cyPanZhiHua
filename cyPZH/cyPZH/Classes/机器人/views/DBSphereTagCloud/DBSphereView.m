@@ -134,7 +134,7 @@
 - (void)autoTurnRotation
 {
     for (NSInteger i = 0; i < tags.count; i ++) {
-        [self updateFrameOfPoint:i direction:normalDirection andAngle:0.002];
+        [self updateFrameOfPoint:i direction:normalDirection andAngle:0.006];
     }
     
 }

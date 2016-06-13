@@ -536,6 +536,7 @@
 		3B61CBFF1D0E44320022DDC7 /* 主控制器 */ = {
 			isa = PBXGroup;
 			children = (
+				3B61CC411D0E81300022DDC7 /* 分页面 */,
 				3B61CC011D0E44920022DDC7 /* storyboard */,
 				3B61CC001D0E44550022DDC7 /* Controller */,
 			);
@@ -567,6 +568,213 @@
 				3B61CC021D0E44E90022DDC7 /* main.storyboard */,
 			);
 			path = storyboard;
+			sourceTree = "<group>";
+		};
+		3B61CC3B1D0E80C60022DDC7 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC451D0E81800022DDC7 /* controller */,
+				3B61CC541D0E81C80022DDC7 /* cellView */,
+				3B61CC4F1D0E81AE0022DDC7 /* mode */,
+				3B61CC4A1D0E81970022DDC7 /* views */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		3B61CC3D1D0E80E50022DDC7 /* paly */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC461D0E81840022DDC7 /* controller */,
+				3B61CC551D0E81CF0022DDC7 /* cellView */,
+				3B61CC501D0E81B10022DDC7 /* mode */,
+				3B61CC4B1D0E819A0022DDC7 /* views */,
+			);
+			path = paly;
+			sourceTree = "<group>";
+		};
+		3B61CC3E1D0E80FB0022DDC7 /* scenery */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC441D0E817D0022DDC7 /* controller */,
+				3B61CC531D0E81C50022DDC7 /* cellView */,
+				3B61CC4E1D0E81AB0022DDC7 /* mode */,
+				3B61CC491D0E81940022DDC7 /* views */,
+			);
+			path = scenery;
+			sourceTree = "<group>";
+		};
+		3B61CC3F1D0E81070022DDC7 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC431D0E817A0022DDC7 /* controller */,
+				3B61CC521D0E81C20022DDC7 /* cellView */,
+				3B61CC4D1D0E81A90022DDC7 /* mode */,
+				3B61CC481D0E81910022DDC7 /* views */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		3B61CC401D0E81130022DDC7 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC421D0E81760022DDC7 /* controller */,
+				3B61CC511D0E81BF0022DDC7 /* cellView */,
+				3B61CC4C1D0E81A50022DDC7 /* mode */,
+				3B61CC471D0E818F0022DDC7 /* views */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		3B61CC411D0E81300022DDC7 /* 分页面 */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC401D0E81130022DDC7 /* mine */,
+				3B61CC3F1D0E81070022DDC7 /* map */,
+				3B61CC3E1D0E80FB0022DDC7 /* scenery */,
+				3B61CC3B1D0E80C60022DDC7 /* home */,
+				3B61CC3D1D0E80E50022DDC7 /* paly */,
+			);
+			name = "分页面";
+			sourceTree = "<group>";
+		};
+		3B61CC421D0E81760022DDC7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B61CC431D0E817A0022DDC7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B61CC441D0E817D0022DDC7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B61CC451D0E81800022DDC7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B61CC461D0E81840022DDC7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B61CC471D0E818F0022DDC7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B61CC481D0E81910022DDC7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B61CC491D0E81940022DDC7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B61CC4A1D0E81970022DDC7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B61CC4B1D0E819A0022DDC7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B61CC4C1D0E81A50022DDC7 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B61CC4D1D0E81A90022DDC7 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B61CC4E1D0E81AB0022DDC7 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B61CC4F1D0E81AE0022DDC7 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B61CC501D0E81B10022DDC7 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B61CC511D0E81BF0022DDC7 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B61CC521D0E81C20022DDC7 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B61CC531D0E81C50022DDC7 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B61CC541D0E81C80022DDC7 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B61CC551D0E81CF0022DDC7 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
 			sourceTree = "<group>";
 		};
 		3B9D91F01D07E71D002196A1 /* DBSphereTagCloud */ = {

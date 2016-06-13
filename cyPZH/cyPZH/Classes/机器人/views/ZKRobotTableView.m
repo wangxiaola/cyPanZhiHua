@@ -50,7 +50,7 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
     self = [super initWithFrame:frame];
     
     if (self) {
-        
+    
         self.userInteractionEnabled = YES;
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height-24)];
         self.tableView.tableFooterView = [UIView new];

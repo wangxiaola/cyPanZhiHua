@@ -37,7 +37,7 @@
     self.logo = logo;
     
     UILabel *label = [[UILabel alloc] init];
-    label.textColor = [UIColor darkGrayColor];
+    label.textColor = CYBColorGreen;
     label.font = [UIFont systemFontOfSize:12];
     label.textAlignment = NSTextAlignmentLeft;
     [self addSubview:label];
@@ -54,10 +54,10 @@
     
     self.logo.mj_w = 15;
     self.logo.mj_h = 16;
-    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 18;
+    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 22;
     self.logo.mj_y = self.mj_h / 2 - self.logo.mj_h / 2;
     
-    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 3;
+    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 8;
     self.label.mj_y = 0;
     self.label.mj_h = self.mj_h;
     self.label.mj_w = self.mj_w - self.logo.mj_x - self.logo.mj_w;
@@ -113,13 +113,13 @@
 - (void)setPullingPercent:(CGFloat)pullingPercent
 {
     [super setPullingPercent:pullingPercent];
-    
     // 1.0 0.5 0.0
     // 0.5 0.0 0.5
-    CGFloat red = 1.0 - pullingPercent * 0.5;
-    CGFloat green = 0.5 - 0.5 * pullingPercent;
-    CGFloat blue = 0.5 * pullingPercent;
-    self.label.textColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    CGFloat red = 51-pullingPercent*50;
+    CGFloat green = 202-pullingPercent*100;
+    CGFloat blue = 171-pullingPercent*100;
+    self.label.textColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+
 }
 
 @end

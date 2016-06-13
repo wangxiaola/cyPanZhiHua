@@ -14,6 +14,10 @@ typedef NS_ENUM(NSInteger,clickState) {
      */
     clickStateNav = 0,
     /**
+     *  720全景
+     */
+    clickStateScenic,
+    /**
      *  电话
      */
     clickStatephone,

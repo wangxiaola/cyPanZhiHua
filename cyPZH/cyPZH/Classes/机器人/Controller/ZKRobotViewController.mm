@@ -44,6 +44,8 @@
     [self initWXSDK];
     [self initViews];
     [self postData];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 #pragma mark  ----
 #pragma mark  ---- 数据处理 ----
@@ -279,7 +281,8 @@
         return;
     }
     
-    
+    [[WXSpeechSynthesizer sharedSpeechSynthesizer] cancel];
+
     NSString *contenStr;
     NSInteger state;
     UIImage  *handerImage;
@@ -326,6 +329,7 @@
         return;
     }
     
+    [[WXSpeechSynthesizer sharedSpeechSynthesizer] cancel];
     
     if (state == YES)
     {
@@ -351,6 +355,7 @@
     
     self.robotTallyView.hidden = !state;
     
+    self.robotTableView.hidden = state;
 
 }
 

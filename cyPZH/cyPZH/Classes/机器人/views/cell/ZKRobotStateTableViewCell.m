@@ -161,6 +161,12 @@
         [titelArray addObject:@"导航去"];
     }
     
+    if ([robotDic valueForKey:@"address720"])
+    {
+        
+        [titelArray addObject:@"720全景"];
+    }
+    
     if (strIsEmpty([robotDic valueForKey:@"phone"]))
     {
         [titelArray addObject:@"打电话"];
@@ -215,7 +221,10 @@
     
          cellState = clickStateList;
     }
-    
+    else if ([key isEqualToString:@"导航去"])
+    {
+        cellState = clickStateScenic;
+    }
     if ([self.stateDelegate respondsToSelector:@selector(touchData:clickType:)]) {
         
         [self.stateDelegate touchData:robotDic clickType:cellState];
