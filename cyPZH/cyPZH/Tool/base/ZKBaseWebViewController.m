@@ -8,7 +8,7 @@
 
 #import "ZKBaseWebViewController.h"
 #import "UIBarButtonItem+Custom.h"
-#import "ZKNavigationController.h"
+#import "ZKMainTabBarViewController.h"
 
 @interface ZKBaseWebViewController ()<UIWebViewDelegate>
 
@@ -75,23 +75,10 @@
     
     if (self.webView.canGoBack == NO) {
         
-
-        [[UserInfo sharedUserInfo] loadUserInfo];
+        UIStoryboard *board =[UIStoryboard storyboardWithName:@"main" bundle:nil];
         
-        if (strIsEmpty([UserInfo sharedUserInfo].name)) {
-            
-            self.navigationController.navigationBarHidden = NO;
-            [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
-        }
-        else
-        {
-            
-            ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:[NSClassFromString(@"ZKLoginViewController") new]];
-            nav.navigationBarHidden = YES;
-            [APPDELEGATE window].rootViewController = nav;
-        }
-        
-
+        ZKMainTabBarViewController *vc =[board instantiateInitialViewController];
+        [APPDELEGATE window].rootViewController = vc;
         
     }
     else

@@ -47,6 +47,13 @@
 		3B5A5A3A1D0189A700105280 /* PublicDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A5A371D0189A700105280 /* PublicDefine.m */; };
 		3B5A5A3F1D018BBF00105280 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B5A5A3E1D018BBF00105280 /* libBaiduMobStat.a */; };
 		3B5E6D291D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6D281D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m */; };
+		3B61CC031D0E44E90022DDC7 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B61CC021D0E44E90022DDC7 /* main.storyboard */; };
+		3B61CC061D0E4BA40022DDC7 /* ZKMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC051D0E4BA40022DDC7 /* ZKMainTabBarViewController.m */; };
+		3B61CC0C1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC0B1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m */; };
+		3B61CC121D0E4C9D0022DDC7 /* ZKMainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC111D0E4C9D0022DDC7 /* ZKMainMapViewController.m */; };
+		3B61CC181D0E4F660022DDC7 /* ZKMainHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC171D0E4F660022DDC7 /* ZKMainHomeTableViewController.m */; };
+		3B61CC1B1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC1A1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m */; };
+		3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B61CC1D1D0E50970022DDC7 /* ZKMainMineTableViewController.m */; };
 		3B63F59C1D07BDA20087E974 /* ZKRobotLabelMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63F59B1D07BDA20087E974 /* ZKRobotLabelMode.m */; };
 		3B63F59F1D07CC650087E974 /* ZKRobotTallyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63F59E1D07CC650087E974 /* ZKRobotTallyTableViewCell.m */; };
 		3B787A7B1D065EE7009997E9 /* ZKRobotDeployList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A7A1D065EE7009997E9 /* ZKRobotDeployList.m */; };
@@ -182,6 +189,19 @@
 		3B5A5A3E1D018BBF00105280 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		3B5E6D271D0CF3390096F9D7 /* ZKRobotStateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotStateTableViewCell.h; sourceTree = "<group>"; };
 		3B5E6D281D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotStateTableViewCell.m; sourceTree = "<group>"; };
+		3B61CC021D0E44E90022DDC7 /* main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		3B61CC041D0E4BA40022DDC7 /* ZKMainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainTabBarViewController.h; sourceTree = "<group>"; };
+		3B61CC051D0E4BA40022DDC7 /* ZKMainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainTabBarViewController.m; sourceTree = "<group>"; };
+		3B61CC0A1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPalyCollectionViewController.h; sourceTree = "<group>"; };
+		3B61CC0B1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPalyCollectionViewController.m; sourceTree = "<group>"; };
+		3B61CC101D0E4C9D0022DDC7 /* ZKMainMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainMapViewController.h; sourceTree = "<group>"; };
+		3B61CC111D0E4C9D0022DDC7 /* ZKMainMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainMapViewController.m; sourceTree = "<group>"; };
+		3B61CC161D0E4F660022DDC7 /* ZKMainHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainHomeTableViewController.h; sourceTree = "<group>"; };
+		3B61CC171D0E4F660022DDC7 /* ZKMainHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainHomeTableViewController.m; sourceTree = "<group>"; };
+		3B61CC191D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainSceneryTableViewController.h; sourceTree = "<group>"; };
+		3B61CC1A1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainSceneryTableViewController.m; sourceTree = "<group>"; };
+		3B61CC1C1D0E50970022DDC7 /* ZKMainMineTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainMineTableViewController.h; sourceTree = "<group>"; };
+		3B61CC1D1D0E50970022DDC7 /* ZKMainMineTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainMineTableViewController.m; sourceTree = "<group>"; };
 		3B63F59A1D07BDA20087E974 /* ZKRobotLabelMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotLabelMode.h; sourceTree = "<group>"; };
 		3B63F59B1D07BDA20087E974 /* ZKRobotLabelMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotLabelMode.m; sourceTree = "<group>"; };
 		3B63F59D1D07CC650087E974 /* ZKRobotTallyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotTallyTableViewCell.h; sourceTree = "<group>"; };
@@ -513,6 +533,42 @@
 			path = BaiduMobStat;
 			sourceTree = "<group>";
 		};
+		3B61CBFF1D0E44320022DDC7 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC011D0E44920022DDC7 /* storyboard */,
+				3B61CC001D0E44550022DDC7 /* Controller */,
+			);
+			path = "主控制器";
+			sourceTree = "<group>";
+		};
+		3B61CC001D0E44550022DDC7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC041D0E4BA40022DDC7 /* ZKMainTabBarViewController.h */,
+				3B61CC051D0E4BA40022DDC7 /* ZKMainTabBarViewController.m */,
+				3B61CC161D0E4F660022DDC7 /* ZKMainHomeTableViewController.h */,
+				3B61CC171D0E4F660022DDC7 /* ZKMainHomeTableViewController.m */,
+				3B61CC0A1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.h */,
+				3B61CC0B1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m */,
+				3B61CC191D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.h */,
+				3B61CC1A1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m */,
+				3B61CC101D0E4C9D0022DDC7 /* ZKMainMapViewController.h */,
+				3B61CC111D0E4C9D0022DDC7 /* ZKMainMapViewController.m */,
+				3B61CC1C1D0E50970022DDC7 /* ZKMainMineTableViewController.h */,
+				3B61CC1D1D0E50970022DDC7 /* ZKMainMineTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3B61CC011D0E44920022DDC7 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3B61CC021D0E44E90022DDC7 /* main.storyboard */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
 		3B9D91F01D07E71D002196A1 /* DBSphereTagCloud */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +592,7 @@
 		3BA21D3B1D053D780027B5CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3B61CBFF1D0E44320022DDC7 /* 主控制器 */,
 				3B1020321D0D53AD005C0F68 /* 登录注册 */,
 				3BA21D491D055B9C0027B5CE /* 机器人 */,
 				3BA21D3C1D053F1A0027B5CE /* 广告 */,
@@ -828,6 +885,7 @@
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
 				3B592B031D05298400E2727E /* icon@2x.png in Resources */,
 				3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */,
+				3B61CC031D0E44E90022DDC7 /* main.storyboard in Resources */,
 				3B1020371D0D53BD005C0F68 /* ZKLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,6 +964,7 @@
 				3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */,
 				3B5E6D291D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m in Sources */,
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
+				3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */,
 				3B5A59F41D0184B200105280 /* UIImage+Thumbnail.m in Sources */,
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
 				A1F967031D0423E700AF07EB /* iCarousel.m in Sources */,
@@ -917,12 +976,15 @@
 				3B5A5A211D0184D000105280 /* ZKUtil.m in Sources */,
 				3B5A5A1F1D0184D000105280 /* UploadParam.m in Sources */,
 				A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */,
+				3B61CC0C1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m in Sources */,
+				3B61CC061D0E4BA40022DDC7 /* ZKMainTabBarViewController.m in Sources */,
 				3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */,
 				3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */,
 				3BA21D6D1D056B8C0027B5CE /* ZKRobotTallyView.m in Sources */,
 				3B1020361D0D53BD005C0F68 /* ZKLoginViewController.m in Sources */,
 				3B5A5A0E1D0184BE00105280 /* ZKTextField.m in Sources */,
 				3B5A5A201D0184D000105280 /* ZKHttp.m in Sources */,
+				3B61CC1B1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
 				3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */,
@@ -942,7 +1004,9 @@
 				3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */,
 				3B5A59F61D0184B200105280 /* UIViewController+Prompt.m in Sources */,
 				A1E574CF1D045D25009E5507 /* UserInfo.m in Sources */,
+				3B61CC121D0E4C9D0022DDC7 /* ZKMainMapViewController.m in Sources */,
 				3B5A5A161D0184C700105280 /* UIBarButtonItem+YY.m in Sources */,
+				3B61CC181D0E4F660022DDC7 /* ZKMainHomeTableViewController.m in Sources */,
 				3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */,
 				3B5A59EE1D0184B200105280 /* Foundation+Log.m in Sources */,
 				3B787A861D06922E009997E9 /* ZKUserTableViewCell.m in Sources */,

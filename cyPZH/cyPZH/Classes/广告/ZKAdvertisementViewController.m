@@ -8,7 +8,7 @@
 
 #import "ZKAdvertisementViewController.h"
 #import "ZKBaseWebViewController.h"
-#import "ZKNavigationController.h"
+#import "ZKMainTabBarViewController.h"
 
 @interface ZKAdvertisementViewController ()
 
@@ -167,22 +167,11 @@
    if (self.isGoWeb == YES) {return;}
     self.isGoWeb = YES;
     
-    [[UserInfo sharedUserInfo] loadUserInfo];
+    UIStoryboard *board =[UIStoryboard storyboardWithName:@"main" bundle:nil];
     
-    if (strIsEmpty([UserInfo sharedUserInfo].name)) {
-        
-        self.navigationController.navigationBarHidden = NO;
-        [self.navigationController pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
-    }
-    else
-    {
-    
-        ZKNavigationController *nav = [[ZKNavigationController alloc] initWithRootViewController:[NSClassFromString(@"ZKLoginViewController") new]];
-        nav.navigationBarHidden = YES;
-        [APPDELEGATE window].rootViewController = nav;
-    }
-
-    
+    ZKMainTabBarViewController *vc =[board instantiateInitialViewController];
+    [APPDELEGATE window].rootViewController = vc;
+ 
     
 }
 - (void)didReceiveMemoryWarning {
