@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="Y0U-s7-ZDC" id="feH-sB-YeA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="U6z-zd-44O"/>
+                    <navigationItem key="navigationItem" title="超好玩" id="U6z-zd-44O"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bo0-yL-gCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +64,7 @@
                             <outlet property="delegate" destination="Mln-Iq-5qX" id="oF3-hB-ugb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="mv4-lZ-Uhn"/>
+                    <navigationItem key="navigationItem" title="探风景" id="mv4-lZ-Uhn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aM-r0-UqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +100,7 @@
                             <outlet property="delegate" destination="w3v-kb-qbr" id="1HZ-J7-zcD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="OoW-Ln-lxJ"/>
+                    <navigationItem key="navigationItem" title="我的" id="OoW-Ln-lxJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I6Q-67-q1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jp4-x2-oK9"/>
+                    <navigationItem key="navigationItem" title="身边游" id="Jp4-x2-oK9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rJ-Dd-Lxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,7 +172,7 @@
                             <outlet property="delegate" destination="owC-KP-YM1" id="aQX-2Y-m9K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HmW-8f-hyr"/>
+                    <navigationItem key="navigationItem" title="首页" id="HmW-8f-hyr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aKO-7b-ltO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
