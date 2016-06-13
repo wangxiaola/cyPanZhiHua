@@ -1346,7 +1346,7 @@
 			baseConfigurationReference = 05BEC5071EF2473BE33402D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhou Daohua (7E4U8C88MR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1367,7 +1367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ac58d82e-48a9-4add-83de-f27af0fbc3cc";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1376,7 +1376,7 @@
 			baseConfigurationReference = E2659243C1836EFE4B5767EA /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "compiler-default";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zhou Daohua (7E4U8C88MR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1397,7 +1397,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ac58d82e-48a9-4add-83de-f27af0fbc3cc";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

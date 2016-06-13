@@ -85,17 +85,15 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
 {
     
     [self.modeArray addObject:list];
+    [self.tableView reloadData];
+    
     NSInteger dex = self.modeArray.count-1;
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
     
-    [self.tableView beginUpdates];
-    NSArray *indexPaths = @[indexPath];
-    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationRight:UITableViewRowAnimationLeft;
-    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:state];
-    [self.tableView endUpdates];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+
     
     if (ps == YES)
     {
@@ -180,24 +178,20 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
             list.size         = CGSizeMake(300, 50);
             [self.modeArray addObject:list];
             
+            [self.tableView reloadData];
             NSInteger dex = self.modeArray.count-1;
+            
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
-
-            NSArray *indexPaths = @[indexPath];
             
-            [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
-            [self.tableView endUpdates];
-            
-            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-
-            
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
         });
         
     }
    
     
 }
+
+
 - (void)updateData:(UIImage*)poto robotName:(NSString*)name;
 {
     
