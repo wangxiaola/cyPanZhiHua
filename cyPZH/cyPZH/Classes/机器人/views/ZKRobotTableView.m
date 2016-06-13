@@ -91,14 +91,15 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
     
     [self.tableView beginUpdates];
     NSArray *indexPaths = @[indexPath];
-    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationLeft:UITableViewRowAnimationLeft;
+    UITableViewRowAnimation state = list.type == 1 ?UITableViewRowAnimationRight:UITableViewRowAnimationLeft;
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:state];
     [self.tableView endUpdates];
     
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     
     if (ps == YES)
     {
+   
         NSString *str = list.info;
         
         NSMutableDictionary *dic = [NSMutableDictionary params];
@@ -185,11 +186,11 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
             NSArray *indexPaths = @[indexPath];
             
             [self.tableView beginUpdates];
-            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationLeft];
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
             [self.tableView endUpdates];
             
-            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
-            
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+
             
         });
         
