@@ -74,7 +74,7 @@
     self.tableView.mj_header = [MJDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(postList)];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainTopicTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainTopicTableViewCellID];
-     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainListTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainListTableViewCellID];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainListTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainListTableViewCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainInforTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainInforTableViewCellID];
     
     [self initViews];
@@ -97,7 +97,7 @@
         
         [SVProgressHUD showWithStatus:@"加载中..."];
     }
- 
+    
     [ZKHttp postWithURLString:POST_ZK_URL parameters:headerDic success:^(id responseObject) {
         
         HUDDissmiss
@@ -105,22 +105,22 @@
         
         weakSelf.headerList = [ZKMainHeaderMode mj_objectWithKeyValues:[responseObject valueForKey:@"data"]];
         [weakSelf updata];
-              //缓存
+        //缓存
         [ZKUtil write:weakSelf.headerList forKey:@"mainHeader"];
-       
+        
     } failure:^(NSError *error) {
         HUDShowError(@"网路出问题了")
-         [weakSelf.tableView.mj_header endRefreshing];
+        [weakSelf.tableView.mj_header endRefreshing];
         [weakSelf setCache];
     }];
-
+    
 }
 //缓存
 - (BOOL)setCache
 {
-
+    
     self.headerList = [ZKUtil readForKey:@"mainHeader"];
- 
+    
     if (self.headerList.apply.count == 0)
     {
         
@@ -150,7 +150,7 @@
 - (void)initViews
 {
     self.tableView.tableHeaderView = self.headerView;
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -161,12 +161,12 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     if (section == 0 ) {
         
         return 1;
@@ -182,7 +182,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     if (indexPath.section>0&&indexPath.row == 0)
     {
         
@@ -192,18 +192,18 @@
     {
         return 450/3;
     }
-
+    
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-
+    
     return 10;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-
+    
     UIView *headerView = [UIView new];
     
     return headerView;
@@ -212,52 +212,37 @@
     
     UITableViewCell *cell;
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0)
+    {
         
         
         ZKMainTopicTableViewCell *ggCell = [tableView dequeueReusableCellWithIdentifier:ZKMainTopicTableViewCellID];
         ggCell.linkList = self.headerList.link;
         cell = ggCell;
     }
-    else if (indexPath.section == 1)
+    else if (indexPath.section == 1 && indexPath.row > 0)
     {
         
-        if (indexPath.row == 0)
-        {
-            ZKMainInforTableViewCell *inforCell = [tableView dequeueReusableCellWithIdentifier:ZKMainInforTableViewCellID];
-            inforCell.isTopic = YES;
-            cell = inforCell;
-            
-        }
-        else
-        {
+        ZKMainTopic  *topMode = self.headerList.topic[indexPath.row-1];
+        ZKMainListTableViewCell *topicCell = [tableView dequeueReusableCellWithIdentifier:ZKMainListTableViewCellID];
+        topicCell.topicList = topMode;
+        cell = topicCell;
         
-            ZKMainTopic  *topMode = self.headerList.topic[indexPath.row-1];
-            ZKMainListTableViewCell *topicCell = [tableView dequeueReusableCellWithIdentifier:ZKMainListTableViewCellID];
-            topicCell.topicList = topMode;
-            cell = topicCell;
-            
-        }
-  
     }
-    else if (indexPath.section == 2)
+    else if (indexPath.section == 2  && indexPath.row > 0)
     {
-        if (indexPath.row == 0)
-        {
-            ZKMainInforTableViewCell *inforCell = [tableView dequeueReusableCellWithIdentifier:ZKMainInforTableViewCellID];
-            inforCell.isTopic = NO;
-            cell = inforCell;
-            
-        }
-        else
-        {
-
-            ZKMainProduct  *productMode = self.headerList.product[indexPath.row-1];
-            ZKMainListTableViewCell *productCell = [tableView dequeueReusableCellWithIdentifier:ZKMainListTableViewCellID];
-            productCell.productList = productMode;
-            cell = productCell;
-        }
-
+        ZKMainProduct  *productMode = self.headerList.product[indexPath.row-1];
+        ZKMainListTableViewCell *productCell = [tableView dequeueReusableCellWithIdentifier:ZKMainListTableViewCellID];
+        productCell.productList = productMode;
+        cell = productCell;
+    }
+    else
+    {
+        
+        ZKMainInforTableViewCell *inforCell = [tableView dequeueReusableCellWithIdentifier:ZKMainInforTableViewCellID];
+        inforCell.isTopic = indexPath.section == 1?YES:NO;
+        cell = inforCell;
+        
     }
     cell.backgroundColor = [UIColor whiteColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -268,21 +253,21 @@
 
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
