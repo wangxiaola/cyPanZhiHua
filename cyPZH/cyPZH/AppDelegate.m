@@ -20,6 +20,7 @@
 
 #import "ZKForbidNavigationController.h"
 #import "ZKRobotViewController.h"
+#import "ZKAdvertisementViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -45,9 +46,9 @@
 {
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    ZKRobotViewController *advertisement = [[ZKRobotViewController alloc ] init];
+    ZKAdvertisementViewController *advertisement = [[ZKAdvertisementViewController alloc ] init];
      ZKForbidNavigationController*nav = [[ZKForbidNavigationController alloc] initWithRootViewController:advertisement];
-    nav.navigationBarHidden = NO;
+    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
 }

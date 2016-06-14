@@ -30,7 +30,7 @@
         
         [self.webView addSubview:errorImageView];
         
-
+        
         
         self.errorImageView = errorImageView;
     }
@@ -40,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     
     UIWebView * webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     webView.backgroundColor = [UIColor whiteColor];
@@ -49,21 +49,24 @@
     webView.delegate = self;
     [self.view addSubview:webView];
     self.webView = webView;
-
+    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"backimage" highIcon:@"backimage" target:self action:@selector(goBack)];
-
+    
+    NSString *path = self.htmlUrl;
+    NSURL *URL = [NSURL URLWithString:path];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+    
     
 }
+
 - (void)setHtmlName:(NSString *)htmlName
 {
-
+    
     self.title = htmlName;
 }
 - (void)loadHtml
 {
-    NSString *path = self.htmlName;
-    NSURL *URL = [NSURL URLWithString:path];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
+
 }
 
 /**
@@ -73,12 +76,24 @@
 {
     
     
-    if (self.webView.canGoBack == NO) {
+    if (self.webView.canGoBack == NO)
+    {
         
-        UIStoryboard *board =[UIStoryboard storyboardWithName:@"main" bundle:nil];
+        if (self.isMain == NO)
+        {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+        else
+        {
+            UIStoryboard *board =[UIStoryboard storyboardWithName:@"main" bundle:nil];
+            
+            ZKMainTabBarViewController *vc =[board instantiateInitialViewController];
+            [APPDELEGATE window].rootViewController = vc;
+            
+        }
         
-        ZKMainTabBarViewController *vc =[board instantiateInitialViewController];
-        [APPDELEGATE window].rootViewController = vc;
         
     }
     else
@@ -93,12 +108,12 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-
+    
     self.errorImageView.hidden = YES;
     
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView;
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error;
 {
     self.errorImageView.hidden = NO;
 }
@@ -108,13 +123,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

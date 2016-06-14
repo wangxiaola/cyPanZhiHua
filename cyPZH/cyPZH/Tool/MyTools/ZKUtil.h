@@ -93,8 +93,13 @@
  *  @param duImageName 错误图片
  */
 +(void)UIimageView:(UIImageView*)image NSSting:(NSString*)url  duImage:(NSString*)duImageName;
-
-
+/**
+ *  返回图片
+ *
+ *  @param bty button
+ *  @param url   url
+ */
++(void)UIButtonImage:(UIButton*)bty NSSting:(NSString*)url;
 /**
  * 时间戳
  *

@@ -398,25 +398,26 @@
     NSString *key;
     BOOL state;
     ZKRobotState dex;
-    
+    UIImage *header ;
     if (array && array.count>0)
     {
         WXVoiceResult *result=[array objectAtIndex:0];
         key = result.text;
         state = YES;
         dex = ZKRobotStateUser;
-        
+        header = self.userPortraitImage;
     }else{
         
         key = [NSString stringWithFormat:@"刚才什么也没有听到,难道是%@走神了?请重新再说一次吧!",self.deployList.RoleName];;
         dex = ZKRobotStateRobot;
         state = NO;
+        header = self.robotPortraitImage;
     }
     
     
     ZKRobotMode *data = [[ZKRobotMode alloc] init];
     data.info = key;
-    data.potoImage = self.userPortraitImage;
+    data.potoImage = header;
     data.type = dex;
     
     data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:key];
@@ -425,7 +426,15 @@
 }
 //出现错误，错误码请参见官方网站
 - (void)voiceInputMakeError:(NSInteger)errorCode{
-    HUDShowError(@"语音录取失败");
+
+    
+    ZKRobotMode *data = [[ZKRobotMode alloc] init];
+    data.info = [NSString stringWithFormat:@"刚才什么也没有听到,难道是%@走神了?请重新再说一次吧!",self.deployList.RoleName];
+    data.potoImage = self.robotPortraitImage;
+    data.type = ZKRobotStateRobot;
+    
+    data.size  = [ZKUtil contentLabelSize:CGSizeMake(_SCREEN_WIDTH - 40 - 36, MAXFLOAT) labelFont:14 labelText:data.info];
+    [self.robotTableView addMOde:data post:NO];
     
 }
 //音量，界限为0-30，通常音量范围在0-15之间

@@ -17,22 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initAppearance];
     
     self.delegate = self;
 
-    
-}
-
--(void)initAppearance{
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : CYBColorGreen} forState:UIControlStateSelected];
-    //搜索取消字体颜色
-    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],NSForegroundColorAttributeName,[UIColor grayColor],NSShadowAttributeName,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)],NSShadowAttributeName,nil] forState:UIControlStateNormal];
-    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor blackColor],NSForegroundColorAttributeName,[UIColor grayColor],NSShadowAttributeName,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)],NSShadowAttributeName,nil] forState:UIControlStateHighlighted];
-    
-    
-    
+    self.tabBar.tintColor = CYBColorGreen;
 }
 
 

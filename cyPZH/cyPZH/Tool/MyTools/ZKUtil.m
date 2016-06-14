@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+WebCache.h"
-
+#import "UIButton+WebCache.h"
 
 @implementation ZKUtil
 
@@ -132,20 +132,23 @@
 }
 
 
-+(void)UIimageView:(UIImageView*)image NSSting:(NSString*)url;
++ (void)UIimageView:(UIImageView*)image NSSting:(NSString*)url;
 {
     [image sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"2D_enterpriseHead"]];
   
 }
 
 
-+(void)UIimageView:(UIImageView*)image NSSting:(NSString*)url  duImage:(NSString*)duImageName;
++( void)UIimageView:(UIImageView*)image NSSting:(NSString*)url  duImage:(NSString*)duImageName;
 {
- [image sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:duImageName]];
+  [image sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:duImageName]];
 
 }
 
-
++ (void)UIButtonImage:(UIButton*)bty NSSting:(NSString*)url;
+{
+    [bty sd_setBackgroundImageWithURL:[NSURL URLWithString:url] forState:UIControlStateNormal];
+}
 
 + (NSString *)timeStamp
 {

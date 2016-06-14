@@ -13,7 +13,9 @@
 @property (nonatomic, weak) UIWebView *webView;
 @property (nonatomic, copy) NSString *htmlName;
 @property (nonatomic, strong) NSString *htmlUrl;
-
-- (void)loadHtml;
+/**
+ *  是否返回主页面
+ */
+@property (nonatomic, assign) BOOL  isMain;
 
 @end

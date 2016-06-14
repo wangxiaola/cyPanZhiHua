@@ -2,14 +2,12 @@
 //  ZKMainHomeTableViewController.h
 //  cyPZH
 //
-//  Created by 王小腊 on 16/6/13.
+//  Created by 王小腊 on 16/6/14.
 //  Copyright © 2016年 王小腊. All rights reserved.
 //
 
-#import "ZKTableViewBaseController.h"
-/**
- *  首页
- */
-@interface ZKMainHomeTableViewController : ZKTableViewBaseController
+#import <UIKit/UIKit.h>
+
+@interface ZKMainHomeTableViewController : UITableViewController
 
 @end

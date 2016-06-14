@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) NSString *advUrl;
 
+@property (nonatomic, strong) NSString *webTitle;
+
 @property (nonatomic, assign) BOOL isGoWeb;
 @end
 
@@ -36,13 +38,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self initadvertisementViews];
-    
-    int64_t delayInSeconds = 5.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        
-        [self goContenView];
-    });
+    [self postData];
     
 }
 /**
@@ -52,7 +48,7 @@
 {
 
     advertisementImageView = [[UIImageView alloc] init];
-    advertisementImageView.contentMode = UIViewContentModeScaleAspectFit;
+    advertisementImageView.contentMode = UIViewContentModeScaleAspectFill;
     advertisementImageView.backgroundColor = [UIColor whiteColor];
     advertisementImageView.userInteractionEnabled = YES;
     [self.view addSubview:advertisementImageView];
@@ -137,25 +133,60 @@
 - (void)postData
 {
     NSMutableDictionary *dic = [NSMutableDictionary params];
+    [dic setObject:@"122" forKey:@"interfaceId"];
+    [dic setObject:@"lead" forKey:@"stype"];
+    [dic setObject:@"28" forKey:@"id"];
+    [dic setObject:@"add" forKey:@"type"];
+    
+    MJWeakSelf
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
+        
+        NSArray *urlArray = [[responseObject valueForKey:@"data"] valueForKey:@"add"];
+        if (urlArray.count == 0) {
+            
+            [weakSelf dismissAdvertisementTime:0.0];
+        }
+        else
+        {
+            NSString *url = [NSString stringWithFormat:@"%@%@",IMAGE_URL,[urlArray[0] valueForKey:@"img"]];
+            weakSelf.advUrl = [urlArray[0] valueForKey:@"url"];
+            weakSelf.webTitle = [urlArray[0] valueForKey:@"title"];
+            
+            [ZKUtil UIimageView:advertisementImageView NSSting:url duImage:@"guanggo_ default"];
+            [weakSelf dismissAdvertisementTime:5.0];
+        
+        }
+        
+        
         
     } failure:^(NSError *error) {
         
+       [weakSelf dismissAdvertisementTime:0.0];
     }];
     
 }
+- (void)dismissAdvertisementTime:(int64_t)time;
+{
 
+    int64_t delayInSeconds = time;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        
+        [self goContenView];
+    });
+
+    
+}
 #pragma mark -- 点击事件
 - (void)doTap
 {
     
-    
     self.isGoWeb = YES;
 
     ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc] init];
-    web.htmlUrl = @"www.baidu.com";
-    web.htmlName = @"这是测试";
-    [web loadHtml];
+    web.htmlUrl  = self.advUrl;
+    web.htmlName = self.webTitle;
+    web.isMain   = YES;
     self.navigationController.navigationBarHidden = NO;
     [self.navigationController pushViewController:web animated:YES];
     

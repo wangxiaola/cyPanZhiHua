@@ -8,6 +8,8 @@
 
 NSString *const POST_ZK_URL      = @"http://tpanzhihua.m.geeker.com.cn/service.csw";
 
+NSString *const IMAGE_URL      = @"http://tpanzhihua.m.geeker.com.cn/";
+
 NSString *const ZK_ERR           = @"no_data";
 
 NSString *const BAIDU_ID = @"1462e31ee3";

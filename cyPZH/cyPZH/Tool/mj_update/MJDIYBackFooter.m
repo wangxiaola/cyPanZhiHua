@@ -10,7 +10,6 @@
 
 @interface MJDIYBackFooter()
 
-@property (nonatomic, weak) UIImageView *bg;
 @property (nonatomic, weak) UIImageView *logo;
 @property (nonatomic, weak) UILabel *label;
 
@@ -25,11 +24,6 @@
     
     // 设置控件的高度
     self.mj_h = 50;
-    
-    UIImageView *bg = [[UIImageView alloc] init];
-    bg.image = [UIImage imageNamed:@"loading_bg"];
-    [self addSubview:bg];
-    self.bg = bg;
     
     UIImageView *logo = [[UIImageView alloc] init];
     logo.image = [UIImage imageNamed:@"loading_logo"];
@@ -49,8 +43,6 @@
 {
     [super placeSubviews];
     
-  
-    self.bg.frame = self.bounds;
     
     self.logo.mj_w = 15;
     self.logo.mj_h = 16;

@@ -17,7 +17,7 @@
 
 #define kDocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 //颜色
-#define TabelBackCorl [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1]
+#define TabelBackCorl [UIColor colorWithRed:249/255.0 green:249/255.0 blue:249/255.0 alpha:1]
 #define CYBColorGreen [UIColor colorWithRed:51/255.0 green:202/255.0 blue:171/255.0 alpha:1]
 
 #define CellBackCorl  [UIColor colorWithRed:25/255.0 green:199/255.0 blue:168/255.0 alpha:1]
@@ -34,6 +34,10 @@
  *  请求地址
  */
 FOUNDATION_EXPORT NSString *const POST_ZK_URL;
+/**
+ *  图片拼接地址
+ */
+FOUNDATION_EXPORT NSString *const IMAGE_URL;
 
 /**
  *  错误图片

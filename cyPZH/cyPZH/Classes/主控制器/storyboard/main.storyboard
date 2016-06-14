@@ -74,7 +74,7 @@
         <scene sceneID="apx-HD-VAK">
             <objects>
                 <navigationController id="XH3-89-fyM" customClass="ZKNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="探风景" id="OkD-N4-WO9"/>
+                    <tabBarItem key="tabBarItem" title="探风景" image="home_scenery" selectedImage="home_scenery_pre" id="OkD-N4-WO9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KeZ-o6-ohZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -110,7 +110,7 @@
         <scene sceneID="7a6-y7-AXn">
             <objects>
                 <navigationController id="7a5-sO-BAp" customClass="ZKNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="2qr-dk-KfB"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="home_my" selectedImage="home_my_pre" id="2qr-dk-KfB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Va-wq-gfD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -127,7 +127,7 @@
         <scene sceneID="ZEd-8t-Idh">
             <objects>
                 <navigationController id="YBu-2d-bMU" customClass="ZKNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="身边游" id="WBU-ri-aID"/>
+                    <tabBarItem key="tabBarItem" title="身边游" image="home_map" selectedImage="home_map_pre" id="WBU-ri-aID"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Xx-Fk-b11">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -182,7 +182,7 @@
         <scene sceneID="GTV-AP-vTA">
             <objects>
                 <navigationController id="4I5-eE-JRA" customClass="ZKNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="gyB-ZG-CvD"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="homepage" selectedImage="homepage_pre" id="gyB-ZG-CvD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nlh-PT-lMj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -199,7 +199,7 @@
         <scene sceneID="epV-Iy-NuB">
             <objects>
                 <navigationController id="LnT-Dj-Bu9" customClass="ZKNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="超好玩" id="ate-B1-yZT"/>
+                    <tabBarItem key="tabBarItem" title="超好玩" image="home_play" selectedImage="home_play_pre" id="ate-B1-yZT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AVD-Y4-SXa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -213,4 +213,16 @@
             <point key="canvasLocation" x="162" y="-65"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_map" width="15" height="20"/>
+        <image name="home_map_pre" width="15" height="20"/>
+        <image name="home_my" width="20" height="20"/>
+        <image name="home_my_pre" width="20" height="20"/>
+        <image name="home_play" width="15" height="20"/>
+        <image name="home_play_pre" width="15" height="20"/>
+        <image name="home_scenery" width="20" height="20"/>
+        <image name="home_scenery_pre" width="20" height="20"/>
+        <image name="homepage" width="22" height="20"/>
+        <image name="homepage_pre" width="22" height="20"/>
+    </resources>
 </document>
