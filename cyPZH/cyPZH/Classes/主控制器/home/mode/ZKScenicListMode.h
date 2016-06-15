@@ -43,14 +43,15 @@
 //  查看
 @property (nonatomic, assign) NSInteger views;
 //  等级代码
-@property (nonatomic, assign) NSInteger resourceLevel;
+@property (nonatomic, assign) NSInteger resourcelevel;
 //  资源等级名称
-@property (nonatomic, assign) NSInteger resourceLevelName;
+@property (nonatomic, strong) NSString *resourcelevelName;
 //  标识是否有产品 1标识有 0标识无
 @property (nonatomic, assign) NSInteger existproduct;
 //  标识是否推荐 1标识推荐
-@property (nonatomic, assign) NSInteger recommend;
-
+@property (nonatomic, strong) NSString *recommend;
+// 720
+@property (nonatomic, copy) NSString *address720;
 @end
 
 

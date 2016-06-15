@@ -9,7 +9,7 @@
 #import "ZKScenicListMode.h"
 
 @implementation ZKScenicListMode
-
+MJCodingImplementation
 + (NSDictionary *)replacedKeyFromPropertyName
 {
     return @{@"ID": @"id"};

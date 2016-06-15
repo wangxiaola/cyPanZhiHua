@@ -66,7 +66,7 @@
     [self setupTableView];
     [self setupRefreshControl];
     [self setupPromptView];
-    
+
 }
 
 - (void)setupProperties
@@ -132,7 +132,6 @@
         make.height.mas_equalTo(22);
     }];
 }
-
 
 
 - (void)loadData

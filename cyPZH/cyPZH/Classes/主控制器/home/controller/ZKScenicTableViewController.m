@@ -96,32 +96,39 @@
 }
 - (void)setApplyList:(ZKMainApply *)applyList
 {
-
     _applyList = applyList;
 }
 - (void)uploadView;
 {
      [self titleView:_applyList.name];
+    self.modelsType = [ZKScenicListMode class];
+    
     switch (self.scenicType) {
 
         case ZKScenicTicket:
+             [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
             self.type = @"scenery";
+            self.cacheFilename = @"sceneryList";
             break;
         case ZKScenicHotel:
+             [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
             self.type = @"hotel";
+            self.cacheFilename = @"hotelList";
             break;
         case ZKScenicFood:
             self.type = @"dining";
             
             [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
-            self.modelsType = [ZKScenicListMode class];
+            self.cacheFilename = @"diningList";
             
             break;
         case ZKScenicStrategy:
-            self.type = @"";
+            self.type = @"ruraltourism";
+            self.cacheFilename = @"ruraltourismList";
             break;
         case ZKScenicSpecialty:
             self.type = @"";
+            self.cacheFilename = @"";
             break;
         default:
             break;
@@ -160,30 +167,21 @@
     
     NSObject *mode = self.models[indexPath.row];
     
-    if (self.scenicType == ZKScenicTicket)
-    {
-        
-        
-    }
-    else if (self.scenicType == ZKScenicHotel)
-    {
-    
-    }
-    else if (self.scenicType == ZKScenicFood)
-    {
-        ZKScenicFoodTableViewCell *foodCell = [tableView dequeueReusableCellWithIdentifier:ZKScenicFoodTableViewCellID];
-        foodCell.list = (ZKScenicListMode*)mode;
-        cell = foodCell;
-    }
 
-    else if (self.scenicType == ZKScenicStrategy)
+   if (self.scenicType == ZKScenicStrategy)
     {
-        
+
     }
 
     else if (self.scenicType == ZKScenicSpecialty)
     {
         
+    }
+    else
+    {
+        ZKScenicFoodTableViewCell *foodCell = [tableView dequeueReusableCellWithIdentifier:ZKScenicFoodTableViewCellID];
+        foodCell.list = (ZKScenicListMode*)mode;
+        cell = foodCell;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

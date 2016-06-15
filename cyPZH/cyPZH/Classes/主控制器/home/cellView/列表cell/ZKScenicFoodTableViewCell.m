@@ -21,15 +21,37 @@ NSString *const ZKScenicFoodTableViewCellID = @"ZKScenicFoodTableViewCellID";
 }
 - (void)setList:(ZKScenicListMode *)list
 {
-
+    
     [ZKUtil UIimageView:_headerImageView NSSting:list.logosmall];
     _nameLabel.text = strIsNull(list.name);
-    _piceLabel.text = [NSString stringWithFormat:@"%d分",list.exponent];
+    _piceLabel.text = [NSString stringWithFormat:@"%ld分",(long)list.exponent];
     _rating.rating = list.exponent;
     _adderLabel.text = strIsNull(list.address);
     
     _juliLabel.text = [NSString stringWithFormat:@"%.2fkm",list.juli/1000];
     
+    self.QJImageView.hidden =  !strIsEmpty(list.address720);
+    
+    NSString * codeName = list.existproduct == 0?@"err":@"table_icon_booking";
+    self.codeListImage.image = [UIImage imageNamed:codeName];
+    
+    if (strIsEmpty(list.recommend))
+    {
+        
+        self.tjImageView.hidden = NO;
+    }
+    else
+    {
+        self.tjImageView.hidden = YES;
+    }
+    if (strIsEmpty(list.resourcelevelName)) {
+        
+        NSString *leve = [NSString stringWithFormat:@" %@ ",list.resourcelevelName];
+        self.leveName.text = leve;
+        self.leveName.layer.borderWidth = 0.5;
+        self.leveName.layer.cornerRadius = 4;
+        self.leveName.layer.borderColor = [UIColor orangeColor].CGColor;
+    }
     if (strIsEmpty(list.price))
     {
         NSString *state = [NSString stringWithFormat:@"¥%@",list.price];
@@ -39,19 +61,18 @@ NSString *const ZKScenicFoodTableViewCellID = @"ZKScenicFoodTableViewCellID";
         [noteStr addAttribute:NSForegroundColorAttributeName value:CYBColorGreen range:redRange];
         [noteStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0] range:redRange];
         _priceLabel.attributedText = noteStr;
-        self.tjImageView.hidden = NO;
+        
     }
     else
     {
-    self.tjImageView.hidden = YES;
-     _priceLabel.attributedText = nil;
-    
+        _priceLabel.attributedText = nil;
+        
     }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

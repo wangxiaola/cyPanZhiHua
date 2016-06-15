@@ -11,6 +11,7 @@ extern NSString *const ZKScenicFoodTableViewCellID;
 @class RatingBar,ZKScenicListMode;
 
 @interface ZKScenicFoodTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *leveName;
 @property (weak, nonatomic) IBOutlet UIImageView *tjImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -19,6 +20,8 @@ extern NSString *const ZKScenicFoodTableViewCellID;
 @property (weak, nonatomic) IBOutlet UILabel *adderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *juliLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *codeListImage;
+@property (weak, nonatomic) IBOutlet UIImageView *QJImageView;
 
 @property (strong, nonatomic) ZKScenicListMode *list;
 @end
