@@ -48,6 +48,15 @@ FOUNDATION_EXPORT NSString *const ZK_ERR;
  */
 FOUNDATION_EXPORT NSString *const BAIDU_ID;
 
+/**
+ *  地址参数
+ */
+FOUNDATION_EXPORT NSString *const Latitude;
+FOUNDATION_EXPORT NSString *const Longitude;
+FOUNDATION_EXPORT NSString *const ADDRESS;
+FOUNDATION_EXPORT NSString *const CITY;
+
+
 /* shareSDK */
 //    腾讯
 FOUNDATION_EXPORT NSString *const tenxunQQID;

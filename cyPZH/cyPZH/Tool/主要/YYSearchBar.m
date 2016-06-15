@@ -15,11 +15,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         self.keyboardType = UIKeyboardTypeEmailAddress;
-        [self setImage:[UIImage imageNamed:@"nav_icon_search"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+        [self setImage:[UIImage imageNamed:@"research_green"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
         
-        self.barTintColor = [UIColor whiteColor];
+        self.barTintColor = [UIColor clearColor];
         self.searchBarStyle = UISearchBarStyleMinimal;
     }
     return self;
@@ -59,18 +59,27 @@
     }
     
     searchField.background = nil;
-    searchField.backgroundColor = [UIColor whiteColor];
+    if (self.isWeeter == YES) {
+        searchField.backgroundColor = [UIColor whiteColor];
+    }
+    else
+    {
+        searchField.backgroundColor = TabelBackCorl;
+    }
+    
     searchField.textColor = [UIColor colorWithWhite:0x55/255.0 alpha:1];
     searchField.borderStyle = UITextBorderStyleNone;
     searchField.layer.masksToBounds = YES;
     searchField.layer.cornerRadius = searchField.frame.size.height/2.f;
+    //    searchField.layer.borderWidth = 0.4;
+    //    searchField.layer.borderColor = TabelBackCorl.CGColor;
     searchField.font = [UIFont systemFontOfSize:13];
     //placeholder
     NSMutableAttributedString *attributedPlaceholder;
     if (self.placeString) {
         attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:self.placeString];
     }else{
-        attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入关键字查询"];
+        attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"景点地名/酒店"];
     }
     [attributedPlaceholder addAttribute:(NSString*)NSForegroundColorAttributeName value:RGB(180, 180, 180) range:NSMakeRange(0, attributedPlaceholder.length)];
     searchField.attributedPlaceholder = attributedPlaceholder;

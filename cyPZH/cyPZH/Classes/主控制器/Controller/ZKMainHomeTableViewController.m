@@ -16,10 +16,14 @@
 #import "ZKMainListTableViewCell.h"
 #import "ZKMainInforTableViewCell.h"
 
-@interface ZKMainHomeTableViewController ()
+#import <CoreLocation/CoreLocation.h>
+
+@interface ZKMainHomeTableViewController ()<CLLocationManagerDelegate>
 
 @property (nonatomic, strong) ZKMainHeaderMode *headerList;
 @property (nonatomic, strong) ZKNewHomeHeaderView *headerView;
+@property (nonatomic, strong) CLLocationManager  *locationManager;
+
 @end
 
 @implementation ZKMainHomeTableViewController
@@ -75,6 +79,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainListTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainListTableViewCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainInforTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainInforTableViewCellID];
     
+    [self locan];
     [self initViews];
     [self setCache];
     [self postList];
@@ -279,6 +284,62 @@
     
 }
 
+#pragma mark -------
+#pragma mark 地理位置相关
+- (void)locan
+{
+    self.locationManager = [[CLLocationManager alloc]init];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.distanceFilter = 10;
+    
+    if (IOS8) {
+        [_locationManager requestAlwaysAuthorization];
+    }
+    [_locationManager startUpdatingLocation];
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *currLocation = [locations lastObject];
+
+    [ZKUtil MyValue:[NSString stringWithFormat:@"%f",currLocation.coordinate.latitude] MKey:Latitude];
+    [ZKUtil MyValue:[NSString stringWithFormat:@"%f",currLocation.coordinate.longitude] MKey:Longitude];
+    [_locationManager stopUpdatingLocation];
+    
+    CLLocation *c = [[CLLocation alloc] initWithLatitude:currLocation.coordinate.latitude longitude:currLocation.coordinate.longitude];
+    //创建位置
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:c
+     //反向地理编码
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                     
+                     if (!error && [placemarks count] > 0)
+                     {
+                         NSDictionary *dict =
+                         [[placemarks objectAtIndex:0] addressDictionary];
+                         NSString *str =[dict objectForKey:@"Name"];
+                         str =[str stringByReplacingOccurrencesOfString:@"中国" withString:@""];
+                         [ZKUtil MyValue:str MKey:ADDRESS];
+                         [ZKUtil MyValue:[dict objectForKey:@"City"] MKey:CITY];
+
+                     }
+                     else
+                     {
+                     }
+                 }];
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error;
+{
+
+    [ZKUtil MyValue:@"0" MKey:Latitude];
+    [ZKUtil MyValue:@"0" MKey:Longitude];
+    [ZKUtil MyValue:@"未知" MKey:ADDRESS];
+    [ZKUtil MyValue:@"未知" MKey:CITY];
+}
 /*
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

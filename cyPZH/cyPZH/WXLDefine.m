@@ -23,6 +23,12 @@ NSString *const weixinSecret = @"aed2133bdc2c3d5a0245b03aa535902c";
 NSString *const xinlangweipoID = @"1174911398";
 NSString *const xinlangweipoSecret = @"f65ed1aecad1cd94c09a05920b8ab885";
 
+
+NSString *const Latitude  = @"Latitude";
+NSString *const Longitude = @"Longitude";
+NSString *const ADDRESS   = @"ADDRESS";
+NSString *const CITY      = @"CITY";
+
 //   支付宝
 NSString *const PARTNER = @"2088121287826188";
 NSString *const SELLER  = @"hr@daqsoft.com";

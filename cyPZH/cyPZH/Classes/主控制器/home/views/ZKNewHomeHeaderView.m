@@ -9,6 +9,8 @@
 #import "ZKNewHomeHeaderView.h"
 #import "ZKMainHeaderMode.h"
 #import "ZKBaseWebViewController.h"
+#import "ZKScenicTableViewController.h"
+
 
 @implementation ZKNewHomeHeaderView
 
@@ -130,12 +132,13 @@
 - (void)btyClick:(UIButton*)sender
 {
     NSInteger index = sender.tag - 3000;
+    ZKMainApply *list = _applyList[index];
     
-    ZKMainApply *list = [_applyList objectAtIndex:index];
-    
-    ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc]init];
-    web.htmlUrl = list.url;
-    [[self.controller navigationController] pushViewController:web animated:YES];
+    ZKScenicTableViewController *scenicVc = [[ZKScenicTableViewController alloc] init];
+    scenicVc.scenicType = index;
+    scenicVc.applyList = list;
+    [[self.controller navigationController] pushViewController:scenicVc animated:YES];
+
     
 
 }

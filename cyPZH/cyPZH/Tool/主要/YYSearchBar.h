@@ -14,4 +14,6 @@
 
 @property (nonatomic,strong) NSString *placeString;
 
+@property (nonatomic, assign) BOOL isWeeter;
+
 @end

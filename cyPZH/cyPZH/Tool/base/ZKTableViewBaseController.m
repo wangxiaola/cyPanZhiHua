@@ -219,7 +219,7 @@
     [self didGetResponse:responseObject atPage:self.page];
 
     //根据上拉或者下拉情况处理请求到的最新数据
-    NSMutableArray *dataArray = [self.modelsType mj_objectArrayWithKeyValuesArray:responseObject[@"list"]] ? : @[].mutableCopy;
+    NSMutableArray *dataArray = [self.modelsType mj_objectArrayWithKeyValuesArray:responseObject[@"rows"]] ? : @[].mutableCopy;
     
     [self dealWithLatestDataArray:dataArray];
     //根据上拉或者下拉情况停止刷新
