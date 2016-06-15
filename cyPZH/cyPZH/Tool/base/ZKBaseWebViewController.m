@@ -22,9 +22,9 @@
 {
     if (_errorImageView == nil) {
         UIImageView *errorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:ZK_ERR]];
-        errorImageView.bounds = CGRectMake(0, 0, 100, 100);
+        errorImageView.bounds = CGRectMake(0, 0, 100, 28);
         errorImageView.center = CGPointMake(self.webView.frame.size.width / 2, self.webView.frame.size.height / 2);
-        
+        errorImageView.image = [UIImage imageNamed:@"no_data"];
         UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loadHtml)];
         [errorImageView addGestureRecognizer:tapGr];
         
@@ -105,16 +105,29 @@
     
 }
 #pragma mark webDalege
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+  //网页加载之前会调用此方法
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    
-    self.errorImageView.hidden = YES;
+    //retrun YES 表示正常加载网页 返回NO 将停止网页加载
+    return YES;
     
 }
-
+//开始加载网页调用此方法
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [SVProgressHUD showImage:[UIImage imageNamed:@"loading_logo"] status:@"加载中..."];
+}
+//网页加载完成调用此方法
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [SVProgressHUD dismiss];
+    self.errorImageView.hidden = YES;
+    self.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+}
+//网页加载失败 调用此方法
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error;
 {
+    [SVProgressHUD dismiss];
     self.errorImageView.hidden = NO;
 }
 - (void)didReceiveMemoryWarning {

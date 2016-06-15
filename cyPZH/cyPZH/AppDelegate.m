@@ -66,6 +66,12 @@
     [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
     //动画时间
     [SVProgressHUD setMinimumDismissTimeInterval:1.2];
+    
+    [SVProgressHUD setInfoImage:[UIImage imageNamed:@"loading_logo"]];
+    
+    [SVProgressHUD setSuccessImage:[UIImage imageNamed:@"loading_logo"]];
+    
+    [SVProgressHUD setErrorImage:[UIImage imageNamed:@"loading_logo"]];
 }
 
 /**

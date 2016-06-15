@@ -15,4 +15,5 @@ extern NSString *const ZKMainInforTableViewCellID;
 
 @property (assign, nonatomic) BOOL isTopic;
 
+
 @end

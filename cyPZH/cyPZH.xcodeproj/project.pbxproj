@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		3B1020361D0D53BD005C0F68 /* ZKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1020341D0D53BD005C0F68 /* ZKLoginViewController.m */; };
 		3B1020371D0D53BD005C0F68 /* ZKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1020351D0D53BD005C0F68 /* ZKLoginViewController.xib */; };
-		3B3A6FBF1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6FBE1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.m */; };
-		3B3A6FC31D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6FC11D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.m */; };
-		3B3A6FC41D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A6FC21D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.xib */; };
-		3B3A6FC81D0FE19A00FF4B14 /* ZKMainListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6FC61D0FE19A00FF4B14 /* ZKMainListTableViewCell.m */; };
-		3B3A6FC91D0FE19A00FF4B14 /* ZKMainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A6FC71D0FE19A00FF4B14 /* ZKMainListTableViewCell.xib */; };
-		3B3A6FCF1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A6FCD1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.m */; };
-		3B3A6FD01D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3A6FCE1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.xib */; };
+		3B2546E01D11028E001605F1 /* ZKMainHeaderMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */; };
+		3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546F21D1102D9001605F1 /* ZKMainInforTableViewCell.m */; };
+		3B2546FB1D1102D9001605F1 /* ZKMainInforTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2546F31D1102D9001605F1 /* ZKMainInforTableViewCell.xib */; };
+		3B2546FC1D1102D9001605F1 /* ZKMainListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546F51D1102D9001605F1 /* ZKMainListTableViewCell.m */; };
+		3B2546FD1D1102D9001605F1 /* ZKMainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2546F61D1102D9001605F1 /* ZKMainListTableViewCell.xib */; };
+		3B2546FE1D1102D9001605F1 /* ZKMainTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546F81D1102D9001605F1 /* ZKMainTopicTableViewCell.m */; };
+		3B2546FF1D1102D9001605F1 /* ZKMainTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2546F91D1102D9001605F1 /* ZKMainTopicTableViewCell.xib */; };
+		3B2547021D1102F2001605F1 /* ZKNewHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2547011D1102F2001605F1 /* ZKNewHomeHeaderView.m */; };
 		3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AEF1D0516C800E2727E /* ZKBaseViewController.m */; };
 		3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF51D0517A800E2727E /* ZKTabelViewController.m */; };
 		3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF81D0517EE00E2727E /* ZKTableViewBaseController.m */; };
@@ -63,7 +64,6 @@
 		3B63F59C1D07BDA20087E974 /* ZKRobotLabelMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63F59B1D07BDA20087E974 /* ZKRobotLabelMode.m */; };
 		3B63F59F1D07CC650087E974 /* ZKRobotTallyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B63F59E1D07CC650087E974 /* ZKRobotTallyTableViewCell.m */; };
 		3B6A1B9D1D0FA85D0021C524 /* ZKMainHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A1B9C1D0FA85D0021C524 /* ZKMainHomeTableViewController.m */; };
-		3B6A1BA01D0FAD950021C524 /* ZKMainHeaderMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A1B9F1D0FAD950021C524 /* ZKMainHeaderMode.m */; };
 		3B787A7B1D065EE7009997E9 /* ZKRobotDeployList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A7A1D065EE7009997E9 /* ZKRobotDeployList.m */; };
 		3B787A7E1D066AC4009997E9 /* ZKRobotToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A7D1D066AC4009997E9 /* ZKRobotToolView.m */; };
 		3B787A831D069219009997E9 /* ZKRobotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A821D069219009997E9 /* ZKRobotTableViewCell.m */; };
@@ -125,17 +125,19 @@
 		3B1020331D0D53BD005C0F68 /* ZKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKLoginViewController.h; sourceTree = "<group>"; };
 		3B1020341D0D53BD005C0F68 /* ZKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKLoginViewController.m; sourceTree = "<group>"; };
 		3B1020351D0D53BD005C0F68 /* ZKLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKLoginViewController.xib; sourceTree = "<group>"; };
-		3B3A6FBD1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKNewHomeHeaderView.h; sourceTree = "<group>"; };
-		3B3A6FBE1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKNewHomeHeaderView.m; sourceTree = "<group>"; };
-		3B3A6FC01D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainTopicTableViewCell.h; sourceTree = "<group>"; };
-		3B3A6FC11D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainTopicTableViewCell.m; sourceTree = "<group>"; };
-		3B3A6FC21D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainTopicTableViewCell.xib; sourceTree = "<group>"; };
-		3B3A6FC51D0FE19A00FF4B14 /* ZKMainListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainListTableViewCell.h; sourceTree = "<group>"; };
-		3B3A6FC61D0FE19A00FF4B14 /* ZKMainListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainListTableViewCell.m; sourceTree = "<group>"; };
-		3B3A6FC71D0FE19A00FF4B14 /* ZKMainListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainListTableViewCell.xib; sourceTree = "<group>"; };
-		3B3A6FCC1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainInforTableViewCell.h; sourceTree = "<group>"; };
-		3B3A6FCD1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainInforTableViewCell.m; sourceTree = "<group>"; };
-		3B3A6FCE1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainInforTableViewCell.xib; sourceTree = "<group>"; };
+		3B2546D51D11028E001605F1 /* ZKMainHeaderMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainHeaderMode.h; sourceTree = "<group>"; };
+		3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainHeaderMode.m; sourceTree = "<group>"; };
+		3B2546F11D1102D9001605F1 /* ZKMainInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainInforTableViewCell.h; sourceTree = "<group>"; };
+		3B2546F21D1102D9001605F1 /* ZKMainInforTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainInforTableViewCell.m; sourceTree = "<group>"; };
+		3B2546F31D1102D9001605F1 /* ZKMainInforTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainInforTableViewCell.xib; sourceTree = "<group>"; };
+		3B2546F41D1102D9001605F1 /* ZKMainListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainListTableViewCell.h; sourceTree = "<group>"; };
+		3B2546F51D1102D9001605F1 /* ZKMainListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainListTableViewCell.m; sourceTree = "<group>"; };
+		3B2546F61D1102D9001605F1 /* ZKMainListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainListTableViewCell.xib; sourceTree = "<group>"; };
+		3B2546F71D1102D9001605F1 /* ZKMainTopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainTopicTableViewCell.h; sourceTree = "<group>"; };
+		3B2546F81D1102D9001605F1 /* ZKMainTopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainTopicTableViewCell.m; sourceTree = "<group>"; };
+		3B2546F91D1102D9001605F1 /* ZKMainTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainTopicTableViewCell.xib; sourceTree = "<group>"; };
+		3B2547001D1102F2001605F1 /* ZKNewHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKNewHomeHeaderView.h; sourceTree = "<group>"; };
+		3B2547011D1102F2001605F1 /* ZKNewHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKNewHomeHeaderView.m; sourceTree = "<group>"; };
 		3B592AEE1D0516C800E2727E /* ZKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseViewController.h; sourceTree = "<group>"; };
 		3B592AEF1D0516C800E2727E /* ZKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseViewController.m; sourceTree = "<group>"; };
 		3B592AF41D0517A800E2727E /* ZKTabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKTabelViewController.h; sourceTree = "<group>"; };
@@ -225,8 +227,6 @@
 		3B63F59E1D07CC650087E974 /* ZKRobotTallyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTallyTableViewCell.m; sourceTree = "<group>"; };
 		3B6A1B9B1D0FA85D0021C524 /* ZKMainHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainHomeTableViewController.h; sourceTree = "<group>"; };
 		3B6A1B9C1D0FA85D0021C524 /* ZKMainHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainHomeTableViewController.m; sourceTree = "<group>"; };
-		3B6A1B9E1D0FAD950021C524 /* ZKMainHeaderMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainHeaderMode.h; sourceTree = "<group>"; };
-		3B6A1B9F1D0FAD950021C524 /* ZKMainHeaderMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainHeaderMode.m; sourceTree = "<group>"; };
 		3B787A791D065EE7009997E9 /* ZKRobotDeployList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotDeployList.h; sourceTree = "<group>"; };
 		3B787A7A1D065EE7009997E9 /* ZKRobotDeployList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotDeployList.m; sourceTree = "<group>"; };
 		3B787A7C1D066AC4009997E9 /* ZKRobotToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotToolView.h; sourceTree = "<group>"; };
@@ -351,6 +351,175 @@
 				3B1020351D0D53BD005C0F68 /* ZKLoginViewController.xib */,
 			);
 			path = "登录注册";
+			sourceTree = "<group>";
+		};
+		3B2546B91D110276001605F1 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546BA1D110276001605F1 /* cellView */,
+				3B2546BB1D110276001605F1 /* controller */,
+				3B2546BC1D110276001605F1 /* mode */,
+				3B2546BD1D110276001605F1 /* views */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
+		3B2546BA1D110276001605F1 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B2546BB1D110276001605F1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B2546BC1D110276001605F1 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B2546BD1D110276001605F1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B2546BE1D110281001605F1 /* scenery */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546BF1D110281001605F1 /* cellView */,
+				3B2546C01D110281001605F1 /* controller */,
+				3B2546C11D110281001605F1 /* mode */,
+				3B2546C21D110281001605F1 /* views */,
+			);
+			path = scenery;
+			sourceTree = "<group>";
+		};
+		3B2546BF1D110281001605F1 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B2546C01D110281001605F1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B2546C11D110281001605F1 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B2546C21D110281001605F1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B2546C31D110288001605F1 /* paly */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546C41D110288001605F1 /* cellView */,
+				3B2546C51D110288001605F1 /* controller */,
+				3B2546C61D110288001605F1 /* mode */,
+				3B2546C71D110288001605F1 /* views */,
+			);
+			path = paly;
+			sourceTree = "<group>";
+		};
+		3B2546C41D110288001605F1 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B2546C51D110288001605F1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B2546C61D110288001605F1 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B2546C71D110288001605F1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3B2546C81D11028E001605F1 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546C91D11028E001605F1 /* cellView */,
+				3B2546D31D11028E001605F1 /* controller */,
+				3B2546D41D11028E001605F1 /* mode */,
+				3B2546D71D11028E001605F1 /* views */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		3B2546C91D11028E001605F1 /* cellView */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546F11D1102D9001605F1 /* ZKMainInforTableViewCell.h */,
+				3B2546F21D1102D9001605F1 /* ZKMainInforTableViewCell.m */,
+				3B2546F31D1102D9001605F1 /* ZKMainInforTableViewCell.xib */,
+				3B2546F41D1102D9001605F1 /* ZKMainListTableViewCell.h */,
+				3B2546F51D1102D9001605F1 /* ZKMainListTableViewCell.m */,
+				3B2546F61D1102D9001605F1 /* ZKMainListTableViewCell.xib */,
+				3B2546F71D1102D9001605F1 /* ZKMainTopicTableViewCell.h */,
+				3B2546F81D1102D9001605F1 /* ZKMainTopicTableViewCell.m */,
+				3B2546F91D1102D9001605F1 /* ZKMainTopicTableViewCell.xib */,
+			);
+			path = cellView;
+			sourceTree = "<group>";
+		};
+		3B2546D31D11028E001605F1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		3B2546D41D11028E001605F1 /* mode */ = {
+			isa = PBXGroup;
+			children = (
+				3B2546D51D11028E001605F1 /* ZKMainHeaderMode.h */,
+				3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */,
+			);
+			path = mode;
+			sourceTree = "<group>";
+		};
+		3B2546D71D11028E001605F1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3B2547001D1102F2001605F1 /* ZKNewHomeHeaderView.h */,
+				3B2547011D1102F2001605F1 /* ZKNewHomeHeaderView.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		3B592AFD1D05297D00E2727E /* iconImage */ = {
@@ -591,50 +760,6 @@
 			path = storyboard;
 			sourceTree = "<group>";
 		};
-		3B61CC3B1D0E80C60022DDC7 /* home */ = {
-			isa = PBXGroup;
-			children = (
-				3B61CC451D0E81800022DDC7 /* controller */,
-				3B61CC541D0E81C80022DDC7 /* cellView */,
-				3B61CC4F1D0E81AE0022DDC7 /* mode */,
-				3B61CC4A1D0E81970022DDC7 /* views */,
-			);
-			path = home;
-			sourceTree = "<group>";
-		};
-		3B61CC3D1D0E80E50022DDC7 /* paly */ = {
-			isa = PBXGroup;
-			children = (
-				3B61CC461D0E81840022DDC7 /* controller */,
-				3B61CC551D0E81CF0022DDC7 /* cellView */,
-				3B61CC501D0E81B10022DDC7 /* mode */,
-				3B61CC4B1D0E819A0022DDC7 /* views */,
-			);
-			path = paly;
-			sourceTree = "<group>";
-		};
-		3B61CC3E1D0E80FB0022DDC7 /* scenery */ = {
-			isa = PBXGroup;
-			children = (
-				3B61CC441D0E817D0022DDC7 /* controller */,
-				3B61CC531D0E81C50022DDC7 /* cellView */,
-				3B61CC4E1D0E81AB0022DDC7 /* mode */,
-				3B61CC491D0E81940022DDC7 /* views */,
-			);
-			path = scenery;
-			sourceTree = "<group>";
-		};
-		3B61CC3F1D0E81070022DDC7 /* map */ = {
-			isa = PBXGroup;
-			children = (
-				3B61CC431D0E817A0022DDC7 /* controller */,
-				3B61CC521D0E81C20022DDC7 /* cellView */,
-				3B61CC4D1D0E81A90022DDC7 /* mode */,
-				3B61CC481D0E81910022DDC7 /* views */,
-			);
-			path = map;
-			sourceTree = "<group>";
-		};
 		3B61CC401D0E81130022DDC7 /* mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,11 +774,11 @@
 		3B61CC411D0E81300022DDC7 /* 分页面 */ = {
 			isa = PBXGroup;
 			children = (
+				3B2546C81D11028E001605F1 /* home */,
+				3B2546C31D110288001605F1 /* paly */,
+				3B2546BE1D110281001605F1 /* scenery */,
+				3B2546B91D110276001605F1 /* map */,
 				3B61CC401D0E81130022DDC7 /* mine */,
-				3B61CC3F1D0E81070022DDC7 /* map */,
-				3B61CC3E1D0E80FB0022DDC7 /* scenery */,
-				3B61CC3B1D0E80C60022DDC7 /* home */,
-				3B61CC3D1D0E80E50022DDC7 /* paly */,
 			);
 			name = "分页面";
 			sourceTree = "<group>";
@@ -665,65 +790,7 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		3B61CC431D0E817A0022DDC7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		3B61CC441D0E817D0022DDC7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		3B61CC451D0E81800022DDC7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
-		3B61CC461D0E81840022DDC7 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
 		3B61CC471D0E818F0022DDC7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				3B3A6FBD1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.h */,
-				3B3A6FBE1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.m */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		3B61CC481D0E81910022DDC7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		3B61CC491D0E81940022DDC7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		3B61CC4A1D0E81970022DDC7 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		3B61CC4B1D0E819A0022DDC7 /* views */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -733,78 +800,11 @@
 		3B61CC4C1D0E81A50022DDC7 /* mode */ = {
 			isa = PBXGroup;
 			children = (
-				3B6A1B9E1D0FAD950021C524 /* ZKMainHeaderMode.h */,
-				3B6A1B9F1D0FAD950021C524 /* ZKMainHeaderMode.m */,
-			);
-			path = mode;
-			sourceTree = "<group>";
-		};
-		3B61CC4D1D0E81A90022DDC7 /* mode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = mode;
-			sourceTree = "<group>";
-		};
-		3B61CC4E1D0E81AB0022DDC7 /* mode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = mode;
-			sourceTree = "<group>";
-		};
-		3B61CC4F1D0E81AE0022DDC7 /* mode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = mode;
-			sourceTree = "<group>";
-		};
-		3B61CC501D0E81B10022DDC7 /* mode */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = mode;
 			sourceTree = "<group>";
 		};
 		3B61CC511D0E81BF0022DDC7 /* cellView */ = {
-			isa = PBXGroup;
-			children = (
-				3B3A6FC01D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.h */,
-				3B3A6FC11D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.m */,
-				3B3A6FC21D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.xib */,
-				3B3A6FC51D0FE19A00FF4B14 /* ZKMainListTableViewCell.h */,
-				3B3A6FC61D0FE19A00FF4B14 /* ZKMainListTableViewCell.m */,
-				3B3A6FC71D0FE19A00FF4B14 /* ZKMainListTableViewCell.xib */,
-				3B3A6FCC1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.h */,
-				3B3A6FCD1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.m */,
-				3B3A6FCE1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.xib */,
-			);
-			path = cellView;
-			sourceTree = "<group>";
-		};
-		3B61CC521D0E81C20022DDC7 /* cellView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cellView;
-			sourceTree = "<group>";
-		};
-		3B61CC531D0E81C50022DDC7 /* cellView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cellView;
-			sourceTree = "<group>";
-		};
-		3B61CC541D0E81C80022DDC7 /* cellView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = cellView;
-			sourceTree = "<group>";
-		};
-		3B61CC551D0E81CF0022DDC7 /* cellView */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1124,14 +1124,14 @@
 				3B592B021D05298400E2727E /* icon.png in Resources */,
 				3B5A59B21D01825800105280 /* Assets.xcassets in Resources */,
 				3B592B011D05298400E2727E /* icon_120x120.png in Resources */,
-				3B3A6FD01D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.xib in Resources */,
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
-				3B3A6FC41D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.xib in Resources */,
+				3B2546FF1D1102D9001605F1 /* ZKMainTopicTableViewCell.xib in Resources */,
 				3B592B031D05298400E2727E /* icon@2x.png in Resources */,
 				3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */,
 				3B61CC031D0E44E90022DDC7 /* main.storyboard in Resources */,
+				3B2546FB1D1102D9001605F1 /* ZKMainInforTableViewCell.xib in Resources */,
 				3B1020371D0D53BD005C0F68 /* ZKLoginViewController.xib in Resources */,
-				3B3A6FC91D0FE19A00FF4B14 /* ZKMainListTableViewCell.xib in Resources */,
+				3B2546FD1D1102D9001605F1 /* ZKMainListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1211,13 +1211,12 @@
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
 				3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */,
 				3B5A59F41D0184B200105280 /* UIImage+Thumbnail.m in Sources */,
-				3B3A6FBF1D0FB16F00FF4B14 /* ZKNewHomeHeaderView.m in Sources */,
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
 				A1F967031D0423E700AF07EB /* iCarousel.m in Sources */,
 				3B5A5A301D01850800105280 /* HHLocationManger.m in Sources */,
 				3BA21D701D056BFE0027B5CE /* ZKRobotMode.m in Sources */,
+				3B2546FC1D1102D9001605F1 /* ZKMainListTableViewCell.m in Sources */,
 				3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */,
-				3B3A6FC31D0FD5C200FF4B14 /* ZKMainTopicTableViewCell.m in Sources */,
 				3B5A59F01D0184B200105280 /* NSString+Regex.m in Sources */,
 				3B787A831D069219009997E9 /* ZKRobotTableViewCell.m in Sources */,
 				3B5A5A211D0184D000105280 /* ZKUtil.m in Sources */,
@@ -1229,22 +1228,22 @@
 				3BA21D481D055A8A0027B5CE /* ZKForbidNavigationController.m in Sources */,
 				3BA21D6D1D056B8C0027B5CE /* ZKRobotTallyView.m in Sources */,
 				3B1020361D0D53BD005C0F68 /* ZKLoginViewController.m in Sources */,
+				3B2547021D1102F2001605F1 /* ZKNewHomeHeaderView.m in Sources */,
 				3B5A5A0E1D0184BE00105280 /* ZKTextField.m in Sources */,
 				3B5A5A201D0184D000105280 /* ZKHttp.m in Sources */,
 				3B61CC1B1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
 				3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */,
-				3B3A6FC81D0FE19A00FF4B14 /* ZKMainListTableViewCell.m in Sources */,
 				3B5A5A171D0184C700105280 /* ZKCommonImagePickerController.m in Sources */,
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
+				3B2546FE1D1102D9001605F1 /* ZKMainTopicTableViewCell.m in Sources */,
 				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.mm in Sources */,
 				3B63F59F1D07CC650087E974 /* ZKRobotTallyTableViewCell.m in Sources */,
 				3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
-				3B3A6FCF1D0FF8BD00FF4B14 /* ZKMainInforTableViewCell.m in Sources */,
-				3B6A1BA01D0FAD950021C524 /* ZKMainHeaderMode.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
+				3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */,
 				3B5A5A391D0189A700105280 /* TLDefine.m in Sources */,
 				3B5A5A3A1D0189A700105280 /* PublicDefine.m in Sources */,
 				3B5A59AA1D01825800105280 /* AppDelegate.m in Sources */,
@@ -1264,6 +1263,7 @@
 				3B787A7B1D065EE7009997E9 /* ZKRobotDeployList.m in Sources */,
 				3B9D91F91D07FA74002196A1 /* WXSpeechSynthesizerPlayer.m in Sources */,
 				3B787A7E1D066AC4009997E9 /* ZKRobotToolView.m in Sources */,
+				3B2546E01D11028E001605F1 /* ZKMainHeaderMode.m in Sources */,
 				3B5A5A0B1D0184BE00105280 /* ZKNavigationController.m in Sources */,
 				3B5A5A0A1D0184BE00105280 /* YYSearchBar.m in Sources */,
 			);

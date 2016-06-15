@@ -8,6 +8,7 @@
 
 #import "ZKNewHomeHeaderView.h"
 #import "ZKMainHeaderMode.h"
+#import "ZKBaseWebViewController.h"
 
 @implementation ZKNewHomeHeaderView
 
@@ -74,7 +75,7 @@
 }
 - (void)setApplyList:(NSArray<ZKMainApply *> *)applyList
 {
-
+    _applyList = applyList;
     [self.toolScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         if (obj.tag > 2999 && [obj isKindOfClass:[UIButton class]])
@@ -111,6 +112,7 @@
 }
 - (void)setFocusList:(NSArray<ZKMainFocus *> *)focusList
 {
+    _focusList = focusList;
     [self.imageUrlArray removeAllObjects];
     
     [focusList enumerateObjectsUsingBlock:^(ZKMainFocus * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -127,7 +129,13 @@
 
 - (void)btyClick:(UIButton*)sender
 {
-//    NSInteger index = sender.tag - 3000;
+    NSInteger index = sender.tag - 3000;
+    
+    ZKMainApply *list = [_applyList objectAtIndex:index];
+    
+    ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc]init];
+    web.htmlUrl = list.url;
+    [[self.controller navigationController] pushViewController:web animated:YES];
     
 
 }
@@ -147,6 +155,12 @@
 {
 
 
+    ZKMainFocus *list = [_focusList objectAtIndex:index];
+    
+    ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc]init];
+    web.htmlUrl = list.url;
+    [[self.controller navigationController] pushViewController:web animated:YES];
+    
 }
 
 /*

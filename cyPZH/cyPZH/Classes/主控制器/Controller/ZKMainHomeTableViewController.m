@@ -10,6 +10,7 @@
 #import "BaiduMobStat.h"
 #import "ZKMainHeaderMode.h"
 #import "ZKNewHomeHeaderView.h"
+#import "ZKBaseWebViewController.h"
 
 #import "ZKMainTopicTableViewCell.h"
 #import "ZKMainListTableViewCell.h"
@@ -214,7 +215,8 @@
         
         
         ZKMainTopicTableViewCell *ggCell = [tableView dequeueReusableCellWithIdentifier:ZKMainTopicTableViewCellID];
-        ggCell.linkList = self.headerList.link;
+        ggCell.linkList   = self.headerList.link;
+        ggCell.controller = self;
         cell = ggCell;
     }
     else if (indexPath.section == 1 && indexPath.row > 0)
@@ -247,7 +249,35 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
 
+    if (indexPath.section == 1 && indexPath.row > 0)
+    {
+        
+        ZKMainTopic  *topMode = self.headerList.topic[indexPath.row-1];
+        [self pushWebUrl:topMode.url];
+        
+    }
+    else if (indexPath.section == 2  && indexPath.row > 0)
+    {
+        ZKMainProduct  *productMode = self.headerList.product[indexPath.row-1];
+        [self pushWebUrl:productMode.url];
+    }
+    
+}
+/**
+ *  跳转网页
+ *
+ *  @param str URL
+ */
+- (void)pushWebUrl:(NSString*)str
+{
+    ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc]init];
+    web.htmlUrl = str;
+    [self.navigationController pushViewController:web animated:YES];
+    
+}
 
 /*
  // Override to support conditional rearranging of the table view.

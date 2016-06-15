@@ -21,4 +21,5 @@ extern NSString *const ZKMainTopicTableViewCellID;
 
 @property (nonatomic, strong) NSArray<ZKMainLink*> *linkList;
 
+@property (nonatomic, weak) id controller;
 @end

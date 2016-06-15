@@ -7,8 +7,10 @@
 //
 
 NSString *const ZKMainTopicTableViewCellID = @"ZKMainTopicTableViewCellID";
+
 #import "ZKMainTopicTableViewCell.h"
 #import "ZKMainHeaderMode.h"
+#import "ZKBaseWebViewController.h"
 
 @implementation ZKMainTopicTableViewCell
 
@@ -25,6 +27,7 @@ NSString *const ZKMainTopicTableViewCellID = @"ZKMainTopicTableViewCellID";
 }
 - (void)setLinkList:(NSArray<ZKMainLink *> *)linkList
 {
+    _linkList = linkList;
     if (linkList.count < 4) {return;}
     
     ZKMainLink *list_0 = linkList[0];
@@ -52,7 +55,23 @@ NSString *const ZKMainTopicTableViewCellID = @"ZKMainTopicTableViewCellID";
 }
 - (IBAction)topicClick:(UIButton *)sender {
     
+    NSInteger index = sender.tag - 1000;
     
+    if (index == 0)
+    {
+        
+      [[self.controller navigationController] pushViewController:[NSClassFromString(@"ZKRobotViewController") new] animated:YES];
+    }
+    else
+    {
+    
+        ZKMainLink *list = [_linkList objectAtIndex:index];
+        
+        ZKBaseWebViewController *web = [[ZKBaseWebViewController alloc]init];
+        web.htmlUrl = list.url;
+        [[self.controller navigationController] pushViewController:web animated:YES];
+
+    }
     
 }
 
