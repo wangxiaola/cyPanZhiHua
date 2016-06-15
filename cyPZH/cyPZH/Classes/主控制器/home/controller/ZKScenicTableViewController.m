@@ -12,7 +12,9 @@
 #import "ZKMainHeaderMode.h"
 #import "ZKScenicListMode.h"
 
-@interface ZKScenicTableViewController ()
+#import "ZKScenicFoodTableViewCell.h"
+
+@interface ZKScenicTableViewController ()<ZKSelectListViewDelegate>
 
 @property (nonatomic, strong) ZKSelectListView *selecView;
 
@@ -68,7 +70,6 @@
     self.distance = @"";
     self.grade    = @"";
 
-    self.modelsType = [ZKScenicListMode class];
     
 
 }
@@ -77,7 +78,7 @@
  */
 - (void)updataParams
 {
-
+    self.params = nil;
     self.params[@"interfaceId"] = @"133";
     self.params[@"method"] = @"resoureListbyLatLng";
     self.params[@"rows"] = @"15";
@@ -111,6 +112,10 @@
             break;
         case ZKScenicFood:
             self.type = @"dining";
+            
+            [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
+            self.modelsType = [ZKScenicListMode class];
+            
             break;
         case ZKScenicStrategy:
             self.type = @"";
@@ -141,11 +146,59 @@
 
     float foodH = self.scenicType == ZKScenicFood ?0.0:30.0;
     ZKSelectListView *headerView = [[ZKSelectListView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, 10+26+foodH) sceneryType:self.scenicType];
+    headerView.delegate = self;
     self.tableView.tableHeaderView = headerView;
     
 }
+#pragma mark ------
+#pragma mark table Delegate
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 
+    UITableViewCell *cell;
+    
+    NSObject *mode = self.models[indexPath.row];
+    
+    if (self.scenicType == ZKScenicTicket)
+    {
+        
+        
+    }
+    else if (self.scenicType == ZKScenicHotel)
+    {
+    
+    }
+    else if (self.scenicType == ZKScenicFood)
+    {
+        ZKScenicFoodTableViewCell *foodCell = [tableView dequeueReusableCellWithIdentifier:ZKScenicFoodTableViewCellID];
+        foodCell.list = (ZKScenicListMode*)mode;
+        cell = foodCell;
+    }
+
+    else if (self.scenicType == ZKScenicStrategy)
+    {
+        
+    }
+
+    else if (self.scenicType == ZKScenicSpecialty)
+    {
+        
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 94;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    [self.view endEditing:YES];
+    
+}
 #pragma mark 点击事件
 - (void)titleClick
 {
@@ -155,6 +208,21 @@
 {
 
 
+}
+
+#pragma mark --ZKSelectListViewDelegate--
+/**
+ *  搜索
+ *
+ *  @param key 值
+ */
+- (void)seekName:(NSString*)key;
+{
+
+    self.key = key;
+    [self updataParams];
+    [self.tableView.mj_header beginRefreshing];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -31,6 +31,7 @@
         _searchBar.backgroundColor = [UIColor clearColor];
         _searchBar.placeString = @"输入搜索";
         _searchBar.isWeeter = YES;
+        _searchBar.delegate = self;
         _searchBar.layer.masksToBounds = YES;
         _searchBar.layer.cornerRadius = 18;
         _searchBar.userInteractionEnabled = YES;
@@ -108,9 +109,19 @@
 }
 
 #pragma mark - searchBarDelegate
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar;
+{
+
+    if ([self.delegate respondsToSelector:@selector(seekName:)])
+    {
+        NSString *str = searchBar.text.length == 0 ? @"":searchBar.text;
+        [self.delegate seekName:str];
+    }
+}
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    
     
     
 }

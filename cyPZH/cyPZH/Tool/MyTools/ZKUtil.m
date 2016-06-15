@@ -134,7 +134,7 @@
 
 + (void)UIimageView:(UIImageView*)image NSSting:(NSString*)url;
 {
-    [image sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"2D_enterpriseHead"]];
+    [image sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"cell_ default"]];
   
 }
 

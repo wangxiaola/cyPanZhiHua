@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZKSelectListViewDelegate <NSObject>
+@optional
+/**
+ *  搜索
+ *
+ *  @param key 值
+ */
+- (void)seekName:(NSString*)key;
+
+
+@end
 @interface ZKSelectListView : UIView<UISearchBarDelegate>
 /**
  *  选择view
@@ -18,7 +29,7 @@
  *  @return view
  */
 - (instancetype)initWithFrame:(CGRect)frame sceneryType:(NSInteger)dex;
-
+@property (nonatomic, weak) id <ZKSelectListViewDelegate>delegate;
 
 
 @end

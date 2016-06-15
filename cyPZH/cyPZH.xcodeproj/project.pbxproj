@@ -22,6 +22,7 @@
 		3B25470E1D113E92001605F1 /* ZKScenicListMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B25470D1D113E92001605F1 /* ZKScenicListMode.m */; };
 		3B2547131D114305001605F1 /* ZKScenicFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2547111D114305001605F1 /* ZKScenicFoodTableViewCell.m */; };
 		3B2547141D114305001605F1 /* ZKScenicFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2547121D114305001605F1 /* ZKScenicFoodTableViewCell.xib */; };
+		3B25471B1D114558001605F1 /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25471A1D114558001605F1 /* RatingBar.swift */; };
 		3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AEF1D0516C800E2727E /* ZKBaseViewController.m */; };
 		3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF51D0517A800E2727E /* ZKTabelViewController.m */; };
 		3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF81D0517EE00E2727E /* ZKTableViewBaseController.m */; };
@@ -152,6 +153,8 @@
 		3B2547101D114305001605F1 /* ZKScenicFoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKScenicFoodTableViewCell.h; sourceTree = "<group>"; };
 		3B2547111D114305001605F1 /* ZKScenicFoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKScenicFoodTableViewCell.m; sourceTree = "<group>"; };
 		3B2547121D114305001605F1 /* ZKScenicFoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKScenicFoodTableViewCell.xib; sourceTree = "<group>"; };
+		3B2547191D114557001605F1 /* cyPZH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cyPZH-Bridging-Header.h"; sourceTree = "<group>"; };
+		3B25471A1D114558001605F1 /* RatingBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingBar.swift; sourceTree = "<group>"; };
 		3B592AEE1D0516C800E2727E /* ZKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseViewController.h; sourceTree = "<group>"; };
 		3B592AEF1D0516C800E2727E /* ZKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseViewController.m; sourceTree = "<group>"; };
 		3B592AF41D0517A800E2727E /* ZKTabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKTabelViewController.h; sourceTree = "<group>"; };
@@ -553,6 +556,15 @@
 			path = "列表cell";
 			sourceTree = "<group>";
 		};
+		3B2547181D11453D001605F1 /* 星星 */ = {
+			isa = PBXGroup;
+			children = (
+				3B25471A1D114558001605F1 /* RatingBar.swift */,
+				3B2547191D114557001605F1 /* cyPZH-Bridging-Header.h */,
+			);
+			path = "星星";
+			sourceTree = "<group>";
+		};
 		3B592AFD1D05297D00E2727E /* iconImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +652,7 @@
 		3B5A59D81D01848E00105280 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3B2547181D11453D001605F1 /* 星星 */,
 				3B9D91F61D07FA6D002196A1 /* 微信music */,
 				3BBF4F121D05155200EB8DCF /* base */,
 				3BBF4EF51D050D4C00EB8DCF /* mj_update */,
@@ -648,7 +661,6 @@
 				A1F967001D0423D900AF07EB /* 有边滚动视图 */,
 				A1F966F31D040D6600AF07EB /* mj_Loading */,
 				3B5A5A2D1D01850800105280 /* HHLocationManger */,
-				3B5A5A221D0184D400105280 /* ratingbar */,
 				3B5A5A181D0184D000105280 /* MyTools */,
 				3B5A5A111D0184C700105280 /* imagePoto */,
 				3B5A59F81D0184BE00105280 /* 主要 */,
@@ -727,13 +739,6 @@
 				3B5A5A1E1D0184D000105280 /* ZKUtil.m */,
 			);
 			path = MyTools;
-			sourceTree = "<group>";
-		};
-		3B5A5A221D0184D400105280 /* ratingbar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ratingbar;
 			sourceTree = "<group>";
 		};
 		3B5A5A2D1D01850800105280 /* HHLocationManger */ = {
@@ -1284,6 +1289,7 @@
 				3B5A59AA1D01825800105280 /* AppDelegate.m in Sources */,
 				3B25470E1D113E92001605F1 /* ZKScenicListMode.m in Sources */,
 				3B9D91F51D07E71D002196A1 /* DBSphereView.m in Sources */,
+				3B25471B1D114558001605F1 /* RatingBar.swift in Sources */,
 				3B5A59A71D01825800105280 /* main.m in Sources */,
 				3B63F59C1D07BDA20087E974 /* ZKRobotLabelMode.m in Sources */,
 				3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */,
@@ -1423,7 +1429,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05BEC5071EF2473BE33402D7 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1446,6 +1453,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "cyPZH/Tool/星星/cyPZH-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1453,7 +1462,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2659243C1836EFE4B5767EA /* Pods.release.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_INPUT_FILETYPE = automatic;
@@ -1476,6 +1486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.daqsoft.ios.add.cyPZH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "cyPZH/Tool/星星/cyPZH-Bridging-Header.h";
 			};
 			name = Release;
 		};
