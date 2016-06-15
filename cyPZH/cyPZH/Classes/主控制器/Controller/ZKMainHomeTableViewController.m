@@ -29,19 +29,16 @@
     
     if (self.title)
     {
-        
         [[BaiduMobStat defaultStat] pageviewStartWithName:[NSString stringWithFormat:@"%@",self.title]];
     }
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    
     [super viewDidDisappear:animated];
     
     if (self.title)
     {
-        
         [[BaiduMobStat defaultStat] pageviewEndWithName:[NSString stringWithFormat:@"%@",self.title]];
     }
 }
