@@ -32,12 +32,12 @@ typedef NS_ENUM(NSInteger,ZKScenicType) {
     ZKScenicSpecialty
 };
 
-#import "ZKTableViewBaseController.h"
+#import "ZKTabelViewController.h"
 @class ZKMainApply;
 /**
  *  景区
  */
-@interface ZKScenicTableViewController : ZKTableViewBaseController
+@interface ZKScenicTableViewController : ZKTabelViewController
 
 @property (nonatomic) ZKScenicType scenicType;
 

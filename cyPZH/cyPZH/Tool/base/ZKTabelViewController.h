@@ -17,7 +17,7 @@
 /**
  *  列表
  */
-@property (nonatomic, weak, readonly) UITableView *tableView;
+@property (nonatomic, weak) UITableView *tableView;
 /**
  *  无数据时显示的view,可在子类自定义
  */
@@ -53,6 +53,11 @@
  *  是否需要上拉刷新
  */
 @property (nonatomic, assign, getter=isNeedsPullUpRefreshing) BOOL needsPullUpRefreshing;
+
+/**
+ *  是否是陈思文接口
+ */
+@property (nonatomic, assign, getter=isThmList) BOOL thmList;
 
 /**
  *  留给子类覆盖，在方法中应设置以上属性

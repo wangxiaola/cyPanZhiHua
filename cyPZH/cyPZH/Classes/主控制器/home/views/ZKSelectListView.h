@@ -36,7 +36,7 @@
  *
  *  @return view
  */
-- (instancetype)initWithFrame:(CGRect)frame sceneryType:(NSInteger)dex;
+- (instancetype)initWithFrame:(CGRect)frame sceneryType:(NSInteger)dex superView:(UIView*)contenView;
 @property (nonatomic, weak) id <ZKSelectListViewDelegate>delegate;
 
 

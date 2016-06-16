@@ -10,6 +10,7 @@
 
 
 @interface ZKScenicListMode : NSObject
+
 // id
 @property (nonatomic, assign) NSInteger ID;
 // 名字
@@ -52,6 +53,7 @@
 @property (nonatomic, strong) NSString *recommend;
 // 720
 @property (nonatomic, copy) NSString *address720;
+
 @end
 
 

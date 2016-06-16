@@ -74,6 +74,10 @@
 		3B787A7E1D066AC4009997E9 /* ZKRobotToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A7D1D066AC4009997E9 /* ZKRobotToolView.m */; };
 		3B787A831D069219009997E9 /* ZKRobotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A821D069219009997E9 /* ZKRobotTableViewCell.m */; };
 		3B787A861D06922E009997E9 /* ZKUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B787A851D06922E009997E9 /* ZKUserTableViewCell.m */; };
+		3B807A561D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B807A541D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m */; };
+		3B807A571D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B807A551D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib */; };
+		3B807A5A1D1277C000E37A1D /* ZKScenicStrategyMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B807A591D1277C000E37A1D /* ZKScenicStrategyMode.m */; };
+		3B807A5D1D1295A900E37A1D /* ZKSceniceAdvertisementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B807A5C1D1295A900E37A1D /* ZKSceniceAdvertisementView.m */; };
 		3B9D91F51D07E71D002196A1 /* DBSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D91F41D07E71D002196A1 /* DBSphereView.m */; };
 		3B9D91F91D07FA74002196A1 /* WXSpeechSynthesizerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D91F81D07FA74002196A1 /* WXSpeechSynthesizerPlayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3BA21D421D0540CC0027B5CE /* ZKAdvertisementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D411D0540CC0027B5CE /* ZKAdvertisementViewController.m */; };
@@ -252,6 +256,13 @@
 		3B787A821D069219009997E9 /* ZKRobotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTableViewCell.m; sourceTree = "<group>"; };
 		3B787A841D06922E009997E9 /* ZKUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKUserTableViewCell.h; sourceTree = "<group>"; };
 		3B787A851D06922E009997E9 /* ZKUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKUserTableViewCell.m; sourceTree = "<group>"; };
+		3B807A531D1276F500E37A1D /* ZKScenicStrategyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKScenicStrategyTableViewCell.h; sourceTree = "<group>"; };
+		3B807A541D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKScenicStrategyTableViewCell.m; sourceTree = "<group>"; };
+		3B807A551D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKScenicStrategyTableViewCell.xib; sourceTree = "<group>"; };
+		3B807A581D1277C000E37A1D /* ZKScenicStrategyMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKScenicStrategyMode.h; sourceTree = "<group>"; };
+		3B807A591D1277C000E37A1D /* ZKScenicStrategyMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKScenicStrategyMode.m; sourceTree = "<group>"; };
+		3B807A5B1D1295A900E37A1D /* ZKSceniceAdvertisementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSceniceAdvertisementView.h; sourceTree = "<group>"; };
+		3B807A5C1D1295A900E37A1D /* ZKSceniceAdvertisementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSceniceAdvertisementView.m; sourceTree = "<group>"; };
 		3B9D91F11D07E71D002196A1 /* DBMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMatrix.h; sourceTree = "<group>"; };
 		3B9D91F21D07E71D002196A1 /* DBPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPoint.h; sourceTree = "<group>"; };
 		3B9D91F31D07E71D002196A1 /* DBSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBSphereView.h; sourceTree = "<group>"; };
@@ -531,6 +542,8 @@
 				3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */,
 				3B25470C1D113E92001605F1 /* ZKScenicListMode.h */,
 				3B25470D1D113E92001605F1 /* ZKScenicListMode.m */,
+				3B807A581D1277C000E37A1D /* ZKScenicStrategyMode.h */,
+				3B807A591D1277C000E37A1D /* ZKScenicStrategyMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -542,6 +555,8 @@
 				3B2547011D1102F2001605F1 /* ZKNewHomeHeaderView.m */,
 				3B2547061D111A5C001605F1 /* ZKSelectListView.h */,
 				3B2547071D111A5C001605F1 /* ZKSelectListView.m */,
+				3B807A5B1D1295A900E37A1D /* ZKSceniceAdvertisementView.h */,
+				3B807A5C1D1295A900E37A1D /* ZKSceniceAdvertisementView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -552,6 +567,9 @@
 				3B2547101D114305001605F1 /* ZKScenicFoodTableViewCell.h */,
 				3B2547111D114305001605F1 /* ZKScenicFoodTableViewCell.m */,
 				3B2547121D114305001605F1 /* ZKScenicFoodTableViewCell.xib */,
+				3B807A531D1276F500E37A1D /* ZKScenicStrategyTableViewCell.h */,
+				3B807A541D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m */,
+				3B807A551D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib */,
 			);
 			path = "列表cell";
 			sourceTree = "<group>";
@@ -1160,6 +1178,7 @@
 				3B592B091D05299E00E2727E /* LaunchImage@2x.png in Resources */,
 				3B592B021D05298400E2727E /* icon.png in Resources */,
 				3B5A59B21D01825800105280 /* Assets.xcassets in Resources */,
+				3B807A571D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib in Resources */,
 				3B592B011D05298400E2727E /* icon_120x120.png in Resources */,
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
 				3B2546FF1D1102D9001605F1 /* ZKMainTopicTableViewCell.xib in Resources */,
@@ -1248,6 +1267,7 @@
 				3B2547051D1119F4001605F1 /* ZKScenicTableViewController.m in Sources */,
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
 				3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */,
+				3B807A5A1D1277C000E37A1D /* ZKScenicStrategyMode.m in Sources */,
 				3B5A59F41D0184B200105280 /* UIImage+Thumbnail.m in Sources */,
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
 				A1F967031D0423E700AF07EB /* iCarousel.m in Sources */,
@@ -1276,9 +1296,11 @@
 				3B5A5A171D0184C700105280 /* ZKCommonImagePickerController.m in Sources */,
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
 				3B2546FE1D1102D9001605F1 /* ZKMainTopicTableViewCell.m in Sources */,
+				3B807A5D1D1295A900E37A1D /* ZKSceniceAdvertisementView.m in Sources */,
 				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.mm in Sources */,
 				3B63F59F1D07CC650087E974 /* ZKRobotTallyTableViewCell.m in Sources */,
 				3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */,
+				3B807A561D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
 				3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */,

@@ -50,6 +50,7 @@
     // 默认需要上拉和下拉刷新
     self.needsPullDownRefreshing = YES;
     self.needsPullUpRefreshing = YES;
+    self.thmList = NO;
     // 请求路径
     self.URLString = POST_ZK_URL;
 }
@@ -75,7 +76,7 @@
 
 - (void)viewDidLayoutSubviews
 {
-    self.tableView.frame = self.view.bounds;
+    
 }
 
 - (void)setupRefreshControl
@@ -206,10 +207,24 @@
     //拿到最新数据，调用子类方法(如果子类有实现)
     [self didGetResponse:responseObject atPage:self.page];
     //根据上拉或者下拉情况处理请求到的最新数据
-    NSMutableArray *dataArray = [self.modelsType mj_objectArrayWithKeyValuesArray:responseObject[@"list"]] ? : @[].mutableCopy;
+    
+    NSMutableArray *dataArray ;
+    id total;
+    if (self.thmList)
+    {
+        
+        dataArray = [self.modelsType mj_objectArrayWithKeyValuesArray:[responseObject[@"row"] valueForKey:@"root"]] ? : @[].mutableCopy;
+        //根据上拉或者下拉情况停止刷新
+        total = [responseObject[@"row"] valueForKey:@"total"];
+    }
+    else
+    {
+        dataArray = [self.modelsType mj_objectArrayWithKeyValuesArray:responseObject[@"rows"]] ? : @[].mutableCopy;
+        //根据上拉或者下拉情况停止刷新
+        total = responseObject[@"total"];
+    }
+    
     [self dealWithLatestDataArray:dataArray];
-    //根据上拉或者下拉情况停止刷新
-    id total = responseObject[@"total"];
     [self endRefreshingWithDataTotalCount:total ? [total integerValue] : -1];
     //控制请求数据页码
     if (dataArray.count == 0 && self.page > 1)
