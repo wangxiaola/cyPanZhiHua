@@ -17,6 +17,14 @@
  */
 - (void)seekName:(NSString*)key;
 
+/**
+ *  按条件搜索
+ *
+ *  @param key 值
+ *  @param type 类型
+ *  @param row 第几个
+ */
+- (void)condition:(NSString*)key typeList:(NSInteger)type index:(NSInteger)row;
 
 @end
 @interface ZKSelectListView : UIView<UISearchBarDelegate>

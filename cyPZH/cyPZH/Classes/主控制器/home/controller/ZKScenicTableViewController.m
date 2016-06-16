@@ -124,7 +124,7 @@
             break;
         case ZKScenicStrategy:
             self.type = @"ruraltourism";
-            self.cacheFilename = @"ruraltourismList";
+            self.cacheFilename = @"recreation";
             break;
         case ZKScenicSpecialty:
             self.type = @"";
