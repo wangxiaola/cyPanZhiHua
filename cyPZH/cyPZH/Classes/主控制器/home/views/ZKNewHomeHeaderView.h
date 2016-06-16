@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SDCycleScrollView.h"
+
 @class ZKMainApply,ZKMainFocus;
 
 @interface ZKNewHomeHeaderView : UIView<SDCycleScrollViewDelegate,UIScrollViewDelegate>

@@ -29,9 +29,9 @@ NSString *const ZKScenicStrategyTableViewCellID = @"ZKScenicStrategyTableViewCel
     [noteStr addAttribute:NSForegroundColorAttributeName value:CYBColorGreen range:redRange];
     self.sateLabel.attributedText = noteStr;
     
-    [self.lavoerButton setTitle:[NSString stringWithFormat:@"%d",list.zan] forState:UIControlStateNormal];
-    [self.scButton setTitle:[NSString stringWithFormat:@"%d",list.col] forState:UIControlStateNormal];
-    [self.lookButton setTitle:[NSString stringWithFormat:@"%d",list.val] forState:UIControlStateNormal];
+    [self.lavoerButton setTitle:[NSString stringWithFormat:@"%ld",(long)list.zan] forState:UIControlStateNormal];
+    [self.scButton setTitle:[NSString stringWithFormat:@"%ld",(long)list.col] forState:UIControlStateNormal];
+    [self.lookButton setTitle:[NSString stringWithFormat:@"%ld",(long)list.val] forState:UIControlStateNormal];
     [self.dateButton setTitle:[NSString stringWithFormat:@"%@  ",list.time] forState:UIControlStateNormal];
 
 

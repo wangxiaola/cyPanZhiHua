@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="ZKMainPlayCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="119"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="255" height="119"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="3fX-tv-x07">
+                        <rect key="frame" x="75" y="46" width="25" height="27"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-Qc-lfo">
+                        <rect key="frame" x="108" y="46" width="35.5" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="fdQ-o4-mSA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DC5-Mm-4Kg">
+                        <rect key="frame" x="108" y="67" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3fX-tv-x07" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="82P-f1-6zf"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DC5-Mm-4Kg" secondAttribute="trailing" constant="10" id="JLh-rD-Oam"/>
+                <constraint firstItem="DC5-Mm-4Kg" firstAttribute="top" secondItem="SvG-Qc-lfo" secondAttribute="bottom" id="KJZ-Pv-NBp"/>
+                <constraint firstItem="SvG-Qc-lfo" firstAttribute="top" secondItem="3fX-tv-x07" secondAttribute="top" id="Ksx-zR-dRa"/>
+                <constraint firstItem="3fX-tv-x07" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" constant="-40" id="L7g-Pn-lpd"/>
+                <constraint firstItem="DC5-Mm-4Kg" firstAttribute="leading" secondItem="3fX-tv-x07" secondAttribute="trailing" constant="8" id="LX2-Rj-zvS"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DC5-Mm-4Kg" secondAttribute="bottom" constant="10" id="dSm-DV-Hr5"/>
+                <constraint firstItem="SvG-Qc-lfo" firstAttribute="leading" secondItem="3fX-tv-x07" secondAttribute="trailing" constant="8" id="fov-Pu-3mk"/>
+            </constraints>
+            <size key="customSize" width="255" height="119"/>
+            <point key="canvasLocation" x="228.5" y="156.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="play_icon_3" width="25" height="27"/>
+    </resources>
+</document>

@@ -97,6 +97,9 @@
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
+		A19A00B71D12E6DE002230BF /* ZKMainPlayMode.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A00B61D12E6DE002230BF /* ZKMainPlayMode.m */; };
+		A19A00BB1D12EB66002230BF /* ZKMainPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A00B91D12EB66002230BF /* ZKMainPlayCollectionViewCell.m */; };
+		A19A00BC1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19A00BA1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib */; };
 		A1DBFCED1D02F5E30037700D /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DBFCEC1D02F5E30037700D /* JavaScriptCore.framework */; };
 		A1DBFCEF1D02F5EB0037700D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DBFCEE1D02F5EB0037700D /* Security.framework */; };
 		A1DBFCF11D02F5F50037700D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DBFCF01D02F5F50037700D /* CoreLocation.framework */; };
@@ -299,6 +302,11 @@
 		3BBF4F0E1D05149B00EB8DCF /* MJUpdateUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJUpdateUI.h; sourceTree = "<group>"; };
 		3BBF4F131D05156900EB8DCF /* ZKBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseTableView.h; sourceTree = "<group>"; };
 		3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseTableView.m; sourceTree = "<group>"; };
+		A19A00B51D12E6DE002230BF /* ZKMainPlayMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKMainPlayMode.h; path = cyPZH/ZKMainPlayMode.h; sourceTree = SOURCE_ROOT; };
+		A19A00B61D12E6DE002230BF /* ZKMainPlayMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKMainPlayMode.m; path = cyPZH/ZKMainPlayMode.m; sourceTree = SOURCE_ROOT; };
+		A19A00B81D12EB66002230BF /* ZKMainPlayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKMainPlayCollectionViewCell.h; path = cyPZH/ZKMainPlayCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		A19A00B91D12EB66002230BF /* ZKMainPlayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKMainPlayCollectionViewCell.m; path = cyPZH/ZKMainPlayCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		A19A00BA1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZKMainPlayCollectionViewCell.xib; path = cyPZH/ZKMainPlayCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
 		A1DBFCEC1D02F5E30037700D /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A1DBFCEE1D02F5EB0037700D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A1DBFCF01D02F5F50037700D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -473,6 +481,9 @@
 		3B2546C41D110288001605F1 /* cellView */ = {
 			isa = PBXGroup;
 			children = (
+				A19A00B81D12EB66002230BF /* ZKMainPlayCollectionViewCell.h */,
+				A19A00B91D12EB66002230BF /* ZKMainPlayCollectionViewCell.m */,
+				A19A00BA1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib */,
 			);
 			path = cellView;
 			sourceTree = "<group>";
@@ -487,6 +498,8 @@
 		3B2546C61D110288001605F1 /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				A19A00B51D12E6DE002230BF /* ZKMainPlayMode.h */,
+				A19A00B61D12E6DE002230BF /* ZKMainPlayMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -1183,6 +1196,7 @@
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
 				3B2546FF1D1102D9001605F1 /* ZKMainTopicTableViewCell.xib in Resources */,
 				3B592B031D05298400E2727E /* icon@2x.png in Resources */,
+				A19A00BC1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib in Resources */,
 				3B592B071D05299E00E2727E /* LaunchImage-568h@2x.png in Resources */,
 				3B61CC031D0E44E90022DDC7 /* main.storyboard in Resources */,
 				3B2546FB1D1102D9001605F1 /* ZKMainInforTableViewCell.xib in Resources */,
@@ -1316,6 +1330,7 @@
 				3B63F59C1D07BDA20087E974 /* ZKRobotLabelMode.m in Sources */,
 				3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */,
 				3B5A59F61D0184B200105280 /* UIViewController+Prompt.m in Sources */,
+				A19A00BB1D12EB66002230BF /* ZKMainPlayCollectionViewCell.m in Sources */,
 				A1E574CF1D045D25009E5507 /* UserInfo.m in Sources */,
 				3B61CC121D0E4C9D0022DDC7 /* ZKMainMapViewController.m in Sources */,
 				3B6A1B9D1D0FA85D0021C524 /* ZKMainHomeTableViewController.m in Sources */,
@@ -1326,6 +1341,7 @@
 				A1E574CA1D0458D5009E5507 /* UIView+ZKMasonry.m in Sources */,
 				3B787A7B1D065EE7009997E9 /* ZKRobotDeployList.m in Sources */,
 				3B9D91F91D07FA74002196A1 /* WXSpeechSynthesizerPlayer.m in Sources */,
+				A19A00B71D12E6DE002230BF /* ZKMainPlayMode.m in Sources */,
 				3B787A7E1D066AC4009997E9 /* ZKRobotToolView.m in Sources */,
 				3B2546E01D11028E001605F1 /* ZKMainHeaderMode.m in Sources */,
 				3B5A5A0B1D0184BE00105280 /* ZKNavigationController.m in Sources */,
