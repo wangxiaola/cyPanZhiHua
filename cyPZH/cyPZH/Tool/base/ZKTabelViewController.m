@@ -126,13 +126,14 @@
 - (void)loadData
 {
     MMLog(@"%@\n", self.params);
+    MJWeakSelf
     [ZKHttp postWithURLString:self.URLString parameters:self.params success:^(id responseObject)
      {
          MMLog(@"%@", responseObject);
-         [self dealWithSuccess:responseObject];
+         [weakSelf dealWithSuccess:responseObject];
      } failure:^(NSError *error)
      {
-         [self dealWithFailure:error];
+         [weakSelf dealWithFailure:error];
      }];
 }
 

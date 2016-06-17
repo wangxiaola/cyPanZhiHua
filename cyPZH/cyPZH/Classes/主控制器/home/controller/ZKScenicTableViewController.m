@@ -201,7 +201,15 @@
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
         
         weakSelf.bannerArray = [[responseObject valueForKey:@"data"] valueForKey:@"add"];
-        [self.tableView reloadData];
+        if (weakSelf.models.count == 0 && weakSelf.bannerArray.count>0)
+        {
+            [self bannerAdvertisementView];
+        }
+        else
+        {
+            [weakSelf.tableView reloadData];
+            
+        }
         
         
     } failure:^(NSError *error) {
@@ -210,6 +218,22 @@
     }];
     
 }
+
+/**
+ *  每次拿到最新数据的时候调用，子类覆盖使用
+ *
+ *  @param responseObject 数据
+ *  @param page           页数
+ */
+- (void)didGetResponse:(id)responseObject atPage:(NSInteger)page;
+{
+    if (page == 1 && self.bannerArray.count>0)
+    {
+        [self.models removeAllObjects];
+        [self bannerAdvertisementView];
+    }
+}
+
 #pragma mark ------
 #pragma mark table Delegate
 
@@ -310,14 +334,9 @@
         {
             if (self.bannerArray.count > 0)
             {
-                [self.adverView.timer invalidate];
-                self.adverView.timer = nil;
-                self.adverView.delegate = nil;
-                [self.adverView removeFromSuperview];
-                
-                self.adverView = [[ZKSceniceAdvertisementView alloc] initWithFrame:CGRectMake(0, 1, _SCREEN_WIDTH, 239) Data:_bannerArray];
-                self.adverView.delegate = self;
+                [self bannerAdvertisementView];
                 return self.adverView;
+                
             }
             else
             {
@@ -333,6 +352,35 @@
         
     }
 }
+/**
+ *  创建广告
+ *
+ *  @return 返回广告图
+ */
+- (void)bannerAdvertisementView
+{
+    
+    [self.adverView.timer invalidate];
+    self.adverView.timer = nil;
+    self.adverView.delegate = nil;
+    [self.adverView removeFromSuperview];
+    
+    self.adverView = [[ZKSceniceAdvertisementView alloc] initWithFrame:CGRectMake(0, 1, _SCREEN_WIDTH, 239) Data:_bannerArray];
+    self.adverView.delegate = self;
+    
+    if (self.models.count<2) {
+        
+        self.tableView.tableHeaderView = self.adverView;
+        
+    }
+    else
+    {
+        self.tableView.tableHeaderView = [UIView new];
+        
+    }
+    
+}
+
 - (void)resourc
 {
     

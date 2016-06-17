@@ -9,10 +9,13 @@
 extern NSString * const reuseIdentifier;
 
 #import <UIKit/UIKit.h>
-@class ZKMainPlayMode;
+@class ZKPlayeColumnsMode;
 
 @interface ZKMainPlayCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 
-@property (nonatomic, strong)ZKMainPlayMode *list;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *stitleLabel;
+@property (nonatomic, strong)ZKPlayeColumnsMode *list;
 
 @end

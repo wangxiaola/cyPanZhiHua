@@ -9,5 +9,26 @@
 #import "ZKMainPlayMode.h"
 
 @implementation ZKMainPlayMode
+MJCodingImplementation
++ (NSDictionary *)objectClassInArray{
+    return @{@"play":[ZKPlayTypeMode class], @"columns":[ZKPlayeColumnsMode class]};
+}
 
+@end
+
+
+@implementation ZKPlayeColumnsMode
+MJCodingImplementation
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"ID": @"id"};
+}
+@end
+
+@implementation ZKPlayTypeMode
+MJCodingImplementation
++ (NSDictionary *)replacedKeyFromPropertyName
+{
+    return @{@"ID": @"id"};
+}
 @end
