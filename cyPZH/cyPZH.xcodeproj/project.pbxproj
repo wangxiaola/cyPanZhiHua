@@ -11,6 +11,11 @@
 		3B1020371D0D53BD005C0F68 /* ZKLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1020351D0D53BD005C0F68 /* ZKLoginViewController.xib */; };
 		3B1EC1F01D13A56600F39CAC /* ZKMainMapSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1EF1D13A56600F39CAC /* ZKMainMapSelectView.m */; };
 		3B1EC1F41D13CC9800F39CAC /* ZKReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1F31D13CC9800F39CAC /* ZKReminderView.m */; };
+		3B1EC1F71D13F4E500F39CAC /* ZKMianMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1F61D13F4E500F39CAC /* ZKMianMapView.m */; };
+		3B1EC1FB1D13F7FB00F39CAC /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1FA1D13F7FB00F39CAC /* MapView.m */; };
+		3B1EC1FE1D13F81200F39CAC /* CallOutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */; };
+		3B1EC2011D13F82900F39CAC /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */; };
+		3B1EC2041D13F83400F39CAC /* BasicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC2031D13F83400F39CAC /* BasicMapAnnotation.m */; };
 		3B2546E01D11028E001605F1 /* ZKMainHeaderMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */; };
 		3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546F21D1102D9001605F1 /* ZKMainInforTableViewCell.m */; };
 		3B2546FB1D1102D9001605F1 /* ZKMainInforTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2546F31D1102D9001605F1 /* ZKMainInforTableViewCell.xib */; };
@@ -144,6 +149,16 @@
 		3B1EC1EF1D13A56600F39CAC /* ZKMainMapSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainMapSelectView.m; sourceTree = "<group>"; };
 		3B1EC1F21D13CC9800F39CAC /* ZKReminderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKReminderView.h; sourceTree = "<group>"; };
 		3B1EC1F31D13CC9800F39CAC /* ZKReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKReminderView.m; sourceTree = "<group>"; };
+		3B1EC1F51D13F4E500F39CAC /* ZKMianMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMianMapView.h; sourceTree = "<group>"; };
+		3B1EC1F61D13F4E500F39CAC /* ZKMianMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMianMapView.m; sourceTree = "<group>"; };
+		3B1EC1F91D13F7FB00F39CAC /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		3B1EC1FA1D13F7FB00F39CAC /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		3B1EC1FC1D13F81200F39CAC /* CallOutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutAnnotationView.h; sourceTree = "<group>"; };
+		3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutAnnotationView.m; sourceTree = "<group>"; };
+		3B1EC1FF1D13F82900F39CAC /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
+		3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
+		3B1EC2021D13F83400F39CAC /* BasicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotation.h; sourceTree = "<group>"; };
+		3B1EC2031D13F83400F39CAC /* BasicMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicMapAnnotation.m; sourceTree = "<group>"; };
 		3B2546D51D11028E001605F1 /* ZKMainHeaderMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainHeaderMode.h; sourceTree = "<group>"; };
 		3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainHeaderMode.m; sourceTree = "<group>"; };
 		3B2546F11D1102D9001605F1 /* ZKMainInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainInforTableViewCell.h; sourceTree = "<group>"; };
@@ -404,6 +419,21 @@
 			path = "提示框";
 			sourceTree = "<group>";
 		};
+		3B1EC1F81D13F7D800F39CAC /* 地图文件 */ = {
+			isa = PBXGroup;
+			children = (
+				3B1EC2021D13F83400F39CAC /* BasicMapAnnotation.h */,
+				3B1EC2031D13F83400F39CAC /* BasicMapAnnotation.m */,
+				3B1EC1FF1D13F82900F39CAC /* CalloutMapAnnotation.h */,
+				3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */,
+				3B1EC1F91D13F7FB00F39CAC /* MapView.h */,
+				3B1EC1FA1D13F7FB00F39CAC /* MapView.m */,
+				3B1EC1FC1D13F81200F39CAC /* CallOutAnnotationView.h */,
+				3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */,
+			);
+			path = "地图文件";
+			sourceTree = "<group>";
+		};
 		3B2546B91D110276001605F1 /* map */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,8 +469,11 @@
 		3B2546BD1D110276001605F1 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3B1EC1F81D13F7D800F39CAC /* 地图文件 */,
 				3B1EC1EE1D13A56600F39CAC /* ZKMainMapSelectView.h */,
 				3B1EC1EF1D13A56600F39CAC /* ZKMainMapSelectView.m */,
+				3B1EC1F51D13F4E500F39CAC /* ZKMianMapView.h */,
+				3B1EC1F61D13F4E500F39CAC /* ZKMianMapView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1297,10 +1330,12 @@
 				3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */,
 				3B5E6D291D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m in Sources */,
 				3B2547051D1119F4001605F1 /* ZKScenicTableViewController.m in Sources */,
+				3B1EC1FE1D13F81200F39CAC /* CallOutAnnotationView.m in Sources */,
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
 				3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */,
 				3B807A5A1D1277C000E37A1D /* ZKScenicStrategyMode.m in Sources */,
 				3B5A59F41D0184B200105280 /* UIImage+Thumbnail.m in Sources */,
+				3B1EC1FB1D13F7FB00F39CAC /* MapView.m in Sources */,
 				3B592AFC1D05190300E2727E /* ZKErrorView.m in Sources */,
 				A1F967031D0423E700AF07EB /* iCarousel.m in Sources */,
 				3B5A5A301D01850800105280 /* HHLocationManger.m in Sources */,
@@ -1308,8 +1343,10 @@
 				3B2546FC1D1102D9001605F1 /* ZKMainListTableViewCell.m in Sources */,
 				3B592AF91D0517EE00E2727E /* ZKTableViewBaseController.m in Sources */,
 				3B5A59F01D0184B200105280 /* NSString+Regex.m in Sources */,
+				3B1EC2041D13F83400F39CAC /* BasicMapAnnotation.m in Sources */,
 				3B787A831D069219009997E9 /* ZKRobotTableViewCell.m in Sources */,
 				3B5A5A211D0184D000105280 /* ZKUtil.m in Sources */,
+				3B1EC1F71D13F4E500F39CAC /* ZKMianMapView.m in Sources */,
 				3B5A5A1F1D0184D000105280 /* UploadParam.m in Sources */,
 				A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */,
 				3B61CC0C1D0E4C570022DDC7 /* ZKMainPalyCollectionViewController.m in Sources */,
@@ -1351,6 +1388,7 @@
 				3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */,
 				3B5A59F61D0184B200105280 /* UIViewController+Prompt.m in Sources */,
 				A19A00BB1D12EB66002230BF /* ZKMainPlayCollectionViewCell.m in Sources */,
+				3B1EC2011D13F82900F39CAC /* CalloutMapAnnotation.m in Sources */,
 				A1E574CF1D045D25009E5507 /* UserInfo.m in Sources */,
 				3B61CC121D0E4C9D0022DDC7 /* ZKMainMapViewController.m in Sources */,
 				3B6A1B9D1D0FA85D0021C524 /* ZKMainHomeTableViewController.m in Sources */,

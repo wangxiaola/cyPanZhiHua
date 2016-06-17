@@ -20,7 +20,7 @@
                             <constraint firstAttribute="width" constant="80" id="c9k-NG-XQr"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_lab_recomment" translatesAutoresizingMaskIntoConstraints="NO" id="nNc-zB-p9i">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="table_lab_recomment" translatesAutoresizingMaskIntoConstraints="NO" id="nNc-zB-p9i">
                         <rect key="frame" x="8" y="14" width="36" height="13"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zv-gt-9Md">

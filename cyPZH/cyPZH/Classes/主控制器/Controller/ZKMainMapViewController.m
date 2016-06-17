@@ -11,10 +11,13 @@
 #import "ZKMainMapSelectView.h"
 #import "ZKScenicFoodTableViewCell.h"
 #import "ZKErrorView.h"
+#import "ZKMianMapView.h"
 
 @interface ZKMainMapViewController ()<UITableViewDelegate,UITableViewDataSource,ZKMainMapSelectViewDelegate>
 
 @property (nonatomic, strong) ZKMainMapSelectView *selectView;
+
+@property (nonatomic, strong) ZKMianMapView *mainMapView;
 
 @property (nonatomic, strong) UITableView *tableView;
 // 数据
@@ -23,6 +26,7 @@
  *  无数据时显示的view,可在子类自定义
  */
 @property (nonatomic, weak) ZKErrorView *promptView;
+
 
 @end
 
@@ -41,20 +45,25 @@
 #pragma mark 初始化视图
 - (void)initSupViews
 {
-    self.selectView = [[ZKMainMapSelectView alloc] initWithFrame:CGRectMake(0, 64, _SCREEN_WIDTH, 60) selectType:self.mChoose];
-    self.selectView.delegate = self;
-    [self.view insertSubview:self.selectView atIndex:999];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, self.selectView.frame.origin.y+60, _SCREEN_WIDTH, _SCREEN_HEIGHT -60 - self.tabBarController.tabBar.frame.size.height-64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, 60)];
+    headerView.backgroundColor = TabelBackCorl;
+    self.tableView.tableHeaderView = headerView;
     self.tableView.estimatedRowHeight = 94;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.backgroundColor = TabelBackCorl;
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorInset = UIEdgeInsetsZero;
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
     [self.view insertSubview:self.tableView atIndex:800];
     self.tableView.mj_header = [MJDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(updataData)];
+    
+    self.mainMapView = [[ZKMianMapView alloc] initWithFrame:CGRectMake(0, 64, _SCREEN_WIDTH, _SCREEN_HEIGHT - 64 - self.tabBarController.tabBar.frame.size.height)];
+    self.mainMapView.hidden = YES;
+    [self.view insertSubview:self.mainMapView atIndex:900];
+    
     /**
      *  错误视图
      */
@@ -70,10 +79,38 @@
         make.height.mas_equalTo(22);
     }];
     
+    self.selectView = [[ZKMainMapSelectView alloc] initWithFrame:CGRectMake(0, 64, _SCREEN_WIDTH, 60) selectType:self.mChoose];
+    self.selectView.delegate = self;
+    [self.view insertSubview:self.selectView atIndex:999];
+    
+
+    
     
     
 }
+/**
+ *  加载地图
+ *
+ *  @param isShowMap 是否显示
+ */
+- (void)initMaapView:(BOOL)isShowMap
+{
 
+    if (isShowMap == YES)
+    {
+        self.mainMapView.hidden = NO;
+        [self.mainMapView addAnnotations:self.dataArray Type:self.mChoose];
+        
+    }
+    else
+    {
+        self.mainMapView.hidden = YES;
+        [self.mainMapView mapDestroy];
+
+    
+    }
+
+}
 
 #pragma mark ---
 #pragma mark -- ZKMainMapSelectViewDelegate ---
@@ -86,6 +123,7 @@
  */
 - (void)updataSelectData:(NSArray<ZKScenicListMode*>*)list selectType:(NSInteger)type;
 {
+    self.choose = type;
     [self.tableView.mj_header endRefreshing];
     self.dataArray = list;
     self.promptView.prompt = list.count == 0?@"暂无数据":@"";
@@ -103,12 +141,14 @@
         // 地图
         [sender setBackgroundImage:[UIImage imageNamed:@"play_icon_1"] forState:UIControlStateNormal];
         sender.selected = YES;
+        [self initMaapView:sender.selected];
     }
     else
     {
         //列表
         sender.selected = NO;
         [sender setBackgroundImage:[UIImage imageNamed:@"table_map"] forState:UIControlStateNormal];
+        [self initMaapView:sender.selected];
     }
     
 }
