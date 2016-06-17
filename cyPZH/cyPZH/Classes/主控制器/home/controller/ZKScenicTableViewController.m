@@ -47,8 +47,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"table_map" highIcon:nil target:self action:@selector(mapClick)];
-    
     [self uploadView];
     [self initData];
     [self updataParams];
@@ -130,6 +128,13 @@
 {
     _applyList = applyList;
 }
+/**
+ *  创建右边按钮
+ */
+- (void)addRitBarItem
+{
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"table_map" highIcon:nil target:self action:@selector(mapClick)];
+}
 - (void)uploadView;
 {
     [self titleView:_applyList.name];
@@ -142,6 +147,7 @@
             self.cacheFilename = @"sceneryList";
             self.modelsType = [ZKScenicListMode class];
             [self setAdvertisementType:@"ticket"];
+            [self addRitBarItem];
             break;
         case ZKScenicHotel:
             [self.tableView registerNib:[UINib nibWithNibName:@"ZKScenicFoodTableViewCell" bundle:nil] forCellReuseIdentifier:ZKScenicFoodTableViewCellID];
@@ -149,6 +155,7 @@
             self.cacheFilename = @"hotelList";
             self.modelsType = [ZKScenicListMode class];
             [self setAdvertisementType:@"hotel"];
+            [self addRitBarItem];
             break;
         case ZKScenicFood:
             self.type = @"dining";
@@ -157,6 +164,7 @@
             self.cacheFilename = @"diningList";
             self.modelsType = [ZKScenicListMode class];
             [self setAdvertisementType:@"food"];
+            [self addRitBarItem];
             break;
         case ZKScenicStrategy:
             self.type = @"";
