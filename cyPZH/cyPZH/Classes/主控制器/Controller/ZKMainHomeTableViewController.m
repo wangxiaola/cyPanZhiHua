@@ -308,10 +308,9 @@
     [ZKUtil MyValue:[NSString stringWithFormat:@"%f",currLocation.coordinate.longitude] MKey:Longitude];
     [_locationManager stopUpdatingLocation];
     
-    CLLocation *c = [[CLLocation alloc] initWithLatitude:currLocation.coordinate.latitude longitude:currLocation.coordinate.longitude];
     //创建位置
     CLGeocoder *revGeo = [[CLGeocoder alloc] init];
-    [revGeo reverseGeocodeLocation:c
+    [revGeo reverseGeocodeLocation:currLocation
      //反向地理编码
                  completionHandler:^(NSArray *placemarks, NSError *error) {
                      

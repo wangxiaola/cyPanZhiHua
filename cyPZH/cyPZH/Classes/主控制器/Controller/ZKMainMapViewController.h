@@ -12,4 +12,6 @@
  */
 @interface ZKMainMapViewController : ZKBaseViewController
 
+@property (nonatomic, assign,getter=mChoose) NSInteger choose;
+
 @end

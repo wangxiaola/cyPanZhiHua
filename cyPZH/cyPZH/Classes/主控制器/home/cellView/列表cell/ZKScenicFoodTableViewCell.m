@@ -21,8 +21,10 @@ NSString *const ZKScenicFoodTableViewCellID = @"ZKScenicFoodTableViewCellID";
 }
 - (void)setList:(ZKScenicListMode *)list
 {
+    NSString * url;
+    url = [list.logosmall containsString:IMAGE_URL_CSW]?list.logosmall:[NSString stringWithFormat:@"%@%@",IMAGE_URL_CSW,list.logosmall];
     
-    [ZKUtil UIimageView:_headerImageView NSSting:list.logosmall];
+    [ZKUtil UIimageView:_headerImageView NSSting:url];
     _nameLabel.text = strIsNull(list.name);
     _piceLabel.text = [NSString stringWithFormat:@"%ld分",(long)list.exponent];
     _rating.rating = list.exponent;

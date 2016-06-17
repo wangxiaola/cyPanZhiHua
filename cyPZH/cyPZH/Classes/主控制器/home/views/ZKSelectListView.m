@@ -37,7 +37,17 @@
         _type = dex;
         jlSate = -1;
         self.backgroundColor = TabelBackCorl;
-        _searchBar = [[YYSearchBar alloc] initWithFrame:CGRectMake(10, 5, _SCREEN_WIDTH-20, 26)];
+        float searchHeight ;
+        
+        if (dex == 2)
+        {
+            searchHeight = frame.size.height - 10;
+        }
+        else
+        {
+            searchHeight = 26;
+        }
+        _searchBar = [[YYSearchBar alloc] initWithFrame:CGRectMake(10, 5, _SCREEN_WIDTH-20, searchHeight)];
         _searchBar.backgroundColor = [UIColor clearColor];
         _searchBar.placeString = @"输入搜索";
         _searchBar.isWeeter = YES;
@@ -155,8 +165,7 @@
 {
     if (isScoll)
     {
-        
-        
+
         [_mpButtonArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             
             UIButton *bty = obj;
@@ -188,7 +197,7 @@
 #pragma mark 点击事件
 - (void)titleClick:(UIButton*)sender
 {
-    
+    [self endEditing:YES];
     [self selectBtton:sender.tag isScollView:NO];
     
     NSArray *array = [[listArray objectAtIndex:sender.tag] valueForKey:@"array"];
@@ -231,8 +240,7 @@
  */
 - (void)scollClick:(UIButton*)sender
 {
-    
-    
+    [self endEditing:YES];
     if ([self.delegate respondsToSelector:@selector(condition:typeList:index:)])
     {
        
@@ -244,9 +252,6 @@
         
         _scollView.frame =  CGRectMake(0,self.frame.size.height+64, _SCREEN_WIDTH, 0);
     }];
-    
-    
-    
     
 }
 #pragma mark - searchBarDelegate

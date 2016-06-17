@@ -79,7 +79,7 @@
     if (self.placeString) {
         attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:self.placeString];
     }else{
-        attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"景点地名/酒店"];
+        attributedPlaceholder = [[NSMutableAttributedString alloc] initWithString:@"输入搜索"];
     }
     [attributedPlaceholder addAttribute:(NSString*)NSForegroundColorAttributeName value:RGB(180, 180, 180) range:NSMakeRange(0, attributedPlaceholder.length)];
     searchField.attributedPlaceholder = attributedPlaceholder;

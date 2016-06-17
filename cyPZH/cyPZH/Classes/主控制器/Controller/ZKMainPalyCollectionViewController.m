@@ -174,7 +174,6 @@ float const sdCycleHeghit = 440/3;
 - (void)setupPromptView
 {
     MJWeakSelf
-    
     ZKErrorView *promptView = [[ZKErrorView alloc] init];
     promptView.hidden = YES;
     

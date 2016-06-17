@@ -38,6 +38,10 @@ FOUNDATION_EXPORT NSString *const POST_ZK_URL;
  *  图片拼接地址
  */
 FOUNDATION_EXPORT NSString *const IMAGE_URL;
+/**
+ *  图片拼接地址 陈思文
+ */
+FOUNDATION_EXPORT NSString *const IMAGE_URL_CSW;
 
 /**
  *  错误图片
@@ -55,7 +59,11 @@ FOUNDATION_EXPORT NSString *const Latitude;
 FOUNDATION_EXPORT NSString *const Longitude;
 FOUNDATION_EXPORT NSString *const ADDRESS;
 FOUNDATION_EXPORT NSString *const CITY;
-
+/**
+ *  地址名字
+ */
+FOUNDATION_EXPORT NSString *const ZK_HZ_ADDER;
+FOUNDATION_EXPORT NSString *const ZK_PY_ADDER;
 
 /* shareSDK */
 //    腾讯

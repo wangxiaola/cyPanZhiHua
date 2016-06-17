@@ -10,6 +10,8 @@ NSString *const POST_ZK_URL      = @"http://tpanzhihua.m.geeker.com.cn/service.c
 
 NSString *const IMAGE_URL      = @"http://tpanzhihua.m.geeker.com.cn/";
 
+NSString *const IMAGE_URL_CSW = @"http://www.tpanzhihua.com//";
+
 NSString *const ZK_ERR           = @"no_data";
 
 NSString *const BAIDU_ID = @"1462e31ee3";
@@ -28,6 +30,9 @@ NSString *const Latitude  = @"Latitude";
 NSString *const Longitude = @"Longitude";
 NSString *const ADDRESS   = @"ADDRESS";
 NSString *const CITY      = @"CITY";
+
+NSString *const ZK_HZ_ADDER = @"攀枝花";
+NSString *const ZK_PY_ADDER = @"panzhihua";
 
 //   支付宝
 NSString *const PARTNER = @"2088121287826188";
