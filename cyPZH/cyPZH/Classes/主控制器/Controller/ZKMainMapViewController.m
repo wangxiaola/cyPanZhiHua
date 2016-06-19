@@ -274,24 +274,23 @@
     
     self.lat = currLocation.coordinate.latitude;
     self.lon = currLocation.coordinate.longitude;
-    
-    CLGeocoder *clGeoCoder = [[CLGeocoder alloc] init];
-    __block NSString *cityStr;
-    
-    CLGeocodeCompletionHandler handle = ^(NSArray *placemarks,NSError *error)
-    
-    {
-        for (CLPlacemark * placeMark in placemarks)
-        {
-            NSDictionary *addressDic=placeMark.addressDictionary;
-            NSString *city=[addressDic objectForKey:@"City"];
-            cityStr = city;
-            [self verdictLocationAddress:cityStr];
-            
-        }
-    };
+    //创建位置
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:currLocation
+     //反向地理编码
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                     
+                     if (!error && [placemarks count] > 0)
+                     {
+                         NSDictionary *dict =
+                         [[placemarks objectAtIndex:0] addressDictionary];
+                         
+                         [self verdictLocationAddress:[dict objectForKey:@"City"]];
+                     }
+                     
+                 }];
     HUDDissmiss
-    [clGeoCoder reverseGeocodeLocation:currLocation completionHandler:handle];
+    
     [_locationManager stopUpdatingLocation];
 }
 // 定位失败
@@ -299,6 +298,7 @@
        didFailWithError:(NSError *)error;
 {
     [SVProgressHUD showErrorWithStatus:@"亲！实时位置获取失败"];
+    self.promptView.hidden = NO;
 }
 
 /**
