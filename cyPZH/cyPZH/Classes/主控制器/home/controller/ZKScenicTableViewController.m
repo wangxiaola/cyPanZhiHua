@@ -406,13 +406,10 @@
     [self.view endEditing:YES];
 }
 #pragma mark 点击事件
-- (void)titleClick
-{
-    
-}
+
 - (void)mapClick
 {
-    
+    [self.navigationController pushViewController:[NSClassFromString(@"ZKMainMapViewController") new] animated:YES];
     
 }
 

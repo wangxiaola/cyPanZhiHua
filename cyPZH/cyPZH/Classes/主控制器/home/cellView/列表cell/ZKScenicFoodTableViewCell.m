@@ -11,6 +11,7 @@ NSString *const ZKScenicFoodTableViewCellID = @"ZKScenicFoodTableViewCellID";
 #import "cyPZH-Swift.h"
 #import "ZKScenicListMode.h"
 #import "UIImage+CircleImage.h"
+#import "ZKMainMapMode.h"
 
 @implementation ZKScenicFoodTableViewCell
 
@@ -71,7 +72,44 @@ NSString *const ZKScenicFoodTableViewCellID = @"ZKScenicFoodTableViewCellID";
         
     }
 }
+- (void)setMapList:(ZKMainMapMode *)mapList
+{
+    NSString * url;
+    url = [mapList.logosmall containsString:IMAGE_URL_CSW]?mapList.logosmall:[NSString stringWithFormat:@"%@%@",IMAGE_URL_CSW,mapList.logosmall];
+    
+    [ZKUtil UIimageView:_headerImageView NSSting:url];
+    _nameLabel.text = strIsNull(mapList.name);
+    _piceLabel.text = [NSString stringWithFormat:@"%ld分",(long)mapList.exponent];
+    _rating.rating = mapList.exponent;
+    _adderLabel.text = strIsNull(mapList.address);
+    
+    _juliLabel.text = [NSString stringWithFormat:@"%.2fkm",mapList.juli/1000];
+    
+    self.QJImageView.hidden =  YES;
+    
+    NSString * codeName = @"err";
+    self.codeListImage.image = [UIImage imageNamed:codeName];
+    self.tjImageView.hidden = YES;
 
+    if (strIsEmpty(mapList.price))
+    {
+        NSString *state = [NSString stringWithFormat:@"¥%@",mapList.price];
+        
+        NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ 起",state]];
+        NSRange redRange = NSMakeRange(0,state.length);
+        [noteStr addAttribute:NSForegroundColorAttributeName value:CYBColorGreen range:redRange];
+        [noteStr addAttribute:NSFontAttributeName value:[UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0] range:redRange];
+        _priceLabel.attributedText = noteStr;
+        
+    }
+    else
+    {
+        _priceLabel.attributedText = nil;
+        
+    }
+
+    
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     

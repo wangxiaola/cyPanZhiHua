@@ -15,13 +15,13 @@
 @property (nonatomic,strong)MKMapView *mapView;
 @property (nonatomic,assign)double span;//default 40000
 
-- (id)initWithDelegate:(id<MapViewDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<MapViewDelegate>)delegate;
 /**
  *  刷新数据
  */
 - (void)beginLoad;
 
-
+- (void)myUserLocation:(CLLocationCoordinate2D)cllocation;
 @end
 
 
@@ -29,7 +29,7 @@
 
 - (NSInteger)numbersWithCalloutViewForMapView;
 - (CLLocationCoordinate2D)coordinateForMapViewWithIndex:(NSInteger)index;
-- (UIView *)mapViewCalloutContentViewWithIndex:(NSInteger)index;
+- (UIImage *)mapViewCalloutContentViewWithIndex:(NSInteger)index;
 - (UIImage *)baseMKAnnotationViewImageWithIndex:(NSInteger)index;
 
 @optional

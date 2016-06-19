@@ -19,7 +19,6 @@
     // Do any additional setup after loading the view.
     
     self.delegate = self;
-
     self.tabBar.tintColor = CYBColorGreen;
 }
 
@@ -27,7 +26,16 @@
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
+    NSUInteger dex = tabBarController.selectedIndex;
     
+    if (dex != 3)
+    {
+        //创建通知
+        NSNotification *notification =[NSNotification notificationWithName:@"dismmMap" object:nil];
+        //通过通知中心发送通知
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+        
+    }
     
 }
 

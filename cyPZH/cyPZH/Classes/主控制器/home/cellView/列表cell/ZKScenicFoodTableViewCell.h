@@ -8,7 +8,7 @@
 
 extern NSString *const ZKScenicFoodTableViewCellID;
 #import <UIKit/UIKit.h>
-@class RatingBar,ZKScenicListMode;
+@class RatingBar,ZKScenicListMode,ZKMainMapMode;
 
 @interface ZKScenicFoodTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *leveName;
@@ -24,4 +24,7 @@ extern NSString *const ZKScenicFoodTableViewCellID;
 @property (weak, nonatomic) IBOutlet UIImageView *QJImageView;
 
 @property (strong, nonatomic) ZKScenicListMode *list;
+
+@property (strong, nonatomic) ZKMainMapMode *mapList;
+
 @end

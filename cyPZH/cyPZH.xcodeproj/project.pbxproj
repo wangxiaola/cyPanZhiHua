@@ -13,7 +13,6 @@
 		3B1EC1F41D13CC9800F39CAC /* ZKReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1F31D13CC9800F39CAC /* ZKReminderView.m */; };
 		3B1EC1F71D13F4E500F39CAC /* ZKMianMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1F61D13F4E500F39CAC /* ZKMianMapView.m */; };
 		3B1EC1FB1D13F7FB00F39CAC /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1FA1D13F7FB00F39CAC /* MapView.m */; };
-		3B1EC1FE1D13F81200F39CAC /* CallOutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */; };
 		3B1EC2011D13F82900F39CAC /* CalloutMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */; };
 		3B1EC2041D13F83400F39CAC /* BasicMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B1EC2031D13F83400F39CAC /* BasicMapAnnotation.m */; };
 		3B2546E01D11028E001605F1 /* ZKMainHeaderMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2546D61D11028E001605F1 /* ZKMainHeaderMode.m */; };
@@ -104,6 +103,8 @@
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
+		A106D14F1D163A9F00497B45 /* ZKMainMapMode.m in Sources */ = {isa = PBXBuildFile; fileRef = A106D14E1D163A9F00497B45 /* ZKMainMapMode.m */; };
+		A106D1521D16658300497B45 /* ZKMainSelectPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = A106D1511D16658300497B45 /* ZKMainSelectPopView.m */; };
 		A19A00B71D12E6DE002230BF /* ZKMainPlayMode.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A00B61D12E6DE002230BF /* ZKMainPlayMode.m */; };
 		A19A00BB1D12EB66002230BF /* ZKMainPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A00B91D12EB66002230BF /* ZKMainPlayCollectionViewCell.m */; };
 		A19A00BC1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A19A00BA1D12EB66002230BF /* ZKMainPlayCollectionViewCell.xib */; };
@@ -153,8 +154,6 @@
 		3B1EC1F61D13F4E500F39CAC /* ZKMianMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMianMapView.m; sourceTree = "<group>"; };
 		3B1EC1F91D13F7FB00F39CAC /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		3B1EC1FA1D13F7FB00F39CAC /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
-		3B1EC1FC1D13F81200F39CAC /* CallOutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallOutAnnotationView.h; sourceTree = "<group>"; };
-		3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallOutAnnotationView.m; sourceTree = "<group>"; };
 		3B1EC1FF1D13F82900F39CAC /* CalloutMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalloutMapAnnotation.h; sourceTree = "<group>"; };
 		3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalloutMapAnnotation.m; sourceTree = "<group>"; };
 		3B1EC2021D13F83400F39CAC /* BasicMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicMapAnnotation.h; sourceTree = "<group>"; };
@@ -323,6 +322,10 @@
 		3BBF4F0E1D05149B00EB8DCF /* MJUpdateUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJUpdateUI.h; sourceTree = "<group>"; };
 		3BBF4F131D05156900EB8DCF /* ZKBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseTableView.h; sourceTree = "<group>"; };
 		3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKBaseTableView.m; sourceTree = "<group>"; };
+		A106D14D1D163A9F00497B45 /* ZKMainMapMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKMainMapMode.h; path = cyPZH/ZKMainMapMode.h; sourceTree = SOURCE_ROOT; };
+		A106D14E1D163A9F00497B45 /* ZKMainMapMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKMainMapMode.m; path = cyPZH/ZKMainMapMode.m; sourceTree = SOURCE_ROOT; };
+		A106D1501D16658300497B45 /* ZKMainSelectPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainSelectPopView.h; sourceTree = "<group>"; };
+		A106D1511D16658300497B45 /* ZKMainSelectPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainSelectPopView.m; sourceTree = "<group>"; };
 		A19A00B51D12E6DE002230BF /* ZKMainPlayMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKMainPlayMode.h; path = cyPZH/ZKMainPlayMode.h; sourceTree = SOURCE_ROOT; };
 		A19A00B61D12E6DE002230BF /* ZKMainPlayMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKMainPlayMode.m; path = cyPZH/ZKMainPlayMode.m; sourceTree = SOURCE_ROOT; };
 		A19A00B81D12EB66002230BF /* ZKMainPlayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKMainPlayCollectionViewCell.h; path = cyPZH/ZKMainPlayCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
@@ -428,8 +431,8 @@
 				3B1EC2001D13F82900F39CAC /* CalloutMapAnnotation.m */,
 				3B1EC1F91D13F7FB00F39CAC /* MapView.h */,
 				3B1EC1FA1D13F7FB00F39CAC /* MapView.m */,
-				3B1EC1FC1D13F81200F39CAC /* CallOutAnnotationView.h */,
-				3B1EC1FD1D13F81200F39CAC /* CallOutAnnotationView.m */,
+				A106D1501D16658300497B45 /* ZKMainSelectPopView.h */,
+				A106D1511D16658300497B45 /* ZKMainSelectPopView.m */,
 			);
 			path = "地图文件";
 			sourceTree = "<group>";
@@ -462,6 +465,8 @@
 		3B2546BC1D110276001605F1 /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				A106D14D1D163A9F00497B45 /* ZKMainMapMode.h */,
+				A106D14E1D163A9F00497B45 /* ZKMainMapMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -1330,7 +1335,6 @@
 				3BA21D451D054F190027B5CE /* ZKBaseWebViewController.m in Sources */,
 				3B5E6D291D0CF3390096F9D7 /* ZKRobotStateTableViewCell.m in Sources */,
 				3B2547051D1119F4001605F1 /* ZKScenicTableViewController.m in Sources */,
-				3B1EC1FE1D13F81200F39CAC /* CallOutAnnotationView.m in Sources */,
 				3B5A59F21D0184B200105280 /* UIImage+CircleImage.m in Sources */,
 				3B61CC1E1D0E50970022DDC7 /* ZKMainMineTableViewController.m in Sources */,
 				3B807A5A1D1277C000E37A1D /* ZKScenicStrategyMode.m in Sources */,
@@ -1362,6 +1366,7 @@
 				3B61CC1B1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
+				A106D1521D16658300497B45 /* ZKMainSelectPopView.m in Sources */,
 				3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */,
 				3B5A5A171D0184C700105280 /* ZKCommonImagePickerController.m in Sources */,
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
@@ -1373,6 +1378,7 @@
 				3B807A561D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
+				A106D14F1D163A9F00497B45 /* ZKMainMapMode.m in Sources */,
 				3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */,
 				3B2547131D114305001605F1 /* ZKScenicFoodTableViewCell.m in Sources */,
 				3B2547081D111A5C001605F1 /* ZKSelectListView.m in Sources */,

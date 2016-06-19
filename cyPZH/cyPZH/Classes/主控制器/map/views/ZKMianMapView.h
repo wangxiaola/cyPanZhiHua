@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ZKScenicListMode;
+@class ZKMainMapMode;
 /**
  *  地图显示
  */
@@ -22,7 +22,11 @@
  *  @param dataArray 数据
  *  @param type      类型
  */
-- (void)addAnnotations:(NSArray<ZKScenicListMode*>*)dataArray Type:(NSInteger)type;
+- (void)addAnnotations:(NSArray<ZKMainMapMode*>*)dataArray Type:(NSInteger)type;
+// 更新数据
+- (void)updataAddAnnotations:(NSArray<ZKMainMapMode*>*)dataArray Type:(NSInteger)type;
+// 更新左标
+- (void)mapUpdataMyLat:(float)lat myLon:(float)lon;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 

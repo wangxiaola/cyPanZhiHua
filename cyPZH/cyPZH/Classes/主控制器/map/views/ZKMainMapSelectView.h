@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZKScenicListMode.h"
+#import "ZKMainMapMode.h"
 
 @protocol ZKMainMapSelectViewDelegate <NSObject>
 @optional
@@ -17,7 +17,7 @@
  *  @param list 数据
  *  @param type 类型
  */
-- (void)updataSelectData:(NSArray<ZKScenicListMode*>*)list selectType:(NSInteger)type;
+- (void)updataSelectData:(NSArray<ZKMainMapMode*>*)list selectType:(NSInteger)type;
 
 @end
 
@@ -40,5 +40,7 @@
  */
 - (void)selectViewUpdata;
 
+// 更新左标
+- (void)selecUpdataMyLat:(float)lat myLon:(float)lon;
 
 @end
