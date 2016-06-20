@@ -61,7 +61,7 @@ static NSString *highlightedStr = @"map_select";
     
     if (self) {
 
-        UIView *bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 30)];
+        UIView *bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 40)];
         bannerView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         [self addSubview:bannerView];
         
@@ -72,22 +72,22 @@ static NSString *highlightedStr = @"map_select";
         
         for (int i=0; i<5; i++) {
             
-            UIImageView* lefView =[[UIImageView alloc]initWithFrame:CGRectMake(8+gapWidth*i,(30-14)/2, 14, 14)];
+            UIImageView* lefView =[[UIImageView alloc]initWithFrame:CGRectMake(8+gapWidth*i,(40-16)/2, 16, 16)];
             lefView.backgroundColor =[UIColor clearColor];
             lefView.tag =i+1000;
             lefView.image =[UIImage imageNamed:normalStr];
             [self addSubview:lefView];
             [self.imageArray addObject:lefView];
             
-            UILabel *  name =[[UILabel alloc]initWithFrame:CGRectMake(gapWidth*i+8, 0, gapWidth, 30)];
+            UILabel *  name =[[UILabel alloc]initWithFrame:CGRectMake(gapWidth*i+8, 0, gapWidth, 40)];
             name.backgroundColor =[UIColor clearColor];
             name.textColor =[UIColor whiteColor];
             name.textAlignment =NSTextAlignmentCenter;
-            name.font =[UIFont systemFontOfSize:12];
+            name.font =[UIFont systemFontOfSize:13];
             name.text =titis [i];
             [self addSubview:name];
             
-            UIButton * button =[[UIButton alloc]initWithFrame:CGRectMake(gapWidth*i, 0, gapWidth, 30)];
+            UIButton * button =[[UIButton alloc]initWithFrame:CGRectMake(gapWidth*i, 0, gapWidth, 40)];
             button.backgroundColor =[UIColor clearColor];
             button.tag =i+3000;
             [button addTarget:self action:@selector(selectButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -95,7 +95,7 @@ static NSString *highlightedStr = @"map_select";
             [self addSubview:button];
         }
         
-        ZKSelectListView *headerView = [[ZKSelectListView alloc] initWithFrame:CGRectMake(0, 30, _SCREEN_WIDTH,30) sceneryType:2 superView:nil];
+        ZKSelectListView *headerView = [[ZKSelectListView alloc] initWithFrame:CGRectMake(0, 40, _SCREEN_WIDTH,40) sceneryType:2 superView:nil];
         headerView.delegate = self;
         [self addSubview:headerView];
         headerView.backgroundColor = [UIColor clearColor];

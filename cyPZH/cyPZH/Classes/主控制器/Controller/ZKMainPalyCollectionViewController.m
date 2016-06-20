@@ -11,6 +11,7 @@
 #import "ZKMainPlayCollectionViewCell.h"
 #import "ZKMainPlayMode.h"
 #import "ZKErrorView.h"
+#import "ZKMainPlayeRemindView.h"
 
 @interface ZKMainPalyCollectionViewController ()<SDCycleScrollViewDelegate>
 
@@ -216,7 +217,8 @@ float const sdCycleHeghit = 440/3;
 {
     
     
-    
+    ZKMainPlayeRemindView *popView = [[ZKMainPlayeRemindView alloc] initInfor:@"小编正在加班策划,敬请期待!"];
+    [popView show];
     
 }
 #pragma mark <SDCycleScrollViewDelegate>

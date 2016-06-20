@@ -79,7 +79,7 @@
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.view.frame.size.height) style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, 60)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, 80)];
     headerView.backgroundColor = TabelBackCorl;
     self.tableView.tableHeaderView = headerView;
     self.tableView.estimatedRowHeight = 94;
@@ -110,7 +110,7 @@
         make.height.mas_equalTo(22);
     }];
     
-    self.selectView = [[ZKMainMapSelectView alloc] initWithFrame:CGRectMake(0, 64, _SCREEN_WIDTH, 60) selectType:self.mChoose];
+    self.selectView = [[ZKMainMapSelectView alloc] initWithFrame:CGRectMake(0, 64, _SCREEN_WIDTH, 80) selectType:self.mChoose];
     self.selectView.delegate = self;
     [self.view insertSubview:self.selectView atIndex:999];
     
@@ -169,18 +169,20 @@
 
 - (void)mapClick:(UIButton*)sender
 {
-    self.isMap = !sender.selected;
+    
     if (sender.selected == NO)
     {
         // 地图
         [sender setBackgroundImage:[UIImage imageNamed:@"play_icon_1"] forState:UIControlStateNormal];
         sender.selected = YES;
+        self.isMap = YES;
         [self initMaapView:sender.selected];
     }
     else
     {
         //列表
         sender.selected = NO;
+        self.isMap = NO;
         [sender setBackgroundImage:[UIImage imageNamed:@"table_map"] forState:UIControlStateNormal];
         [self initMaapView:sender.selected];
     }
@@ -204,6 +206,7 @@
     {
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"table_map" highIcon:nil target:self action:@selector(mapClick:)];
         [self initMaapView:NO];
+        self.isMap = NO;
     }
 }
 #pragma mark ------
@@ -256,16 +259,43 @@
 #pragma mark 地理位置相关
 - (void)locan
 {
-    self.locationManager = [[CLLocationManager alloc]init];
-    _locationManager.delegate = self;
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationManager.distanceFilter = 10;
+
+    self.lat = [[ZKUtil ToTakeTheKey:Latitude] doubleValue];
+    self.lon = [[ZKUtil ToTakeTheKey:Longitude] doubleValue];
+    NSString *city = [ZKUtil ToTakeTheKey:CITY];
     
-    if (IOS8) {
-        [_locationManager requestAlwaysAuthorization];
+    if ([city isEqualToString:@"未知"])
+    {
+        //定位管理器
+        _locationManager=[[CLLocationManager alloc]init];
+        [SVProgressHUD showWithStatus:@"正在获取实时位置"];
+        if (![CLLocationManager locationServicesEnabled])
+        {
+            [SVProgressHUD showErrorWithStatus:@"定位服务当前可能尚未打开，请设置打开！"];
+            return;
+        }
+        //如果没有授权则请求用户授权
+        if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){
+            [_locationManager requestWhenInUseAuthorization];
+        }
+        else
+        {
+            //设置代理
+            _locationManager.delegate=self;
+            //设置定位精度
+            _locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+            [_locationManager requestAlwaysAuthorization];
+            //启动跟踪定位
+            [_locationManager startUpdatingLocation];
+        }
+
     }
-    [_locationManager startUpdatingLocation];
-    [SVProgressHUD showWithStatus:@"正在获取实时位置"];
+    else
+    {
+    [self verdictLocationAddress:city];
+    
+    }
+   
     
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -289,8 +319,7 @@
                      }
                      
                  }];
-    HUDDissmiss
-    
+    [SVProgressHUD showSuccessWithStatus:@"为正常获取成功!"];
     [_locationManager stopUpdatingLocation];
 }
 // 定位失败

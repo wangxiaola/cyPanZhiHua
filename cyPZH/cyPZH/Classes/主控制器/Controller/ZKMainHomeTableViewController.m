@@ -288,15 +288,28 @@
 #pragma mark 地理位置相关
 - (void)locan
 {
-    self.locationManager = [[CLLocationManager alloc]init];
-    _locationManager.delegate = self;
-    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locationManager.distanceFilter = 10;
-    
-    if (IOS8) {
-        [_locationManager requestAlwaysAuthorization];
+    //定位管理器
+    _locationManager=[[CLLocationManager alloc]init];
+    [SVProgressHUD showWithStatus:@"正在获取实时位置"];
+    if (![CLLocationManager locationServicesEnabled])
+    {
+        [SVProgressHUD showErrorWithStatus:@"定位服务当前可能尚未打开，请设置打开！"];
+        return;
     }
-    [_locationManager startUpdatingLocation];
+    //如果没有授权则请求用户授权
+    if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){
+        [_locationManager requestWhenInUseAuthorization];
+    }
+    else
+    {
+        //设置代理
+        _locationManager.delegate=self;
+        //设置定位精度
+        _locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+        [_locationManager requestAlwaysAuthorization];
+        //启动跟踪定位
+        [_locationManager startUpdatingLocation];
+    }
     
 }
 
