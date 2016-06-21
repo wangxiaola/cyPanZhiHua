@@ -174,14 +174,15 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 {
     [_commentDic removeAllObjects];
     _commentDic = nil;
-    self.commentDic[@"id"] = [NSString stringWithFormat:@"%d",ID];
+    self.commentDic[@"id"] = [NSString stringWithFormat:@"%ld",(long)ID];
     
     [ZKHttp postWithURLString:POST_ZK_URL parameters:self.commentDic success:^(id responseObject) {
         
         self.inforMode = [ZKMainPlayInforMode mj_objectWithKeyValues:responseObject];
-
+        
         NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+        
         NSIndexSet *indexSetOne=[[NSIndexSet alloc]initWithIndex:1];
         [self.tableView reloadSections:indexSetOne withRowAnimation:UITableViewRowAnimationAutomatic];
 
@@ -236,7 +237,7 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     else
     {
         
-        return indexPath.row == 0 ? 38:60;
+        return indexPath.row == 0 ? 38:66;
         
     }
     

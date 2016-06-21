@@ -15,7 +15,9 @@ extern NSString *const ZKMainPlayInforTableViewCellID;
 
 @property (nonatomic, strong) ZKMainSceneryMode *sceneryList;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *popView;
+
+@property (weak, nonatomic) IBOutlet UITextView *infoTextView;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *numberButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageViw;

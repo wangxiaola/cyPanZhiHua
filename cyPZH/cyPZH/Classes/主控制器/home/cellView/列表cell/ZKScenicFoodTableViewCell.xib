@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="358" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="358" height="89"/>
+                <rect key="frame" x="0.0" y="0.0" width="358" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J6E-eH-NQ5">
@@ -20,7 +21,7 @@
                             <constraint firstAttribute="width" constant="80" id="c9k-NG-XQr"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="table_lab_recomment" translatesAutoresizingMaskIntoConstraints="NO" id="nNc-zB-p9i">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_lab_recomment" translatesAutoresizingMaskIntoConstraints="NO" id="nNc-zB-p9i">
                         <rect key="frame" x="8" y="14" width="36" height="13"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zv-gt-9Md">
@@ -112,7 +113,9 @@
                     <constraint firstItem="T7S-14-iEA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="2e1-zb-5vb"/>
                     <constraint firstItem="UX5-4j-cn0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OSS-Kw-zuG" secondAttribute="trailing" constant="4" id="6tc-GD-ycV"/>
                     <constraint firstAttribute="trailing" secondItem="T7S-14-iEA" secondAttribute="trailing" constant="8" id="7je-dE-gSs"/>
+                    <constraint firstItem="nNc-zB-p9i" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="7vc-CI-aSe"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Zv-gt-9Md" secondAttribute="trailing" constant="6" id="Bm3-zZ-0of"/>
+                    <constraint firstItem="nNc-zB-p9i" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="leading" id="ERj-md-hgQ"/>
                     <constraint firstItem="28X-US-yIs" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="trailing" constant="8" id="H60-0F-DuX"/>
                     <constraint firstItem="J6E-eH-NQ5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="HKz-L4-qUd"/>
                     <constraint firstItem="7Zv-gt-9Md" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="trailing" constant="6" id="KYI-wg-9lA"/>
@@ -123,13 +126,11 @@
                     <constraint firstItem="gH3-7Q-7mE" firstAttribute="centerY" secondItem="emO-yT-56E" secondAttribute="centerY" id="Z8L-cp-elw"/>
                     <constraint firstItem="lAd-GC-ThB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="Zoz-XW-DsU"/>
                     <constraint firstItem="8xa-ac-DPO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Zx2-0f-W1z"/>
-                    <constraint firstItem="nNc-zB-p9i" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="leading" id="bSq-MY-b9a"/>
                     <constraint firstAttribute="trailing" secondItem="lAd-GC-ThB" secondAttribute="trailing" constant="8" id="dmc-p6-qgS"/>
                     <constraint firstItem="OSS-Kw-zuG" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="trailing" constant="8" id="eZK-xm-t77"/>
                     <constraint firstItem="T7S-14-iEA" firstAttribute="leading" secondItem="8xa-ac-DPO" secondAttribute="trailing" constant="8" id="g4k-ES-LBC"/>
                     <constraint firstItem="gH3-7Q-7mE" firstAttribute="leading" secondItem="emO-yT-56E" secondAttribute="trailing" constant="8" id="kVa-F5-q5V"/>
                     <constraint firstItem="28X-US-yIs" firstAttribute="top" secondItem="7Zv-gt-9Md" secondAttribute="bottom" constant="1" id="nd9-DH-vVv"/>
-                    <constraint firstItem="nNc-zB-p9i" firstAttribute="top" secondItem="J6E-eH-NQ5" secondAttribute="top" constant="6" id="nll-9I-NPP"/>
                     <constraint firstItem="gH3-7Q-7mE" firstAttribute="height" secondItem="emO-yT-56E" secondAttribute="height" id="s8f-iv-Ccd"/>
                     <constraint firstItem="emO-yT-56E" firstAttribute="leading" secondItem="J6E-eH-NQ5" secondAttribute="trailing" constant="8" id="wWt-Wv-WbH"/>
                     <constraint firstAttribute="bottom" secondItem="J6E-eH-NQ5" secondAttribute="bottom" constant="8" id="zpE-MB-JNj"/>

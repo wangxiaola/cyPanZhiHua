@@ -28,7 +28,7 @@
     
     NSUInteger dex = tabBarController.selectedIndex;
         //创建通知
-    NSNotification *notification =[NSNotification notificationWithName:@"selectTabar" object:[NSString stringWithFormat:@"%d",dex]];
+    NSNotification *notification =[NSNotification notificationWithName:@"selectTabar" object:[NSString stringWithFormat:@"%lu",(unsigned long)dex]];
         //通过通知中心发送通知
     [[NSNotificationCenter defaultCenter] postNotification:notification];
 

@@ -18,7 +18,7 @@ NSString *const PlayHeaderTableViewCellID = @"PlayHeaderTableViewCellID";
 - (void)headerNumber:(NSInteger)num;
 {
     
-    self.numberLabel.text = [NSString stringWithFormat:@"互动留言 (%d条)",num];
+    self.numberLabel.text = [NSString stringWithFormat:@"互动留言 (%ld条)",(long)num];
 
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

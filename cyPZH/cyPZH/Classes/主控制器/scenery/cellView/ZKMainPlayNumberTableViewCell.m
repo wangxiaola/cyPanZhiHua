@@ -38,8 +38,8 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
     }
     
     self.peopleNumberLabel.text = @"5";
-    self.dqPeopelNumberLabel.text = [NSString stringWithFormat:@"%d",list.rtnumber];
-    self.czNumberLabel.text = [NSString stringWithFormat:@"%d",list.frontmax];
+    self.dqPeopelNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.rtnumber];
+    self.czNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.frontmax];
     self.comfortLabel.text = strIsNull(list.yjd);
     self.TemperatureLabel.text = [NSString stringWithFormat:@"%@ ~ %@°C",list.t1,list.t2];
     self.nameLabel.text = strIsNull(list.name);
