@@ -58,6 +58,9 @@
 
 /* playItem */
 @property (nonatomic, retain) AVPlayerItem *currentItem;
+
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+
 /**
  *  初始化WMPlayer的方法
  *

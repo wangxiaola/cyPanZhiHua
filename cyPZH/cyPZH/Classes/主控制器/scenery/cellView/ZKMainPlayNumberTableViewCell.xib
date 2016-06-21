@@ -41,8 +41,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-AD-K1S">
-                                <rect key="frame" x="409" y="30" width="0.0" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-AD-K1S">
+                                <rect key="frame" x="400" y="30" width="9" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="2rp-Fv-huA"/>
                                 </constraints>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery_Sun" translatesAutoresizingMaskIntoConstraints="NO" id="J3t-9B-8w4">
-                                <rect key="frame" x="388" y="31" width="17" height="13"/>
+                                <rect key="frame" x="379" y="31" width="17" height="13"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PzJ-TK-3UM">
                                 <rect key="frame" x="46" y="30" width="0.0" height="16"/>
@@ -115,6 +115,7 @@
                             <constraint firstItem="zHQ-Dx-qGB" firstAttribute="centerX" secondItem="k2j-hz-btt" secondAttribute="centerX" constant="-20" id="LKm-5f-zPR"/>
                             <constraint firstItem="mRV-nS-fd3" firstAttribute="centerY" secondItem="zHQ-Dx-qGB" secondAttribute="centerY" id="Mvz-sH-oD3"/>
                             <constraint firstItem="jTe-AD-K1S" firstAttribute="leading" secondItem="J3t-9B-8w4" secondAttribute="trailing" constant="4" id="O8k-IC-P2z"/>
+                            <constraint firstItem="jTe-AD-K1S" firstAttribute="leading" secondItem="J3t-9B-8w4" secondAttribute="trailing" constant="4" id="OCg-Yu-1ag"/>
                             <constraint firstItem="I2p-ZA-uVj" firstAttribute="centerY" secondItem="fE0-sv-sd6" secondAttribute="centerY" id="Pdn-RN-6nS"/>
                             <constraint firstItem="I2p-ZA-uVj" firstAttribute="leading" secondItem="jTe-AD-K1S" secondAttribute="trailing" constant="16" id="Tt9-g4-FXh"/>
                             <constraint firstItem="hA6-JK-PvT" firstAttribute="height" secondItem="jqz-eg-fZF" secondAttribute="height" id="U46-mV-gBr"/>
@@ -133,8 +134,15 @@
                             <constraint firstItem="zHQ-Dx-qGB" firstAttribute="height" secondItem="hA6-JK-PvT" secondAttribute="height" id="wug-tG-S2P"/>
                             <constraint firstItem="hA6-JK-PvT" firstAttribute="leading" secondItem="k2j-hz-btt" secondAttribute="leading" constant="8" id="xFc-dH-dTm"/>
                             <constraint firstItem="Vwk-I8-VaB" firstAttribute="leading" secondItem="hA6-JK-PvT" secondAttribute="trailing" constant="4" id="yR2-Rb-k0m"/>
+                            <constraint firstItem="J3t-9B-8w4" firstAttribute="centerY" secondItem="I2p-ZA-uVj" secondAttribute="centerY" id="ydx-up-Jni"/>
                             <constraint firstItem="mRV-nS-fd3" firstAttribute="leading" secondItem="zHQ-Dx-qGB" secondAttribute="trailing" constant="4" id="z3g-4T-BP5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CqU-97-Hyb"/>
+                                <exclude reference="O8k-IC-P2z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Pr-NX-Cia">
                         <rect key="frame" x="0.0" y="50" width="469" height="30"/>

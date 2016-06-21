@@ -1,0 +1,25 @@
+//
+//  ZKMainPlayInforTableViewCell.h
+//  cyPZH
+//
+//  Created by 王小腊 on 16/6/21.
+//  Copyright © 2016年 王小腊. All rights reserved.
+//
+
+extern NSString *const ZKMainPlayInforTableViewCellID;
+
+#import <UIKit/UIKit.h>
+@class ZKMainSceneryMode;
+
+@interface ZKMainPlayInforTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) ZKMainSceneryMode *sceneryList;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIButton *numberButton;
+@property (weak, nonatomic) IBOutlet UIImageView *backImageViw;
+//修改头部数子
+- (void)updataLick:(NSInteger)lick number:(NSString*)num;
+
+@end

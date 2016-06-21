@@ -32,7 +32,7 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 {
     ZKMainSceneryMode *list = array[row];
     
-    if ([self.delegate respondsToSelector:@selector(selectAnnotation:index:)])
+    if ([self.delegate respondsToSelector:@selector(selectAnnotation:index:)] && row!=0)
     {
         [self.delegate selectAnnotation:list index:row];
     }
@@ -62,7 +62,7 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
     array = data;
     NSInteger imageW  = _SCREEN_WIDTH -100;
     NSInteger imageH  = 200;
-    
+    [self.annonArray removeAllObjects];
     [self.mapImageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     [data enumerateObjectsUsingBlock:^(ZKMainSceneryMode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -79,7 +79,7 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
         
     }];
     
-    [self updatListIndex:0];
+    [self updatListIndex:row];
 }
 - (IBAction)sceneryClick {
     

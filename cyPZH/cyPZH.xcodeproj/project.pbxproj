@@ -31,13 +31,15 @@
 		3B25471B1D114558001605F1 /* RatingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25471A1D114558001605F1 /* RatingBar.swift */; };
 		3B345D8C1D179445007EFB09 /* ZKMainPlayeRemindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B345D8B1D179445007EFB09 /* ZKMainPlayeRemindView.m */; };
 		3B345D8F1D17B72C007EFB09 /* ZKMainSceneryMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B345D8E1D17B72C007EFB09 /* ZKMainSceneryMode.m */; };
+		3B38E1521D1925EE0089FED8 /* ZKMainPlayInforMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B38E1511D1925EE0089FED8 /* ZKMainPlayInforMode.m */; };
+		3B38E1561D193D380089FED8 /* ZKMainPlayMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B38E1541D193D380089FED8 /* ZKMainPlayMessageTableViewCell.m */; };
+		3B38E1571D193D380089FED8 /* ZKMainPlayMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38E1551D193D380089FED8 /* ZKMainPlayMessageTableViewCell.xib */; };
+		3B38E15B1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B38E1591D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.m */; };
+		3B38E15C1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B38E15A1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.xib */; };
 		3B3EF8FB1D17C1C50046969E /* WMPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EF8F81D17C1C50046969E /* WMPlayer.bundle */; };
 		3B3EF8FC1D17C1C50046969E /* WMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EF8FA1D17C1C50046969E /* WMPlayer.m */; };
-		3B3EF8FF1D17C58E0046969E /* ZKMainPlayVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EF8FE1D17C58E0046969E /* ZKMainPlayVideoView.m */; };
 		3B3EF9031D17D3B90046969E /* ZKMainPlayNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EF9011D17D3B90046969E /* ZKMainPlayNumberTableViewCell.m */; };
 		3B3EF9041D17D3B90046969E /* ZKMainPlayNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EF9021D17D3B90046969E /* ZKMainPlayNumberTableViewCell.xib */; };
-		3B3EF9081D17E5960046969E /* ZKMainPlayMapTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EF9061D17E5960046969E /* ZKMainPlayMapTableViewCell.m */; };
-		3B3EF9091D17E5960046969E /* ZKMainPlayMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B3EF9071D17E5960046969E /* ZKMainPlayMapTableViewCell.xib */; };
 		3B3EF90F1D17F0FB0046969E /* ZKPlayMapButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B3EF90E1D17F0FB0046969E /* ZKPlayMapButton.m */; };
 		3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AEF1D0516C800E2727E /* ZKBaseViewController.m */; };
 		3B592AF61D0517A800E2727E /* ZKTabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B592AF51D0517A800E2727E /* ZKTabelViewController.m */; };
@@ -110,6 +112,8 @@
 		3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D691D056B300027B5CE /* ZKRobotTableView.m */; };
 		3BA21D6D1D056B8C0027B5CE /* ZKRobotTallyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D6C1D056B8C0027B5CE /* ZKRobotTallyView.m */; };
 		3BA21D701D056BFE0027B5CE /* ZKRobotMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA21D6F1D056BFE0027B5CE /* ZKRobotMode.m */; };
+		3BB01ACE1D191993002423E0 /* ZKMainPlayInforTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB01ACC1D191993002423E0 /* ZKMainPlayInforTableViewCell.m */; };
+		3BB01ACF1D191993002423E0 /* ZKMainPlayInforTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BB01ACD1D191993002423E0 /* ZKMainPlayInforTableViewCell.xib */; };
 		3BBF4F0A1D05133C00EB8DCF /* MJDIYBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */; };
 		3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F0C1D05134B00EB8DCF /* MJDIYHeader.m */; };
 		3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBF4F141D05156900EB8DCF /* ZKBaseTableView.m */; };
@@ -196,17 +200,20 @@
 		3B345D8B1D179445007EFB09 /* ZKMainPlayeRemindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayeRemindView.m; sourceTree = "<group>"; };
 		3B345D8D1D17B72C007EFB09 /* ZKMainSceneryMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainSceneryMode.h; sourceTree = "<group>"; };
 		3B345D8E1D17B72C007EFB09 /* ZKMainSceneryMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainSceneryMode.m; sourceTree = "<group>"; };
+		3B38E1501D1925EE0089FED8 /* ZKMainPlayInforMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayInforMode.h; sourceTree = "<group>"; };
+		3B38E1511D1925EE0089FED8 /* ZKMainPlayInforMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayInforMode.m; sourceTree = "<group>"; };
+		3B38E1531D193D380089FED8 /* ZKMainPlayMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayMessageTableViewCell.h; sourceTree = "<group>"; };
+		3B38E1541D193D380089FED8 /* ZKMainPlayMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayMessageTableViewCell.m; sourceTree = "<group>"; };
+		3B38E1551D193D380089FED8 /* ZKMainPlayMessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainPlayMessageTableViewCell.xib; sourceTree = "<group>"; };
+		3B38E1581D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayHeaderTableViewCell.h; sourceTree = "<group>"; };
+		3B38E1591D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayHeaderTableViewCell.m; sourceTree = "<group>"; };
+		3B38E15A1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainPlayHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		3B3EF8F81D17C1C50046969E /* WMPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMPlayer.bundle; sourceTree = "<group>"; };
 		3B3EF8F91D17C1C50046969E /* WMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPlayer.h; sourceTree = "<group>"; };
 		3B3EF8FA1D17C1C50046969E /* WMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPlayer.m; sourceTree = "<group>"; };
-		3B3EF8FD1D17C58E0046969E /* ZKMainPlayVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayVideoView.h; sourceTree = "<group>"; };
-		3B3EF8FE1D17C58E0046969E /* ZKMainPlayVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayVideoView.m; sourceTree = "<group>"; };
 		3B3EF9001D17D3B90046969E /* ZKMainPlayNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayNumberTableViewCell.h; sourceTree = "<group>"; };
 		3B3EF9011D17D3B90046969E /* ZKMainPlayNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayNumberTableViewCell.m; sourceTree = "<group>"; };
 		3B3EF9021D17D3B90046969E /* ZKMainPlayNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainPlayNumberTableViewCell.xib; sourceTree = "<group>"; };
-		3B3EF9051D17E5960046969E /* ZKMainPlayMapTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayMapTableViewCell.h; sourceTree = "<group>"; };
-		3B3EF9061D17E5960046969E /* ZKMainPlayMapTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayMapTableViewCell.m; sourceTree = "<group>"; };
-		3B3EF9071D17E5960046969E /* ZKMainPlayMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainPlayMapTableViewCell.xib; sourceTree = "<group>"; };
 		3B3EF90D1D17F0FB0046969E /* ZKPlayMapButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKPlayMapButton.h; sourceTree = "<group>"; };
 		3B3EF90E1D17F0FB0046969E /* ZKPlayMapButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKPlayMapButton.m; sourceTree = "<group>"; };
 		3B592AEE1D0516C800E2727E /* ZKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKBaseViewController.h; sourceTree = "<group>"; };
@@ -342,6 +349,9 @@
 		3BA21D6C1D056B8C0027B5CE /* ZKRobotTallyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotTallyView.m; sourceTree = "<group>"; };
 		3BA21D6E1D056BFE0027B5CE /* ZKRobotMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRobotMode.h; sourceTree = "<group>"; };
 		3BA21D6F1D056BFE0027B5CE /* ZKRobotMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRobotMode.m; sourceTree = "<group>"; };
+		3BB01ACB1D191993002423E0 /* ZKMainPlayInforTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKMainPlayInforTableViewCell.h; sourceTree = "<group>"; };
+		3BB01ACC1D191993002423E0 /* ZKMainPlayInforTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKMainPlayInforTableViewCell.m; sourceTree = "<group>"; };
+		3BB01ACD1D191993002423E0 /* ZKMainPlayInforTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKMainPlayInforTableViewCell.xib; sourceTree = "<group>"; };
 		3BBF4F081D05133C00EB8DCF /* MJDIYBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYBackFooter.h; sourceTree = "<group>"; };
 		3BBF4F091D05133C00EB8DCF /* MJDIYBackFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYBackFooter.m; sourceTree = "<group>"; };
 		3BBF4F0B1D05134B00EB8DCF /* MJDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYHeader.h; sourceTree = "<group>"; };
@@ -529,9 +539,15 @@
 				3B3EF9001D17D3B90046969E /* ZKMainPlayNumberTableViewCell.h */,
 				3B3EF9011D17D3B90046969E /* ZKMainPlayNumberTableViewCell.m */,
 				3B3EF9021D17D3B90046969E /* ZKMainPlayNumberTableViewCell.xib */,
-				3B3EF9051D17E5960046969E /* ZKMainPlayMapTableViewCell.h */,
-				3B3EF9061D17E5960046969E /* ZKMainPlayMapTableViewCell.m */,
-				3B3EF9071D17E5960046969E /* ZKMainPlayMapTableViewCell.xib */,
+				3BB01ACB1D191993002423E0 /* ZKMainPlayInforTableViewCell.h */,
+				3BB01ACC1D191993002423E0 /* ZKMainPlayInforTableViewCell.m */,
+				3BB01ACD1D191993002423E0 /* ZKMainPlayInforTableViewCell.xib */,
+				3B38E1531D193D380089FED8 /* ZKMainPlayMessageTableViewCell.h */,
+				3B38E1541D193D380089FED8 /* ZKMainPlayMessageTableViewCell.m */,
+				3B38E1551D193D380089FED8 /* ZKMainPlayMessageTableViewCell.xib */,
+				3B38E1581D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.h */,
+				3B38E1591D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.m */,
+				3B38E15A1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.xib */,
 			);
 			path = cellView;
 			sourceTree = "<group>";
@@ -548,6 +564,8 @@
 			children = (
 				3B345D8D1D17B72C007EFB09 /* ZKMainSceneryMode.h */,
 				3B345D8E1D17B72C007EFB09 /* ZKMainSceneryMode.m */,
+				3B38E1501D1925EE0089FED8 /* ZKMainPlayInforMode.h */,
+				3B38E1511D1925EE0089FED8 /* ZKMainPlayInforMode.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -555,8 +573,6 @@
 		3B2546C21D110281001605F1 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				3B3EF8FD1D17C58E0046969E /* ZKMainPlayVideoView.h */,
-				3B3EF8FE1D17C58E0046969E /* ZKMainPlayVideoView.m */,
 				3B3EF90D1D17F0FB0046969E /* ZKPlayMapButton.h */,
 				3B3EF90E1D17F0FB0046969E /* ZKPlayMapButton.m */,
 			);
@@ -1299,9 +1315,9 @@
 				3B2547141D114305001605F1 /* ZKScenicFoodTableViewCell.xib in Resources */,
 				3B592B091D05299E00E2727E /* LaunchImage@2x.png in Resources */,
 				3B592B021D05298400E2727E /* icon.png in Resources */,
-				3B3EF9091D17E5960046969E /* ZKMainPlayMapTableViewCell.xib in Resources */,
 				3B5A59B21D01825800105280 /* Assets.xcassets in Resources */,
 				3B807A571D1276F500E37A1D /* ZKScenicStrategyTableViewCell.xib in Resources */,
+				3BB01ACF1D191993002423E0 /* ZKMainPlayInforTableViewCell.xib in Resources */,
 				3B592B011D05298400E2727E /* icon_120x120.png in Resources */,
 				3B592B081D05299E00E2727E /* LaunchImage.png in Resources */,
 				3B2546FF1D1102D9001605F1 /* ZKMainTopicTableViewCell.xib in Resources */,
@@ -1313,6 +1329,8 @@
 				3B2546FB1D1102D9001605F1 /* ZKMainInforTableViewCell.xib in Resources */,
 				3B1020371D0D53BD005C0F68 /* ZKLoginViewController.xib in Resources */,
 				3B2546FD1D1102D9001605F1 /* ZKMainListTableViewCell.xib in Resources */,
+				3B38E15C1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.xib in Resources */,
+				3B38E1571D193D380089FED8 /* ZKMainPlayMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1425,7 @@
 				3B345D8C1D179445007EFB09 /* ZKMainPlayeRemindView.m in Sources */,
 				3B787A831D069219009997E9 /* ZKRobotTableViewCell.m in Sources */,
 				3B5A5A211D0184D000105280 /* ZKUtil.m in Sources */,
+				3B38E15B1D1942C90089FED8 /* ZKMainPlayHeaderTableViewCell.m in Sources */,
 				3B1EC1F71D13F4E500F39CAC /* ZKMianMapView.m in Sources */,
 				3B5A5A1F1D0184D000105280 /* UploadParam.m in Sources */,
 				A1E574D21D045D4F009E5507 /* ZKCache.m in Sources */,
@@ -1423,6 +1442,7 @@
 				3B61CC1B1D0E4F8A0022DDC7 /* ZKMainSceneryTableViewController.m in Sources */,
 				3B592AF01D0516C800E2727E /* ZKBaseViewController.m in Sources */,
 				3B5A59F51D0184B200105280 /* UIImageView+ZKWebCache.m in Sources */,
+				3B38E1521D1925EE0089FED8 /* ZKMainPlayInforMode.m in Sources */,
 				A106D1521D16658300497B45 /* ZKMainSelectPopView.m in Sources */,
 				3BA21D6A1D056B300027B5CE /* ZKRobotTableView.m in Sources */,
 				3B3EF90F1D17F0FB0046969E /* ZKPlayMapButton.m in Sources */,
@@ -1430,14 +1450,15 @@
 				3B5A59F11D0184B200105280 /* UIBarButtonItem+Custom.m in Sources */,
 				3B2546FE1D1102D9001605F1 /* ZKMainTopicTableViewCell.m in Sources */,
 				3B807A5D1D1295A900E37A1D /* ZKSceniceAdvertisementView.m in Sources */,
-				3B3EF9081D17E5960046969E /* ZKMainPlayMapTableViewCell.m in Sources */,
 				3BA21D4F1D0562220027B5CE /* ZKRobotViewController.mm in Sources */,
 				3B63F59F1D07CC650087E974 /* ZKRobotTallyTableViewCell.m in Sources */,
 				3BBF4F0D1D05134B00EB8DCF /* MJDIYHeader.m in Sources */,
+				3BB01ACE1D191993002423E0 /* ZKMainPlayInforTableViewCell.m in Sources */,
 				3B807A561D1276F500E37A1D /* ZKScenicStrategyTableViewCell.m in Sources */,
 				3B5A59F31D0184B200105280 /* UIImage+Strenching.m in Sources */,
 				3B5A5A381D0189A700105280 /* WXLDefine.m in Sources */,
 				A106D14F1D163A9F00497B45 /* ZKMainMapMode.m in Sources */,
+				3B38E1561D193D380089FED8 /* ZKMainPlayMessageTableViewCell.m in Sources */,
 				3B2546FA1D1102D9001605F1 /* ZKMainInforTableViewCell.m in Sources */,
 				3B2547131D114305001605F1 /* ZKScenicFoodTableViewCell.m in Sources */,
 				3B2547081D111A5C001605F1 /* ZKSelectListView.m in Sources */,
@@ -1458,7 +1479,6 @@
 				A1E574CF1D045D25009E5507 /* UserInfo.m in Sources */,
 				3B61CC121D0E4C9D0022DDC7 /* ZKMainMapViewController.m in Sources */,
 				3B345D8F1D17B72C007EFB09 /* ZKMainSceneryMode.m in Sources */,
-				3B3EF8FF1D17C58E0046969E /* ZKMainPlayVideoView.m in Sources */,
 				3B6A1B9D1D0FA85D0021C524 /* ZKMainHomeTableViewController.m in Sources */,
 				3B5A5A161D0184C700105280 /* UIBarButtonItem+YY.m in Sources */,
 				3BBF4F171D05156900EB8DCF /* ZKBaseTableView.m in Sources */,

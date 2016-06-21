@@ -65,7 +65,7 @@
     if (self.navigationController.childViewControllers.count == 1)
     {
         //注册通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissMap) name:@"dismmMap" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectTabar:) name:@"selectTabar" object:nil];
         self.tabarHeight = self.tabBarController.tabBar.frame.size.height;
     }
     [self initSupViews];
@@ -200,15 +200,19 @@
     [self.selectView selectViewUpdata];
 }
 // 通知恢复列表
-- (void)dismissMap
-{
-    if (self.isMap == YES)
+-(void)selectTabar:(NSNotification *)text{
+    
+    NSInteger dex = [text.object integerValue];
+    
+
+    if (self.isMap == YES && dex == 3)
     {
         self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithIcon:@"table_map" highIcon:nil target:self action:@selector(mapClick:)];
         [self initMaapView:NO];
         self.isMap = NO;
     }
 }
+
 #pragma mark ------
 #pragma mark table Delegate
 

@@ -27,15 +27,11 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
     NSUInteger dex = tabBarController.selectedIndex;
-    
-    if (dex != 3)
-    {
         //创建通知
-        NSNotification *notification =[NSNotification notificationWithName:@"dismmMap" object:nil];
+    NSNotification *notification =[NSNotification notificationWithName:@"selectTabar" object:[NSString stringWithFormat:@"%d",dex]];
         //通过通知中心发送通知
-        [[NSNotificationCenter defaultCenter] postNotification:notification];
-        
-    }
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+
     
 }
 

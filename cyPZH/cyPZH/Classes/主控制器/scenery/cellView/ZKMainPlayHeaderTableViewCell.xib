@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayHeaderTableViewCellID" rowHeight="64" id="KGk-i7-Jjw" customClass="ZKMainPlayHeaderTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery_icon" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-rX-zd9">
+                        <rect key="frame" x="16" y="22" width="23" height="20"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBj-sC-ubT">
+                        <rect key="frame" x="342" y="19" width="24" height="26"/>
+                        <state key="normal" image="scenery_icon_write"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互动留言(0条)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-Nj-WBg">
+                        <rect key="frame" x="47" y="22" width="95" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="A3L-9T-hXT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="k1t-rX-zd9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="7Ey-1n-eG5"/>
+                    <constraint firstAttribute="trailing" secondItem="gBj-sC-ubT" secondAttribute="trailing" constant="8" id="7Fg-uG-8Uq"/>
+                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="centerY" secondItem="k1t-rX-zd9" secondAttribute="centerY" id="IFY-Id-PTC"/>
+                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="leading" secondItem="k1t-rX-zd9" secondAttribute="trailing" constant="8" id="kfw-cD-gbo"/>
+                    <constraint firstItem="gBj-sC-ubT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="q5m-PN-fkg"/>
+                    <constraint firstItem="k1t-rX-zd9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zbh-pZ-GEA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="numberLabel" destination="NfP-Nj-WBg" id="jpD-lC-jIT"/>
+            </connections>
+            <point key="canvasLocation" x="294" y="338"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="scenery_icon" width="23" height="20"/>
+        <image name="scenery_icon_write" width="24" height="26"/>
+    </resources>
+</document>

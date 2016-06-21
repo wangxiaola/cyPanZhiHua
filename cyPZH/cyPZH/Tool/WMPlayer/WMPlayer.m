@@ -28,6 +28,7 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
 @property (nonatomic, retain) NSTimer *autoDismissTimer;
 @property (nonatomic, retain)NSDateFormatter *dateFormatter;
 
+@property (nonatomic, assign)BOOL isShow;
 @end
 
 
@@ -199,6 +200,12 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
         
         
         
+        _activityView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _activityView .center = self.center;
+        //设置菊花样式
+        _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+        _activityView.color =CYBColorGreen;
+        [self addSubview:_activityView];
         
         // 单击的 Recognizer
         UITapGestureRecognizer* singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap)];
@@ -307,7 +314,7 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
 - (void)setVideoURLStr:(NSString *)videoURLStr
 {
     _videoURLStr = videoURLStr;
-    
+    _isShow = NO;
     if (self.currentItem) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:_currentItem];
         [self.currentItem removeObserver:self forKeyPath:@"status"];
@@ -347,6 +354,18 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     /* AVPlayerItem "status" property value observer. */
+    
+    if (_isShow == NO) {
+        
+        _isShow = YES;
+        [_activityView startAnimating];
+     
+        
+    }else{
+        
+        [_activityView stopAnimating];
+    }
+
     if (context == PlayViewStatusObservationContext)
     {
         
@@ -387,7 +406,7 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
                 
             case AVPlayerStatusFailed:
             {
-                
+                HUDShowError(@"对不起，该监控暂时无法播放");
             }
                 break;
         }
