@@ -100,7 +100,6 @@ static void *PlayViewStatusObservationContext = &PlayViewStatusObservationContex
         systemSlider.backgroundColor = [UIColor clearColor];
         for (UIControl *view in volumeView.subviews) {
             if ([view.superclass isSubclassOfClass:[UISlider class]]) {
-                NSLog(@"1");
                 systemSlider = (UISlider *)view;
             }
         }

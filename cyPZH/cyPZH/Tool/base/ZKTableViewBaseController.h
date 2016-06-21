@@ -68,6 +68,9 @@
  *  @param error error
  */
 - (void)didFailureRequest:(NSError *)error;
-
+/**
+ *  加载完成
+ */
+- (void)didFinishedLoading;
 
 @end

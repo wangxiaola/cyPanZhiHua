@@ -7,8 +7,22 @@
 //
 extern NSString *const playNumberTableViewCellID;
 
+
+
 #import <UIKit/UIKit.h>
-@class ZKMainSceneryMode;
+@class ZKMainSceneryMode,ZKPlayMapButton;
+@protocol ZKMainPlayNumberTableViewCellDelegate <NSObject>
+@optional
+/**
+ *  选中哪个气泡
+ *
+ *  @param mode 数据
+ *  @param row  第几个
+ */
+- (void)selectAnnotation:(ZKMainSceneryMode*)mode index:(NSInteger)row;
+
+
+@end
 
 @interface ZKMainPlayNumberTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *peopleNumberLabel;
@@ -18,7 +32,16 @@ extern NSString *const playNumberTableViewCellID;
 @property (weak, nonatomic) IBOutlet UILabel *TemperatureLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIView *pmtView;
+@property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 
-@property (strong, nonatomic) ZKMainSceneryMode *list;
+@property (strong, nonatomic) NSMutableArray <ZKPlayMapButton*>*annonArray;
+/**
+ *  显示气泡
+ *
+ *  @param data 数据
+ */
+- (void)showAnnonViews:(NSArray<ZKMainSceneryMode*>*)data selct:(NSInteger)row;
+
+@property (nonatomic, weak) id<ZKMainPlayNumberTableViewCellDelegate>delegate;
 
 @end

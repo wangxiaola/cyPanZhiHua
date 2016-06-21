@@ -10,6 +10,8 @@
 
 @interface ZKPlayMapButton : UIButton
 
-@property(nonatomic, strong) NSString *popName;
+@property (nonatomic, strong) NSString *popName;
+
+@property (nonatomic, strong) UIColor *labelColor;
 
 @end

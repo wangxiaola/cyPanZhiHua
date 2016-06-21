@@ -10,17 +10,33 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 
 #import "ZKMainPlayNumberTableViewCell.h"
 #import "ZKMainSceneryMode.h"
+#import "ZKPlayMapButton.h"
 
 @implementation ZKMainPlayNumberTableViewCell
-
+{
+    NSArray *array;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
-
-- (void)setList:(ZKMainSceneryMode *)list
+- (NSMutableArray<ZKPlayMapButton *> *)annonArray
 {
-
+    if (!_annonArray) {
+        
+        _annonArray = [NSMutableArray array];
+    }
+    return _annonArray;
+}
+- (void)updatListIndex:(NSInteger)row;
+{
+    ZKMainSceneryMode *list = array[row];
+    
+    if ([self.delegate respondsToSelector:@selector(selectAnnotation:index:)])
+    {
+        [self.delegate selectAnnotation:list index:row];
+    }
+    
     self.peopleNumberLabel.text = @"5";
     self.dqPeopelNumberLabel.text = [NSString stringWithFormat:@"%d",list.rtnumber];
     self.czNumberLabel.text = [NSString stringWithFormat:@"%d",list.frontmax];
@@ -31,8 +47,40 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
     [self.pmtView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.pmtView.clipsToBounds = YES;
     [self beginAnimationWithTitle:strIsNull(list.name)];
+    
+    [self.annonArray enumerateObjectsUsingBlock:^(ZKPlayMapButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *imageName = idx==row ? @"scenery_icon_3":@"scenery_icon_3_pre";
+        [obj setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+        UIColor *color = idx==row?RGB(244, 86, 9):[UIColor grayColor];
+        obj.labelColor = color;
+    }];
 }
 
+- (void)showAnnonViews:(NSArray<ZKMainSceneryMode*>*)data selct:(NSInteger)row;
+{
+    array = data;
+    NSInteger imageW  = _SCREEN_WIDTH -100;
+    NSInteger imageH  = 200;
+    
+    [self.mapImageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    [data enumerateObjectsUsingBlock:^(ZKMainSceneryMode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        float x = arc4random()%imageW+50;
+        float y = arc4random()%imageH+20;
+        ZKPlayMapButton *bty = [[ZKPlayMapButton alloc] initWithFrame:CGRectMake(x, y, 16, 20)];
+        [bty setImage:[UIImage imageNamed:@"scenery_icon_3_pre"] forState:UIControlStateNormal];
+        bty.popName = obj.name;
+        bty.tag = idx;
+        [bty addTarget:self action:@selector(annonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.mapImageView addSubview:bty];
+        [self.annonArray addObject:bty];
+        
+    }];
+    
+    [self updatListIndex:0];
+}
 - (IBAction)sceneryClick {
     
     
@@ -40,6 +88,13 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 - (IBAction)shareClick {
     
     
+}
+/**
+ *  气泡点击
+ */
+- (void)annonClick:(UIButton*)sender
+{
+    [self updatListIndex:sender.tag];
 }
 
 - (void)beginAnimationWithTitle:(NSString *)title
@@ -69,7 +124,7 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

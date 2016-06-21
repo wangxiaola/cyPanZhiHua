@@ -26,7 +26,7 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 {
     if (!_wmPlayer) {
         
-        _wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.frame.size.height) videoURLStr:@""];
+        _wmPlayer = [[WMPlayer alloc]initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, self.frame.size.height) videoURLStr:@"http:183.221.61.239:83/Movies/pazhihua5/pazhihua5.m3u8"];
         _wmPlayer.closeBtn.hidden = YES;
     }
     return _wmPlayer;
@@ -61,7 +61,8 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 
 - (void)updateVideo:(ZKMainSceneryMode*)list;
 {
-    [ZKUtil UIimageView:self.backImageView NSSting:[NSString stringWithFormat:@"%@%@",IMAGE_URL,list.logosmall]];
+    [self destroyVideo];
+    [ZKUtil UIimageView:self.backImageView NSSting:[NSString stringWithFormat:@"%@%@",IMAGE_URL_CSW,list.logosmall] duImage:@"daohuang_ default"];
     NSString *playUrl = [NSString stringWithFormat:@"http:%@",list.url];
    [self.wmPlayer setVideoURLStr:playUrl];
     
@@ -69,6 +70,7 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 
 - (void)destroyVideo;
 {
+    [_wmPlayer.player pause];
     [_wmPlayer.player.currentItem cancelPendingSeeks];
     [_wmPlayer.player.currentItem.asset cancelLoading];
     [_wmPlayer.playerLayer removeFromSuperlayer];
@@ -82,8 +84,6 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 }
 - (void)playSateClick:(UIButton*)sender
 {
-
-    
     if (sender.selected == NO)
     {
         sender.selected = YES;

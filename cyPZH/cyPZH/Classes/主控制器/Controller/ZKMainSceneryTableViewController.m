@@ -11,10 +11,11 @@
 #import "ZKMainPlayVideoView.h"
 #import "ZKMainPlayNumberTableViewCell.h"
 
-@interface ZKMainSceneryTableViewController ()
+@interface ZKMainSceneryTableViewController ()<ZKMainPlayNumberTableViewCellDelegate>
 
 @property (nonatomic, strong)ZKMainPlayVideoView *playView;
 
+@property (nonatomic, assign) NSInteger index;
 @end
 
 @implementation ZKMainSceneryTableViewController
@@ -31,6 +32,7 @@
 #pragma mark --配置参数--
 - (void)configurationParameters
 {
+    self.index = 0;
     self.params[@"interfaceId"]=@"146";
     self.params[@"method"]=@"sceneryRealMonitor";
     self.params[@"rows"]=@"11";
@@ -38,18 +40,17 @@
     self.cacheFilename = @"ZKMainSceneryTableViewController";
     self.needsPullUpRefreshing = NO;
     self.modelsType = [ZKMainSceneryMode class];
-
+  
 }
 /**
- *  选中那一个
- *
- *  @param dex dex
+ *  数据加载完成后
  */
-- (void)selectAnnotation:(NSInteger)dex
+- (void)didFinishedLoading
 {
 
-    
+
 }
+
 
 /**
  *  视图设置
@@ -63,6 +64,27 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainPlayNumberTableViewCell" bundle:nil] forCellReuseIdentifier:playNumberTableViewCellID];
     
 }
+
+#pragma mark----
+#pragma mark --ZKMainPlayNumberTableViewCellDelegate--
+/**
+ *  选中哪个气泡
+ *
+ *  @param mode 数据
+ *  @param row  第几个
+ */
+- (void)selectAnnotation:(ZKMainSceneryMode*)mode index:(NSInteger)row;
+{
+
+    [self.playView updateVideo:mode];
+    
+    NSLog(@" ----");
+
+}
+
+#pragma mark----
+#pragma mark --UITableViewDelageta--
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
@@ -84,12 +106,15 @@
     UITableViewCell *cell;
     
     ZKMainPlayNumberTableViewCell *numberCell = [tableView dequeueReusableCellWithIdentifier:playNumberTableViewCellID];
-    numberCell.list = self.models[0];
+    numberCell.delegate = self;
+    [numberCell showAnnonViews:self.models selct:self.index];
+
     cell = numberCell;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

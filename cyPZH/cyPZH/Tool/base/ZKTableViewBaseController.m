@@ -80,6 +80,7 @@
 
 - (void)didGetResponse:(id)responseObject atPage:(NSInteger)page {}
 - (void)didFailureRequest:(NSError *)error {}
+- (void)didFinishedLoading{}
 
 - (void)setupTableView
 {
@@ -232,6 +233,7 @@
     self.promptView.prompt = dataArray.count == 0?@"暂无数据":@"";
     //根据数据个数决定显示提示状态
     [self showPromptStatus];
+    [self didFinishedLoading];
 }
 
 - (void)dealWithLatestDataArray:(NSMutableArray *)dataArray

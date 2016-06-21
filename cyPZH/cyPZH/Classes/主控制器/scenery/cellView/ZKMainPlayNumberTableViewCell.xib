@@ -168,16 +168,9 @@
                             <constraint firstItem="smc-8V-qLc" firstAttribute="top" secondItem="8Pr-NX-Cia" secondAttribute="top" id="rVn-rt-n6v"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery_map" translatesAutoresizingMaskIntoConstraints="NO" id="yC3-i3-SUD">
+                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery_map" translatesAutoresizingMaskIntoConstraints="NO" id="yC3-i3-SUD">
                         <rect key="frame" x="0.0" y="85" width="469" height="341"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r89-qJ-dyr" customClass="ZKPlayMapButton">
-                        <rect key="frame" x="162" y="125" width="18" height="24"/>
-                        <state key="normal" image="scenery_icon_3_pre"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="popName" value="wakakak"/>
-                        </userDefinedRuntimeAttributes>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="k2j-hz-btt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3Tb-vg-bEa"/>
@@ -203,17 +196,17 @@
                 <outlet property="comfortLabel" destination="PzJ-TK-3UM" id="LMr-4u-0IP"/>
                 <outlet property="czNumberLabel" destination="osA-9s-Mgg" id="8CX-JJ-d6G"/>
                 <outlet property="dqPeopelNumberLabel" destination="mRV-nS-fd3" id="cdE-vD-M3o"/>
+                <outlet property="mapImageView" destination="yC3-i3-SUD" id="JlN-mj-m2v"/>
                 <outlet property="nameLabel" destination="wDe-FA-127" id="dVs-VO-QmP"/>
                 <outlet property="peopleNumberLabel" destination="Vwk-I8-VaB" id="l6Q-sa-22q"/>
                 <outlet property="pmtView" destination="smc-8V-qLc" id="UQN-MZ-MuW"/>
             </connections>
-            <point key="canvasLocation" x="389.5" y="294"/>
+            <point key="canvasLocation" x="245.5" y="277"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="scenery_Sun" width="17" height="13"/>
         <image name="scenery_icon_2_pre" width="16" height="16"/>
-        <image name="scenery_icon_3_pre" width="30" height="43"/>
         <image name="scenery_location" width="12" height="16"/>
         <image name="scenery_map" width="245" height="373"/>
         <image name="scenery_share_pre" width="16" height="16"/>
