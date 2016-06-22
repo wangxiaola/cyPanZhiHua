@@ -77,7 +77,7 @@ static NSString *identifier = @"cell";
     NSMutableDictionary *dic = [NSMutableDictionary params];
     [dic setObject:@"130" forKey:@"interfaceId"];
     [dic setObject:@"TagConfig" forKey:@"Method"];
-
+    dic[@"TimeStamp"] = [ZKUtil timeStamp];
     MJWeakSelf
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
          weakSelf.listArray = [ZKRobotLabelMode mj_objectArrayWithKeyValuesArray:responseObject];

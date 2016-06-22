@@ -17,15 +17,26 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery_icon" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-rX-zd9">
                         <rect key="frame" x="16" y="22" width="23" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="5xP-Wv-nMv"/>
+                            <constraint firstAttribute="width" constant="23" id="MgE-cZ-kna"/>
+                        </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBj-sC-ubT">
                         <rect key="frame" x="342" y="19" width="24" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="Dqu-1A-gx8"/>
+                            <constraint firstAttribute="height" constant="26" id="WWp-IC-Ae2"/>
+                        </constraints>
                         <state key="normal" image="scenery_icon_write"/>
+                        <connections>
+                            <action selector="sendeClick" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HUi-S1-hlq"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互动留言(0条)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-Nj-WBg">
-                        <rect key="frame" x="47" y="22" width="95" height="21"/>
+                        <rect key="frame" x="47" y="23" width="95" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="A3L-9T-hXT"/>
+                            <constraint firstAttribute="height" constant="18" id="Hdm-Jc-OZy"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -33,18 +44,18 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="k1t-rX-zd9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="7Ey-1n-eG5"/>
-                    <constraint firstAttribute="trailing" secondItem="gBj-sC-ubT" secondAttribute="trailing" constant="8" id="7Fg-uG-8Uq"/>
-                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="centerY" secondItem="k1t-rX-zd9" secondAttribute="centerY" id="IFY-Id-PTC"/>
-                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="leading" secondItem="k1t-rX-zd9" secondAttribute="trailing" constant="8" id="kfw-cD-gbo"/>
-                    <constraint firstItem="gBj-sC-ubT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="q5m-PN-fkg"/>
-                    <constraint firstItem="k1t-rX-zd9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zbh-pZ-GEA"/>
+                    <constraint firstAttribute="trailing" secondItem="gBj-sC-ubT" secondAttribute="trailing" constant="8" id="0VY-6W-w5O"/>
+                    <constraint firstItem="k1t-rX-zd9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="41a-UM-c1S"/>
+                    <constraint firstItem="k1t-rX-zd9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="L91-N9-IUb"/>
+                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bGS-EC-VIP"/>
+                    <constraint firstItem="NfP-Nj-WBg" firstAttribute="leading" secondItem="k1t-rX-zd9" secondAttribute="trailing" constant="8" id="fRE-eM-dKe"/>
+                    <constraint firstItem="gBj-sC-ubT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="fc8-4b-z74"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="numberLabel" destination="NfP-Nj-WBg" id="jpD-lC-jIT"/>
             </connections>
-            <point key="canvasLocation" x="294" y="338"/>
+            <point key="canvasLocation" x="49" y="341"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -20,7 +20,18 @@ extern NSString *const playNumberTableViewCellID;
  *  @param row  第几个
  */
 - (void)selectAnnotation:(ZKMainSceneryMode*)mode index:(NSInteger)row;
-
+/**
+ *  全景选中
+ *
+ *  @param mode
+ */
+- (void)panoramaData:(ZKMainSceneryMode*)mode;
+/**
+ *  分享选中
+ *
+ *  @param mode 
+ */
+- (void)shareData:(ZKMainSceneryMode*)mode;
 
 @end
 

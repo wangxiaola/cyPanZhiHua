@@ -138,6 +138,7 @@
 - (void)loadData
 {
     MMLog(@"%@\n", self.params);
+    self.params[@"TimeStamp"] = [ZKUtil timeStamp];
     [ZKHttp postWithURLString:self.URLString parameters:self.params success:^(id responseObject) {
         MMLog(@"%@", responseObject);
         [self dealWithSuccess:responseObject];

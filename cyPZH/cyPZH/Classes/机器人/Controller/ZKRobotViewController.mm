@@ -56,6 +56,7 @@
     NSMutableDictionary *dic = [NSMutableDictionary params];
     [dic setObject:@"129" forKey:@"interfaceId"];
     [dic setObject:@"robotConfig" forKey:@"Method"];
+    dic[@"TimeStamp"] = [ZKUtil timeStamp];
     MJWeakSelf
     HUDShowLoading(@"加载中")
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {

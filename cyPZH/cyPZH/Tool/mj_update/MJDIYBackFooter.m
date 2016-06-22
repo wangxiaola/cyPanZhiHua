@@ -46,10 +46,10 @@
     
     self.logo.mj_w = 15;
     self.logo.mj_h = 16;
-    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 22;
+    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 28;
     self.logo.mj_y = self.mj_h / 2 - self.logo.mj_h / 2;
     
-    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 8;
+    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 6;
     self.label.mj_y = 0;
     self.label.mj_h = self.mj_h;
     self.label.mj_w = self.mj_w - self.logo.mj_x - self.logo.mj_w;
@@ -85,7 +85,7 @@
     
     switch (state) {
         case MJRefreshStateIdle:
-            self.label.text = @"下拉加载更多";
+            self.label.text = @"上拉加载更多";
             break;
         case MJRefreshStatePulling:
             self.label.text = @"松开立即刷新";

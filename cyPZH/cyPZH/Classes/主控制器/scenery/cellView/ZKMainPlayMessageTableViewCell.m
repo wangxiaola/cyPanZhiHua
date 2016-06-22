@@ -9,14 +9,13 @@
 NSString *const PlayMessageTableViewCellID = @"PlayMessageTableViewCellID";
 
 #import "ZKMainPlayMessageTableViewCell.h"
-#import "UIImage+CircleImage.h"
 #import "ZKMainPlayInforMode.h"
+
 @implementation ZKMainPlayMessageTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.potoImageView.image circleImage];
-    
+    self.potoImageView.layer.cornerRadius = 32/2;
     // Initialization code
 }
 - (void)setRootList:(ZKPlayInforRoot *)rootList

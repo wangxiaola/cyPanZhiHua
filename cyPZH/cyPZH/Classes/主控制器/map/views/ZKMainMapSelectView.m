@@ -127,7 +127,7 @@ static NSString *highlightedStr = @"map_select";
     self.params[@"distance"] = @"5";
     self.params[@"lat"] = [NSNumber numberWithDouble:self.lat];
     self.params[@"lon"] = [NSNumber numberWithDouble:self.lon];
-    
+    self.params[@"TimeStamp"] = [ZKUtil timeStamp];
     [SVProgressHUD showWithStatus:@"加载中..."];
     MJWeakSelf
     [ZKHttp postWithURLString:POST_ZK_URL parameters:self.params success:^(id responseObject) {

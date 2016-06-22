@@ -127,6 +127,7 @@
 {
     MMLog(@"%@\n", self.params);
     MJWeakSelf
+    self.params[@"TimeStamp"] = [ZKUtil timeStamp];
     [ZKHttp postWithURLString:self.URLString parameters:self.params success:^(id responseObject)
      {
          MMLog(@"%@", responseObject);

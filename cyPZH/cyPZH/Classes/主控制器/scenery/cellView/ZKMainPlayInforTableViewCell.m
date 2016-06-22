@@ -9,6 +9,7 @@
 NSString *const ZKMainPlayInforTableViewCellID = @"ZKMainPlayInforTableViewCellID";
 
 #import "ZKMainPlayInforTableViewCell.h"
+#import "ZKLoginViewController.h"
 #import "ZKMainSceneryMode.h"
 
 @implementation ZKMainPlayInforTableViewCell
@@ -37,7 +38,6 @@ NSString *const ZKMainPlayInforTableViewCellID = @"ZKMainPlayInforTableViewCellI
     [ZKUtil UIimageView:self.backImageViw NSSting:[NSString stringWithFormat:@"%@%@",IMAGE_URL_CSW,sceneryList.logosmall] duImage:@"daohuang_ default"];
     NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[sceneryList.summary dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
     self.infoTextView.attributedText = attrStr;
-    
     self.nameLabel.text = sceneryList.name;
     
 }
@@ -69,6 +69,28 @@ NSString *const ZKMainPlayInforTableViewCellID = @"ZKMainPlayInforTableViewCellI
 }
 
 - (IBAction)lickClick {
+    
+    if (![ZKUserInfo sharedUserInfo].managerId)
+    {
+        ZKLoginViewController *log = [[ZKLoginViewController alloc] init];
+        MJWeakSelf;
+        [log dengluCG:^{
+           
+            [weakSelf lickClick];
+        }];
+        
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:log];
+        
+        [[self.controller navigationController] presentViewController:nav animated:YES completion:^{
+            
+        }];
+        
+    }
+    else
+    {
+    
+        
+    }
     
     
 }

@@ -8,6 +8,15 @@
 
 #import "ZKBaseViewController.h"
 
+typedef void (^UpdateAlertBlock)();
+
 @interface ZKLoginViewController : ZKBaseViewController
+
+@property (nonatomic, copy) UpdateAlertBlock updateAlertBlock;
+/**
+ *  登录成功
+ *
+ */
+-(void)dengluCG:(UpdateAlertBlock)pk;
 
 @end

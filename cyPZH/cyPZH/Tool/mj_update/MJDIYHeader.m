@@ -47,10 +47,10 @@
     
     self.logo.mj_w = 15;
     self.logo.mj_h = 16;
-    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 22 ;
+    self.logo.mj_x = self.mj_w / 2 - self.logo.mj_w - 28 ;
     self.logo.mj_y = self.mj_h / 2 - self.logo.mj_h / 2;
     
-    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 8;
+    self.label.mj_x = self.logo.mj_x + self.logo.mj_w + 6;
     self.label.mj_y = 0;
     self.label.mj_h = self.mj_h;
     self.label.mj_w = self.mj_w - self.logo.mj_x - self.logo.mj_w;
@@ -91,6 +91,9 @@
             break;
         case MJRefreshStateRefreshing:
             self.label.text = @"加载中...";
+            break;
+        case MJRefreshStateNoMoreData:
+            self.label.text = @"全部加载完毕";
             break;
         default:
             break;

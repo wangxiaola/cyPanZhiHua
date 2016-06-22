@@ -104,7 +104,7 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
         [dic setObject:@"132" forKey:@"interfaceId"];
         [dic setObject:@"AudioQuery" forKey:@"Method"];
         [dic setObject:str forKey:@"QueryKey"];
-        
+        dic[@"TimeStamp"] = [ZKUtil timeStamp];
         MJWeakSelf
         [_activityView startAnimating];
         [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
@@ -182,7 +182,6 @@ static NSString *ZKRobotStateTableViewCellID  = @"ZKRobotStateTableViewCellID";
             NSInteger dex = self.modeArray.count-1;
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:dex inSection:0];
-            
             [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
         });
         

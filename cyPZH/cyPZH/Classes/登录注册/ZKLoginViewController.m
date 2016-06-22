@@ -264,6 +264,17 @@ static NSString *password_D = @"password_0";
 }
 
 
+/**
+ *  登录成功
+ *
+ *  @param pk 
+ */
+-(void)dengluCG:(UpdateAlertBlock)pk;
+{
+    
+    self.updateAlertBlock =pk;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];

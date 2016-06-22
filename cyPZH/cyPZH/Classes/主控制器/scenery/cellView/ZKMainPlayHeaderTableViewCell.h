@@ -10,6 +10,16 @@ extern NSString *const PlayHeaderTableViewCellID;
 
 #import <UIKit/UIKit.h>
 
+@protocol ZKMainPlayHeaderTableViewCellDelegate <NSObject>
+
+@optional
+/**
+ *  留言点击
+ */
+- (void)ClickOnMessage;
+
+@end
+
 @interface ZKMainPlayHeaderTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 /**
@@ -18,4 +28,7 @@ extern NSString *const PlayHeaderTableViewCellID;
  *  @param num
  */
 - (void)headerNumber:(NSInteger)num;
+
+@property (nonatomic, weak)id<ZKMainPlayHeaderTableViewCellDelegate>delegate;
+
 @end

@@ -21,6 +21,9 @@ extern NSString *const ZKMainPlayInforTableViewCellID;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *numberButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageViw;
+
+@property (weak, nonatomic)id controller;
+
 //修改头部数子
 - (void)updataLick:(NSInteger)lick number:(NSString*)num;
 

@@ -15,6 +15,13 @@ NSString *const PlayHeaderTableViewCellID = @"PlayHeaderTableViewCellID";
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)sendeClick {
+    
+    if ([self.delegate respondsToSelector:@selector(ClickOnMessage)]) {
+        [self.delegate ClickOnMessage];
+    }
+    
+}
 - (void)headerNumber:(NSInteger)num;
 {
     

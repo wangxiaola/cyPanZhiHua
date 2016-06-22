@@ -14,8 +14,8 @@
 #import "SVProgressHUD.h"
 //工具类
 #import "ZKUtil.h"
-#import "UserInfo.h"
-#import "ZKCache.h"
+#import "ZKUserInfo.h"
+
 
 // 固定参数的分类
 #import "NSDictionary+FixedParams.h"

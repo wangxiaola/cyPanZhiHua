@@ -75,6 +75,7 @@ float const sdCycleHeghit = 440/3;
     dic[@"id"] = @"28";
     dic[@"type"] = @"play";
     dic[@"interfaceId"] = @"123";
+    dic[@"TimeStamp"] = [ZKUtil timeStamp];
     MJWeakSelf
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
         

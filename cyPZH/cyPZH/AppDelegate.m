@@ -37,6 +37,14 @@
     [self commonConfiguration];
     [self advertisement];
     
+    ZKUserInfo *info = [[ZKUserInfo alloc] init];
+    info.managerId = @"123";
+    info.nick  = @"王小腊";
+    info.account   = @"123456";
+    info.wxID      = @"7890";
+    info.img = @"http://wx.qlogo.cn/mmopen/Y7GXelf5TbsRhkP8QfOFvzrIUpwp5EAeMjT4iaziccOibamPkFWz50fmbKRvWspTJlQFTsJG9s550dvuyY2NQycRgEA7pZuSs22/0";
+    [ZKUserInfo saveAccount:info];
+    
     return YES;
 }
 /**

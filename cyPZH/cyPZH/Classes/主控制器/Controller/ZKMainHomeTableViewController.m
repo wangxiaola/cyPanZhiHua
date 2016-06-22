@@ -93,7 +93,7 @@
     NSMutableDictionary * headerDic = [NSMutableDictionary params];
     [headerDic setObject:@"119" forKey:@"interfaceId"];
     [headerDic setObject:@"28" forKey:@"id"];
-    
+    headerDic[@"TimeStamp"] = [ZKUtil timeStamp];
     MJWeakSelf
     if (self.headerList.apply.count == 0)
     {

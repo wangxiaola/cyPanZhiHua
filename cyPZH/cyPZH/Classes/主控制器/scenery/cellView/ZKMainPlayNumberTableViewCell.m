@@ -15,6 +15,7 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 @implementation ZKMainPlayNumberTableViewCell
 {
     NSArray *array;
+    ZKMainSceneryMode *rowList;
 }
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -31,22 +32,12 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
 - (void)updatListIndex:(NSInteger)row;
 {
     ZKMainSceneryMode *list = array[row];
-    
-    if ([self.delegate respondsToSelector:@selector(selectAnnotation:index:)] && row!=0)
+    if ([self.delegate respondsToSelector:@selector(selectAnnotation:index:)])
     {
         [self.delegate selectAnnotation:list index:row];
     }
     
-    self.peopleNumberLabel.text = @"5";
-    self.dqPeopelNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.rtnumber];
-    self.czNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.frontmax];
-    self.comfortLabel.text = strIsNull(list.yjd);
-    self.TemperatureLabel.text = [NSString stringWithFormat:@"%@ ~ %@°C",list.t1,list.t2];
-    self.nameLabel.text = strIsNull(list.name);
-    
-    [self.pmtView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    self.pmtView.clipsToBounds = YES;
-    [self beginAnimationWithTitle:strIsNull(list.name)];
+    [self beginAnimationWithTitle:list];
     
     [self.annonArray enumerateObjectsUsingBlock:^(ZKPlayMapButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
@@ -70,8 +61,11 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
         float x = arc4random()%imageW+50;
         float y = arc4random()%imageH+20;
         ZKPlayMapButton *bty = [[ZKPlayMapButton alloc] initWithFrame:CGRectMake(x, y, 16, 20)];
-        [bty setImage:[UIImage imageNamed:@"scenery_icon_3_pre"] forState:UIControlStateNormal];
+        NSString *imageUrl = idx == row ? @"scenery_icon_3":@"scenery_icon_3_pre";
+        [bty setImage:[UIImage imageNamed:imageUrl] forState:UIControlStateNormal];
         bty.popName = obj.name;
+        UIColor *color = idx==row?RGB(244, 86, 9):[UIColor grayColor];
+        bty.labelColor = color;
         bty.tag = idx;
         [bty addTarget:self action:@selector(annonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.mapImageView addSubview:bty];
@@ -79,15 +73,23 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
         
     }];
     
-    [self updatListIndex:row];
+    [self beginAnimationWithTitle:data[row]];
+
 }
 - (IBAction)sceneryClick {
     
+    if ([self.delegate respondsToSelector:@selector(panoramaData:)])
+    {
+        [self.delegate panoramaData:rowList];
+    }
     
 }
 - (IBAction)shareClick {
     
-    
+    if ([self.delegate respondsToSelector:@selector(shareData:)])
+    {
+        [self.delegate shareData:rowList];
+    }
 }
 /**
  *  气泡点击
@@ -97,8 +99,19 @@ NSString *const playNumberTableViewCellID = @"playNumberTableViewCellID";
     [self updatListIndex:sender.tag];
 }
 
-- (void)beginAnimationWithTitle:(NSString *)title
+- (void)beginAnimationWithTitle:(ZKMainSceneryMode *)list
 {
+    rowList = list;
+    self.peopleNumberLabel.text = @"5";
+    self.dqPeopelNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.rtnumber];
+    self.czNumberLabel.text = [NSString stringWithFormat:@"%ld",(long)list.frontmax];
+    self.comfortLabel.text = strIsNull(list.yjd);
+    self.TemperatureLabel.text = [NSString stringWithFormat:@"%@ ~ %@°C",list.t1,list.t2];
+    self.nameLabel.text = strIsNull(list.name);
+    
+    NSString * title = strIsNull(list.name);
+    [self.pmtView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    self.pmtView.clipsToBounds = YES;
     
     NSString *extendedTitle = [NSString stringWithFormat:@"    %@    ", title];
     CGSize labelSize = [extendedTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:0 attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]} context:nil].size;

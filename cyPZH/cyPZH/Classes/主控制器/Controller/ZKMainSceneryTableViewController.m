@@ -8,6 +8,7 @@
 
 #import "ZKMainSceneryTableViewController.h"
 #import "WMPlayer.h"
+#import "ZKBaseWebViewController.h"
 
 #import "ZKMainSceneryMode.h"
 #import "ZKMainPlayInforMode.h"
@@ -18,9 +19,10 @@
 #import "ZKMainPlayHeaderTableViewCell.h"
 
 
+
 static NSString *const playHighlighted = @"scenery_icon_suspend";
 
-@interface ZKMainSceneryTableViewController ()<ZKMainPlayNumberTableViewCellDelegate>
+@interface ZKMainSceneryTableViewController ()<ZKMainPlayNumberTableViewCellDelegate,ZKMainPlayHeaderTableViewCellDelegate>
 
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) UIImageView *backImageView;
@@ -29,7 +31,9 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 @property (nonatomic, strong) NSString *mvpUrl;
 @property (nonatomic, strong) ZKMainPlayInforMode *inforMode;
 @property (nonatomic, strong) NSMutableDictionary *commentDic;
-@property (nonatomic, strong) NSAttributedString *attrStr;
+//留言
+@property (nonatomic, assign) NSInteger tool;
+@property (nonatomic, assign) NSInteger lyID;
 @end
 
 @implementation ZKMainSceneryTableViewController
@@ -46,7 +50,6 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
         _commentDic= [NSMutableDictionary params];
         _commentDic[@"type"] = @"video";
         _commentDic[@"page"] = @"1";
-        _commentDic[@"rows"] = @"20";
         _commentDic[@"interfaceId"] = @"124";
     }
     return _commentDic;
@@ -82,8 +85,6 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     //旋转屏幕通知
-    
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onDeviceOrientationChange)
                                                  name:UIDeviceOrientationDidChangeNotification
@@ -99,19 +100,34 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     [self.tableView.mj_header beginRefreshing];
     
 }
+/**
+ *  重组
+ */
+- (void)setupProperties
+{
+    [super setupProperties];
+    self.needsPullUpRefreshing = NO;
+}
 
 /**
  *  加载完成
  */
 - (void)didFinishedLoading;
 {
+    if (self.models.count >0)
+    {
+        self.tool  = 5;
+        self.index = -1;
+        [self.tableView.mj_footer resetNoMoreData];
+        [self selectAnnotation:self.models[0] index:0];
+    }
     
-    [self selectAnnotation:self.models[0] index:0];
 }
 #pragma mark --配置参数--
 - (void)configurationParameters
 {
-    self.index = 0;
+    self.tool  = 5;
+    self.index = -1;
     self.params[@"interfaceId"]=@"146";
     self.params[@"method"]=@"sceneryRealMonitor";
     self.params[@"rows"]=@"11";
@@ -133,13 +149,21 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectTabar:) name:@"selectTabar" object:nil];
     
     playerFrame = CGRectMake(0, 0, self.view.frame.size.width, 140);
-    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _SCREEN_WIDTH, 26)];
     self.tableView.tableHeaderView = self.wmPlayer;
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainPlayInforTableViewCell" bundle:nil] forCellReuseIdentifier:ZKMainPlayInforTableViewCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainPlayNumberTableViewCell" bundle:nil] forCellReuseIdentifier:playNumberTableViewCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainPlayMessageTableViewCell" bundle:nil] forCellReuseIdentifier:PlayMessageTableViewCellID];
     [self.tableView registerNib:[UINib nibWithNibName:@"ZKMainPlayHeaderTableViewCell" bundle:nil] forCellReuseIdentifier:PlayHeaderTableViewCellID];
+    
+    MJWeakSelf;
+    self.tableView.mj_footer = [MJDIYBackFooter footerWithRefreshingBlock:^{
+        weakSelf.tool = weakSelf.tool+5;
+        [weakSelf commentPost];
+        
+    }];
+    self.tableView.mj_footer.ignoredScrollViewContentInsetBottom = -40;
+    
 }
 
 #pragma mark----
@@ -152,6 +176,7 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
  */
 - (void)selectAnnotation:(ZKMainSceneryMode*)mode index:(NSInteger)row;
 {
+    if (row == self.index) {return;}
     self.index = row;
     NSString *playUrl = [NSString stringWithFormat:@"http:%@",mode.url];
     self.mvpUrl = playUrl;
@@ -159,8 +184,35 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     [self.wmPlayer.player pause];
     [ZKUtil UIimageView:self.backImageView NSSting:[NSString stringWithFormat:@"%@%@",IMAGE_URL_CSW,mode.logosmall] duImage:@"daohuang_ default"];
     self.backImageView.hidden = NO;
+    /**
+     *  重新获取留言
+     */
+    self.tool = 5 ;
+    self.lyID = mode.ID;
+    [self commentPost];
     
-    [self commentPost:mode.ID];
+    
+}
+
+/**
+ *  全景选中
+ *
+ *  @param mode
+ */
+- (void)panoramaData:(ZKMainSceneryMode*)mode;
+{
+    ZKBaseWebViewController *webView = [[ZKBaseWebViewController alloc] init];
+    webView.htmlUrl  = mode.address720;
+    webView.htmlName = mode.name;
+    [self.navigationController pushViewController:webView animated:YES];
+}
+/**
+ *  分享选中
+ *
+ *  @param mode
+ */
+- (void)shareData:(ZKMainSceneryMode*)mode;
+{
     
     
 }
@@ -170,32 +222,68 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
  *
  *  @param ID
  */
-- (void)commentPost:(NSInteger)ID
+- (void)commentPost
 {
     [_commentDic removeAllObjects];
     _commentDic = nil;
-    self.commentDic[@"id"] = [NSString stringWithFormat:@"%ld",(long)ID];
+    self.commentDic[@"id"]   = [NSString stringWithFormat:@"%ld",(long)self.lyID];
+    self.commentDic[@"rows"] = [NSNumber numberWithInteger:self.tool];
+    self.commentDic[@"TimeStamp"] = [ZKUtil timeStamp];
     
+    [SVProgressHUD showWithStatus:@"正在获取留言"];
+    MJWeakSelf;
     [ZKHttp postWithURLString:POST_ZK_URL parameters:self.commentDic success:^(id responseObject) {
+        HUDDissmiss
+        weakSelf.inforMode = [ZKMainPlayInforMode mj_objectWithKeyValues:responseObject];
         
-        self.inforMode = [ZKMainPlayInforMode mj_objectWithKeyValues:responseObject];
-        
-        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-        
-        NSIndexSet *indexSetOne=[[NSIndexSet alloc]initWithIndex:1];
-        [self.tableView reloadSections:indexSetOne withRowAnimation:UITableViewRowAnimationAutomatic];
-
+        [weakSelf commentFootCount:weakSelf.inforMode.total];
         
     } failure:^(NSError *error) {
-        
+        weakSelf.tool = 5;
         HUDShowError(@"网路错误!")
     }];
     
 }
+/**
+ *  根据数据来对foot控件做操作
+ *
+ *  @param dataTotalCount 个数
+ */
+- (void)commentFootCount:(NSInteger)dataTotalCount
+{
+    // 停止头部刷新
+    [self.tableView.mj_header endRefreshing];
+    // 第一页时重置尾部刷新状态
+    if (self.tool == 5)
+    {
+        [self.tableView.mj_footer resetNoMoreData];
+    }
+    // 如果数据个数达到总数则尾部显示已经加载完毕，否则直接停止刷新
+    if (self.inforMode.root.count == dataTotalCount) {
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }else {
+        [self.tableView.mj_footer endRefreshing];
+    }
+    
+    NSIndexSet *setOne = [[NSIndexSet alloc] initWithIndex:2];
+    NSIndexSet *setTow = [NSIndexSet indexSetWithIndex:1];
+    [self.tableView reloadSections:setOne withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView reloadSections:setTow withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    if (self.inforMode.root.count>5)
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.inforMode.root.count inSection:2];
+        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
+}
+
 #pragma mark----
 #pragma mark --UITableViewDelageta--
-
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 66;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
@@ -223,22 +311,11 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     }
     else if (indexPath.section == 1)
     {
-        if (self.models.count > 0)
-        {
-            ZKMainSceneryMode *list = self.models[self.index];
-            return 190+[self textHeghit:list.summary];
-        }
-        else
-        {
-            return 190;
-        }
-        
+        return UITableViewAutomaticDimension;
     }
     else
     {
-        
-        return indexPath.row == 0 ? 38:66;
-        
+        return indexPath.row == 0 ? 38:UITableViewAutomaticDimension;
     }
     
 }
@@ -289,14 +366,14 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
         {
             
             ZKMainPlayHeaderTableViewCell *headerCell = [tableView dequeueReusableCellWithIdentifier:PlayHeaderTableViewCellID];
-            
+            headerCell.delegate = self;
             [headerCell headerNumber:self.inforMode.total];
             cell = headerCell;
         }
         else
         {
             ZKMainPlayMessageTableViewCell *messageCell = [tableView dequeueReusableCellWithIdentifier:PlayMessageTableViewCellID];
-
+            
             ZKPlayInforRoot *root = self.inforMode.root[indexPath.row-1];
             messageCell.rootList = root;
             cell = messageCell;
@@ -476,21 +553,19 @@ static NSString *const playHighlighted = @"scenery_icon_suspend";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark 返回高度
-- (CGFloat)textHeghit:(NSString*)str
+
+#pragma mark -----
+#pragma mark --ZKMainPlayHeaderTableViewCellDelegate--
+/**
+ *  留言点击
+ */
+- (void)ClickOnMessage;
 {
-    _attrStr = nil;
-    _attrStr = [[NSAttributedString alloc] initWithString:str];
-    NSRange range = NSMakeRange(0, _attrStr.length);
-    NSDictionary *dic = [_attrStr attributesAtIndex:0 effectiveRange:&range];   // 获取该段attributedString的属性字典
-    // 计算文本的大小  ios7.0
-    CGSize textSize = [str boundingRectWithSize:CGSizeMake(_SCREEN_WIDTH, MAXFLOAT) // 用于计算文本绘制时占据的矩形块
-                                        options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading // 文本绘制时的附加选项
-                                     attributes:dic        // 文字的属性
-                                        context:nil].size;
     
-    return textSize.height;
+    
+    
 }
+
 /*
  #pragma mark - Navigation
  

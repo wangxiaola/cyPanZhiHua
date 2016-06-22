@@ -205,7 +205,7 @@
     [dic setObject:type forKey:@"stype"];
     [dic setObject:@"28" forKey:@"id"];
     [dic setObject:@"add" forKey:@"type"];
-    
+    dic[@"TimeStamp"] = [ZKUtil timeStamp];
     MJWeakSelf
     [ZKHttp postWithURLString:POST_ZK_URL parameters:dic success:^(id responseObject) {
         
